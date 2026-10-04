@@ -1,35 +1,268 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff0f5"><title>For Felisha ♡</title><link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0f5">
+  <title>For Felisha ♡</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="ambient" aria-hidden="true"><span>♡</span><span>✦</span><span>✿</span><span>♡</span><span>✧</span><span>❀</span><span>♡</span></div>
-<header><div class="brand">a little world for <b>Felisha</b> <span>♡</span></div><button id="musicBtn" class="music" aria-pressed="false">♫ <span>Play a little melody</span></button></header>
-<main>
-<div class="cover-art">
-  <img class="cover-photo"
-       src="images/felisha-cover.png"
-       alt="Felisha">
-  <div class="orbit orbit1"></div>
-  <div class="orbit orbit2"></div>
-  <div class="cover-heart">♡</div>
-  <span class="spark s1">✦</span>
-  <span class="spark s2">✧</span>
-  <span class="spark s3">✿</span>
-</div><h1>Happy Birthday,<br><em>Felisha</em></h1><p class="subtitle">To my favourite person, my Cutie pie.</p><button class="primary" id="openBtn">Open your little surprise <span>→</span></button><div class="tiny">A few pages, a few memories, and a whole lot of love.</div></section>
-<section class="book-wrap hidden" id="bookWrap" aria-live="polite">
-<div class="progress"><span id="pageCount">01 / 05</span><div class="progress-track"><i id="progressFill"></i></div><span class="chapter" id="chapter">A little hello</span></div>
-<div class="book" id="book">
-<article class="page active" data-page="0"><div class="page-kicker">01 · JUST FOR YOU</div><div class="mini-flower">✿</div><h2>To my<br><em>Cutie pie</em></h2><p class="copy">Today is all about you, Felisha. I wanted to make you something you could open, explore, and keep close—a tiny corner of the internet that belongs just to us.</p><div class="scribble">You deserve to feel special. Always. ♡</div><div class="page-foot">turn the page, lovely <span>♡</span></div></article>
-<article class="page" data-page="1"><div class="page-kicker">02 · YOUR SMILE</div><h2>My favourite<br><em>sight</em></h2><p class="copy">A little gallery of the girl who makes ordinary moments feel brighter.</p><div class="photo-grid"><div class="photo p1"><div class="photo-placeholder"><span>♡</span><small>Add Felisha's photo</small></div><label>that pretty smile</label></div><div class="photo p2"><div class="photo-placeholder"><span>✿</span><small>Add another photo</small></div><label>my cutie pie</label></div></div><div class="note-tag">P.S. You're prettier than this whole page.</div><div class="page-foot">a page full of you <span>♡</span></div></article>
-<article class="page" data-page="2"><div class="page-kicker">03 · LITTLE THINGS</div><h2>Reasons I<br><em>adore you</em></h2><p class="copy">Tap a little note. I hope each one makes you smile.</p><div class="notes"><button class="note" data-note="Your smile has a way of making my day better, even when nothing else goes right. ♡"><span>01</span><b>Your smile</b><i>tap to open ↗</i></button><button class="note" data-note="I love how you are simply, wonderfully you. Never feel like you need to be anyone else. ✿"><span>02</span><b>The real you</b><i>tap to open ↗</i></button><button class="note" data-note="Even the smallest moments feel memorable when I get to share them with you. ✨"><span>03</span><b>Our little moments</b><i>tap to open ↗</i></button></div><div class="page-foot">little notes, big feelings <span>♡</span></div></article>
-<article class="page" data-page="3"><div class="page-kicker">04 · US</div><h2>More memories<br><em>to make</em></h2><div class="memory-frame"><div class="memory-placeholder">✧<small>Your favourite memory goes here</small></div></div><p class="copy center">I hope we get to collect so many more laughs, adventures, silly moments, and beautiful memories together. One day at a time, with you.</p><div class="scribble">My favourite story is still being written. ♡</div><div class="page-foot">to all the days ahead <span>♡</span></div></article>
-<article class="page final-page" data-page="4"><div class="page-kicker">05 · YOUR DAY</div><div class="cake" aria-label="Birthday cake"><div class="flame" id="flame">✦</div><div class="candle"></div><div class="icing"></div><div class="cake-body"><span>♡</span></div><div class="plate"></div></div><h2>Make a wish,<br><em>Felisha</em></h2><p class="copy center">Happy birthday, my Cutie pie. I hope this year brings you all the happiness, love, and lovely surprises your heart can hold.</p><button id="wishBtn" class="secondary">Blow out the candle ✨</button><p id="wishText" class="wish hidden">Whatever you wished for, I hope it finds you. ♡</p><div class="page-foot">with all my heart, always <span>♡</span></div></article>
-</div>
-<div class="nav"><button id="prevBtn" class="navbtn" disabled>← Previous</button><span class="dots" id="dots"><i class="selected"></i><i></i><i></i><i></i><i></i></span><button id="nextBtn" class="navbtn">Next page →</button></div>
-</section>
-</main>
-<div class="modal hidden" id="modal"><div class="modal-card"><button class="close" id="closeModal" aria-label="Close">×</button><div class="modal-flower">✿</div><p class="eyebrow">A LITTLE NOTE FOR YOU</p><p id="modalText"></p><div class="modal-heart">♡</div></div></div>
-<footer>made gently, with love <span>♡</span></footer><script src="script.js"></script>
-</body></html>
+
+  <div class="ambient" aria-hidden="true">
+    <span>♡</span><span>✦</span><span>✿</span>
+    <span>♡</span><span>✧</span><span>❀</span><span>♡</span>
+  </div>
+
+  <header>
+    <div class="brand">a little world for <b>Felisha</b> <span>♡</span></div>
+    <button id="musicBtn" class="music" aria-pressed="false">
+      ♫ <span>Play a little melody</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- INTRO COVER -->
+    <section class="intro" id="intro">
+      <div class="eyebrow">MADE WITH LOVE, JUST FOR YOU</div>
+
+      <div class="cover-art">
+        <img
+          class="cover-photo"
+          src="images/felisha-cover.png"
+          alt="Felisha"
+        >
+        <div class="orbit orbit1"></div>
+        <div class="orbit orbit2"></div>
+        <div class="cover-heart">♡</div>
+        <span class="spark s1">✦</span>
+        <span class="spark s2">✧</span>
+        <span class="spark s3">✿</span>
+      </div>
+
+      <h1>Happy Birthday,<br><em>Felisha</em></h1>
+      <p class="subtitle">To my favourite person, my Cutie pie.</p>
+
+      <button class="primary" id="openBtn">
+        Open your little surprise <span>→</span>
+      </button>
+
+      <div class="tiny">
+        A few pages, a few memories, and a whole lot of love.
+      </div>
+    </section>
+
+    <!-- BIRTHDAY BOOK -->
+    <section class="book-wrap hidden" id="bookWrap" aria-live="polite">
+
+      <div class="progress">
+        <span id="pageCount">01 / 05</span>
+        <div class="progress-track">
+          <i id="progressFill"></i>
+        </div>
+        <span class="chapter" id="chapter">A little hello</span>
+      </div>
+
+      <div class="book" id="book">
+
+        <!-- PAGE 1 -->
+        <article class="page active" data-page="0">
+          <div class="page-kicker">01 · JUST FOR YOU</div>
+          <div class="mini-flower">✿</div>
+
+          <h2>To my<br><em>Cutie pie</em></h2>
+
+          <p class="copy">
+            Today is all about you, Felisha. I wanted to make you
+            something you could open, explore, and keep close—a tiny
+            corner of the internet that belongs just to us.
+          </p>
+
+          <div class="scribble">
+            You deserve to feel special. Always. ♡
+          </div>
+
+          <div class="page-foot">
+            turn the page, lovely <span>♡</span>
+          </div>
+        </article>
+
+        <!-- PAGE 2 -->
+        <article class="page" data-page="1">
+          <div class="page-kicker">02 · YOUR SMILE</div>
+
+          <h2>My favourite<br><em>sight</em></h2>
+
+          <p class="copy">
+            A little gallery of the girl who makes ordinary moments
+            feel brighter.
+          </p>
+
+          <div class="photo-grid">
+            <div class="photo p1">
+              <div class="photo-placeholder">
+                <span>♡</span>
+                <small>Add Felisha's photo</small>
+              </div>
+              <label>that pretty smile</label>
+            </div>
+
+            <div class="photo p2">
+              <div class="photo-placeholder">
+                <span>✿</span>
+                <small>Add another photo</small>
+              </div>
+              <label>my cutie pie</label>
+            </div>
+          </div>
+
+          <div class="note-tag">
+            P.S. You're prettier than this whole page.
+          </div>
+
+          <div class="page-foot">
+            a page full of you <span>♡</span>
+          </div>
+        </article>
+
+        <!-- PAGE 3 -->
+        <article class="page" data-page="2">
+          <div class="page-kicker">03 · LITTLE THINGS</div>
+
+          <h2>Reasons I<br><em>adore you</em></h2>
+
+          <p class="copy">
+            Tap a little note. I hope each one makes you smile.
+          </p>
+
+          <div class="notes">
+            <button class="note"
+              data-note="Your smile has a way of making my day better, even when nothing else goes right. ♡">
+              <span>01</span>
+              <b>Your smile</b>
+              <i>tap to open ↗</i>
+            </button>
+
+            <button class="note"
+              data-note="I love how you are simply, wonderfully you. Never feel like you need to be anyone else. ✿">
+              <span>02</span>
+              <b>The real you</b>
+              <i>tap to open ↗</i>
+            </button>
+
+            <button class="note"
+              data-note="Even the smallest moments feel memorable when I get to share them with you. ✨">
+              <span>03</span>
+              <b>Our little moments</b>
+              <i>tap to open ↗</i>
+            </button>
+          </div>
+
+          <div class="page-foot">
+            little notes, big feelings <span>♡</span>
+          </div>
+        </article>
+
+        <!-- PAGE 4 -->
+        <article class="page" data-page="3">
+          <div class="page-kicker">04 · US</div>
+
+          <h2>More memories<br><em>to make</em></h2>
+
+          <div class="memory-frame">
+            <div class="memory-placeholder">
+              ✧
+              <small>Your favourite memory goes here</small>
+            </div>
+          </div>
+
+          <p class="copy center">
+            I hope we get to collect so many more laughs, adventures,
+            silly moments, and beautiful memories together. One day
+            at a time, with you.
+          </p>
+
+          <div class="scribble">
+            My favourite story is still being written. ♡
+          </div>
+
+          <div class="page-foot">
+            to all the days ahead <span>♡</span>
+          </div>
+        </article>
+
+        <!-- PAGE 5 -->
+        <article class="page final-page" data-page="4">
+          <div class="page-kicker">05 · YOUR DAY</div>
+
+          <div class="cake" aria-label="Birthday cake">
+            <div class="flame" id="flame">✦</div>
+            <div class="candle"></div>
+            <div class="icing"></div>
+            <div class="cake-body"><span>♡</span></div>
+            <div class="plate"></div>
+          </div>
+
+          <h2>Make a wish,<br><em>Felisha</em></h2>
+
+          <p class="copy center">
+            Happy birthday, my Cutie pie. I hope this year brings
+            you all the happiness, love, and lovely surprises
+            your heart can hold.
+          </p>
+
+          <button id="wishBtn" class="secondary">
+            Blow out the candle ✨
+          </button>
+
+          <p id="wishText" class="wish hidden">
+            Whatever you wished for, I hope it finds you. ♡
+          </p>
+
+          <div class="page-foot">
+            with all my heart, always <span>♡</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- BOOK NAVIGATION -->
+      <div class="nav">
+        <button id="prevBtn" class="navbtn" disabled>
+          ← Previous
+        </button>
+
+        <span class="dots" id="dots">
+          <i class="selected"></i>
+          <i></i><i></i><i></i><i></i>
+        </span>
+
+        <button id="nextBtn" class="navbtn">
+          Next page →
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- NOTE POP-UP -->
+  <div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <button class="close" id="closeModal" aria-label="Close">×</button>
+      <div class="modal-flower">✿</div>
+      <p class="eyebrow">A LITTLE NOTE FOR YOU</p>
+      <p id="modalText"></p>
+      <div class="modal-heart">♡</div>
+    </div>
+  </div>
+
+  <footer>
+    made gently, with love <span>♡</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+        </html>
+  
