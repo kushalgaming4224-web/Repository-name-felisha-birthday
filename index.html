@@ -21,6 +21,7 @@
 </div>
 
 <header>
+
   <div class="brand">
     a little world for <b>Felisha</b> <span>♡</span>
   </div>
@@ -28,9 +29,14 @@
   <button id="musicBtn" class="music" aria-pressed="false">
     ♫ <span>Play a little melody</span>
   </button>
+
 </header>
 
+
 <main>
+
+
+  <!-- COVER PAGE -->
 
   <section class="intro" id="intro">
 
@@ -38,7 +44,15 @@
       MADE WITH LOVE, JUST FOR YOU
     </div>
 
+
     <div class="cover-art">
+
+      <!-- COVER IMAGE -->
+      <img
+        class="cover-photo"
+        src="images/felisha-cover.png"
+        alt="Felisha"
+      >
 
       <div class="orbit orbit1"></div>
       <div class="orbit orbit2"></div>
@@ -53,18 +67,22 @@
 
     </div>
 
+
     <h1>
       Happy Birthday,<br>
       <em>Felisha</em>
     </h1>
 
+
     <p class="subtitle">
       To my favourite person, my Cutie pie.
     </p>
 
+
     <button class="primary" id="openBtn">
       Open your little surprise <span>→</span>
     </button>
+
 
     <div class="tiny">
       A few pages, a few memories, and a whole lot of love.
@@ -73,7 +91,11 @@
   </section>
 
 
+
+  <!-- BOOK -->
+
   <section class="book-wrap hidden" id="bookWrap" aria-live="polite">
+
 
     <div class="progress">
 
@@ -92,10 +114,12 @@
     </div>
 
 
+
     <div class="book" id="book">
 
 
       <!-- PAGE 1 -->
+
       <article class="page active" data-page="0">
 
         <div class="page-kicker">
@@ -126,7 +150,9 @@
       </article>
 
 
+
       <!-- PAGE 2 -->
+
       <article class="page" data-page="1">
 
         <div class="page-kicker">
@@ -145,6 +171,9 @@
 
         <div class="photo-grid">
 
+
+          <!-- LEFT PHOTO -->
+
           <div class="photo p1">
 
             <img
@@ -160,6 +189,9 @@
           </div>
 
 
+
+          <!-- RIGHT PHOTO -->
+
           <div class="photo p2">
 
             <img
@@ -174,12 +206,14 @@
 
           </div>
 
+
         </div>
 
 
         <div class="note-tag">
           P.S. You're prettier than this whole page.
         </div>
+
 
         <div class="page-foot">
           a page full of you <span>♡</span>
@@ -188,7 +222,9 @@
       </article>
 
 
+
       <!-- PAGE 3 -->
+
       <article class="page" data-page="2">
 
         <div class="page-kicker">
@@ -206,6 +242,7 @@
 
 
         <div class="notes">
+
 
           <button
             class="note"
@@ -236,6 +273,7 @@
             <i>tap to open ↗</i>
           </button>
 
+
         </div>
 
 
@@ -246,7 +284,9 @@
       </article>
 
 
+
       <!-- PAGE 4 -->
+
       <article class="page" data-page="3">
 
         <div class="page-kicker">
@@ -275,9 +315,11 @@
           I hope we get to collect so many more laughs, adventures, silly moments, and beautiful memories together. One day at a time, with you.
         </p>
 
+
         <div class="scribble">
           My favourite story is still being written. ♡
         </div>
+
 
         <div class="page-foot">
           to all the days ahead <span>♡</span>
@@ -286,7 +328,9 @@
       </article>
 
 
+
       <!-- PAGE 5 -->
+
       <article class="page final-page" data-page="4">
 
         <div class="page-kicker">
@@ -340,8 +384,12 @@
 
       </article>
 
+
     </div>
 
+
+
+    <!-- NAVIGATION -->
 
     <div class="nav">
 
@@ -349,13 +397,17 @@
         ← Previous
       </button>
 
+
       <span class="dots" id="dots">
+
         <i class="selected"></i>
         <i></i>
         <i></i>
         <i></i>
         <i></i>
+
       </span>
+
 
       <button id="nextBtn" class="navbtn">
         Next page →
@@ -363,10 +415,14 @@
 
     </div>
 
+
   </section>
 
 </main>
 
+
+
+<!-- NOTE POPUP -->
 
 <div class="modal hidden" id="modal">
 
@@ -380,15 +436,19 @@
       ×
     </button>
 
+
     <div class="modal-flower">
       ✿
     </div>
+
 
     <p class="eyebrow">
       A LITTLE NOTE FOR YOU
     </p>
 
+
     <p id="modalText"></p>
+
 
     <div class="modal-heart">
       ♡
@@ -397,6 +457,7 @@
   </div>
 
 </div>
+
 
 
 <footer>
