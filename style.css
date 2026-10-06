@@ -187,7 +187,7 @@ main {
   margin-bottom: 20px;
 }
 
-/* LARGE COVER ART */
+/* ---------------- COVER ART ---------------- */
 
 .cover-art {
   position: relative;
@@ -214,8 +214,6 @@ main {
   position: relative;
   z-index: 3;
 }
-
-/* Decorative circles */
 
 .orbit {
   position: absolute;
@@ -539,17 +537,16 @@ main {
   background: #fff;
 }
 
-/* RIGHT IMAGE — FACE CROPPED AND CENTERED */
+/* RIGHT IMAGE */
+/* Slightly zoomed out + moved upward */
 
 .photo.p2 .photo-image {
   width: 100%;
   height: 190px;
   display: block;
   object-fit: cover;
-
-  /* This crops the photo while keeping the face visible */
-  object-position: center 35%;
-
+  object-position: center 28%;
+  transform: scale(0.96);
   background: #fff;
 }
 
@@ -694,7 +691,7 @@ main {
   width: 15px;
   height: 20px;
   background: #f4ad72;
-  border-radius: 50% 50% 50% 50%;
+  border-radius: 50%;
   animation: flame 0.7s ease-in-out infinite alternate;
 }
 
