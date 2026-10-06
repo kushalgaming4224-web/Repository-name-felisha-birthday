@@ -1,13 +1,12 @@
 :root {
-  --pink: #c45f83;
-  --pink-dark: #a94368;
-  --pink-light: #f3c5d5;
-  --cream: #fff8f3;
-  --paper: #fffaf7;
-  --brown: #5d4350;
-  --muted: #8f6d7d;
-  --line: #e4b9c9;
-  --shadow: rgba(95, 50, 75, 0.18);
+  --bg: #fff7f9;
+  --paper: #fffdfd;
+  --ink: #4d3542;
+  --muted: #8b6f7b;
+  --accent: #d98ca8;
+  --accent-dark: #b96888;
+  --line: #ead7df;
+  --shadow: rgba(95, 50, 75, 0.15);
 }
 
 * {
@@ -20,62 +19,48 @@ html {
 
 body {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  color: var(--brown);
   background:
-    radial-gradient(circle at top left, rgba(244, 198, 215, 0.35), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(245, 215, 225, 0.35), transparent 35%),
-    var(--cream);
+    radial-gradient(circle at 15% 20%, rgba(255, 220, 232, 0.65), transparent 25%),
+    radial-gradient(circle at 85% 75%, rgba(255, 228, 237, 0.7), transparent 28%),
+    var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
   min-height: 100vh;
 }
 
-button {
-  font: inherit;
-}
-
-.hidden {
-  display: none !important;
-}
-
-
-/* =========================================================
-   INTRO COVER
-   ========================================================= */
+/* =========================
+   INTRO
+========================= */
 
 .intro {
   min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 25px;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.9), transparent 30%),
-    radial-gradient(circle at 80% 80%, rgba(245, 201, 218, 0.45), transparent 35%),
-    #fff4f7;
+  align-items: center;
+  padding: 30px 20px;
+  animation: fadeIn 1s ease;
 }
 
 .cover-card {
-  width: min(850px, 94vw);
-  padding: 14px;
-  background: rgba(255,255,255,0.8);
-  border: 1px solid rgba(196,95,131,0.18);
-  border-radius: 24px;
+  width: min(760px, 94vw);
+  background: #fff;
+  padding: 12px;
+  border-radius: 4px;
   box-shadow:
-    0 30px 70px rgba(95, 50, 75, 0.18),
-    0 8px 20px rgba(95, 50, 75, 0.08);
-  animation: coverFloat 5s ease-in-out infinite;
+    0 25px 60px rgba(95, 50, 75, 0.18),
+    0 4px 15px rgba(95, 50, 75, 0.08);
 }
 
 .cover-image-wrap {
   position: relative;
+  width: 100%;
   overflow: hidden;
-  border-radius: 18px;
 }
 
 .cover-photo {
   width: 100%;
-  display: block;
   height: auto;
+  display: block;
 }
 
 .cover-open-btn {
@@ -84,67 +69,49 @@ button {
   bottom: 28px;
   transform: translateX(-50%);
   border: none;
-  border-radius: 999px;
-  padding: 14px 22px;
-  background: rgba(255,255,255,0.93);
-  color: var(--pink-dark);
-  box-shadow: 0 12px 25px rgba(95, 50, 75, 0.18);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--accent-dark);
+  padding: 13px 18px;
+  border-radius: 30px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  letter-spacing: 1px;
   cursor: pointer;
+  box-shadow: 0 8px 25px rgba(95, 50, 75, 0.18);
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-weight: bold;
-  letter-spacing: 0.04em;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  gap: 12px;
+  transition: all 0.3s ease;
 }
 
 .cover-open-btn:hover {
   transform: translateX(-50%) translateY(-3px);
-  box-shadow: 0 16px 30px rgba(95, 50, 75, 0.24);
+  box-shadow: 0 12px 30px rgba(95, 50, 75, 0.22);
 }
 
 .cover-open-btn b {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: normal;
 }
 
-@keyframes coverFloat {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-7px);
-  }
-}
-
-
-/* =========================================================
+/* =========================
    MAIN BOOK
-   ========================================================= */
+========================= */
+
+.hidden {
+  display: none !important;
+}
 
 .book-wrap {
-  width: min(1050px, 94vw);
+  width: min(950px, 94vw);
   margin: 0 auto;
-  padding: 28px 0 45px;
-  animation: fadeIn 0.8s ease;
+  padding: 35px 0 50px;
+  animation: pageAppear 0.8s ease;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* =========================================================
+/* =========================
    TOP BAR
-   ========================================================= */
+========================= */
 
 .topbar {
   display: flex;
@@ -155,34 +122,35 @@ button {
 }
 
 .brand {
-  color: var(--muted);
   font-size: 16px;
-  letter-spacing: 0.03em;
+  color: var(--muted);
+  letter-spacing: 0.2px;
 }
 
 .brand strong {
-  color: var(--pink-dark);
+  color: var(--accent-dark);
 }
 
 .music-btn {
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.75);
-  color: var(--pink-dark);
-  padding: 10px 15px;
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--muted);
+  padding: 9px 14px;
+  border-radius: 20px;
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: 0.3s ease;
 }
 
 .music-btn:hover {
   background: #fff;
+  color: var(--accent-dark);
   transform: translateY(-2px);
 }
 
-
-/* =========================================================
+/* =========================
    PROGRESS
-   ========================================================= */
+========================= */
 
 .progress-area {
   display: grid;
@@ -193,196 +161,152 @@ button {
 }
 
 .progress-count {
-  color: var(--pink-dark);
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 0.08em;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
 }
 
 .progress-track {
-  height: 5px;
-  background: #efdce4;
-  border-radius: 999px;
+  height: 3px;
+  background: #eadde2;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 .progress-fill {
-  height: 100%;
   width: 20%;
-  background: var(--pink);
-  border-radius: inherit;
+  height: 100%;
+  background: var(--accent);
   transition: width 0.4s ease;
 }
 
 .chapter {
+  font-size: 11px;
   color: var(--muted);
-  font-size: 13px;
-  text-align: right;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-
-/* =========================================================
-   PAGE DOTS
-   ========================================================= */
+/* =========================
+   DOTS
+========================= */
 
 .dots {
   display: flex;
   justify-content: center;
-  gap: 9px;
-  margin: 18px 0;
+  gap: 8px;
+  margin: 15px 0 20px;
 }
 
 .dot {
-  width: 9px;
-  height: 9px;
-  padding: 0;
-  border: none;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: #e5c7d3;
+  border: none;
+  background: #dfcbd3;
   cursor: pointer;
-  transition: all 0.25s ease;
+  padding: 0;
+  transition: 0.3s ease;
 }
 
 .dot.selected {
-  width: 25px;
-  border-radius: 999px;
-  background: var(--pink);
+  background: var(--accent);
+  transform: scale(1.25);
 }
 
-
-/* =========================================================
-   BOOK / PAGES
-   ========================================================= */
+/* =========================
+   BOOK
+========================= */
 
 .book {
   position: relative;
-  min-height: 620px;
+  min-height: 610px;
+  background: var(--paper);
+  border: 1px solid #eadde2;
+  box-shadow:
+    0 25px 55px rgba(95, 50, 75, 0.13),
+    0 3px 10px rgba(95, 50, 75, 0.05);
+  overflow: hidden;
 }
 
 .page {
   display: none;
+  min-height: 610px;
+  padding: 55px 65px 45px;
   position: relative;
-  min-height: 620px;
-  padding: 55px 70px 75px;
   background:
-    linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)),
-    var(--paper);
-  border: 1px solid rgba(196,95,131,0.15);
-  border-radius: 8px;
-  box-shadow:
-    0 25px 55px var(--shadow),
-    0 3px 10px rgba(95, 50, 75, 0.08);
-  overflow: hidden;
+    linear-gradient(rgba(255,255,255,0.97), rgba(255,255,255,0.97)),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      rgba(218, 191, 202, 0.13) 32px
+    );
+  animation: pageSlide 0.5s ease;
 }
 
 .page.active {
   display: block;
-  animation: pageIn 0.5s ease;
 }
 
-@keyframes pageIn {
-  from {
-    opacity: 0;
-    transform: translateX(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.page::before {
-  content: "";
-  position: absolute;
-  inset: 14px;
-  border: 1px dashed rgba(196,95,131,0.18);
-  border-radius: 5px;
-  pointer-events: none;
-}
+/* =========================
+   PAGE TEXT
+========================= */
 
 .page-kicker {
-  position: relative;
-  z-index: 2;
-  color: var(--pink);
-  font-size: 12px;
-  font-weight: bold;
-  letter-spacing: 0.15em;
-  margin-bottom: 18px;
+  color: var(--accent-dark);
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .page h2 {
-  position: relative;
-  z-index: 2;
   margin: 0;
-  font-size: clamp(38px, 5vw, 62px);
+  font-size: clamp(38px, 5vw, 60px);
   line-height: 0.98;
-  color: #633f50;
   font-weight: normal;
+  color: var(--ink);
 }
 
 .page h2 em {
-  color: var(--pink-dark);
+  color: var(--accent-dark);
   font-style: italic;
 }
 
 .copy {
-  position: relative;
-  z-index: 2;
-  max-width: 620px;
-  margin: 22px 0;
+  max-width: 590px;
+  margin: 22px 0 0;
   color: var(--muted);
-  line-height: 1.8;
-  font-size: 16px;
+  line-height: 1.75;
+  font-size: 15px;
 }
-
-
-/* =========================================================
-   PAGE 1
-   ========================================================= */
 
 .hello-decoration {
-  position: relative;
-  z-index: 2;
   display: flex;
-  gap: 20px;
-  color: var(--pink);
-  font-size: 28px;
-  margin: 30px 0 22px;
-  animation: gentlePulse 3s ease-in-out infinite;
-}
-
-@keyframes gentlePulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.05);
-  }
+  gap: 15px;
+  margin: 30px 0;
+  color: var(--accent);
+  font-size: 22px;
 }
 
 .letter {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  padding: 25px 28px;
-  background: rgba(255,255,255,0.68);
-  border-left: 4px solid var(--pink-light);
-  line-height: 1.8;
-  color: var(--brown);
+  max-width: 600px;
+  border-left: 2px solid var(--accent);
+  padding-left: 20px;
+  margin-top: 25px;
+  color: var(--muted);
+  line-height: 1.75;
 }
 
 .letter p:first-child {
-  margin-top: 0;
-  color: var(--pink-dark);
+  color: var(--ink);
   font-weight: bold;
 }
 
-
-/* =========================================================
-   PAGE 2 — PHOTO GALLERY
-   ========================================================= */
+/* =========================
+   PAGE 2 PHOTO GALLERY
+========================= */
 
 .photo-grid {
   display: flex;
@@ -405,12 +329,14 @@ button {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* LEFT PHOTO CARD */
+/* LEFT PHOTO */
 .photo.p1 {
   transform: translateY(0) rotate(-4deg);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* RIGHT PHOTO — DO NOT CHANGE */
+/* RIGHT PHOTO — UNCHANGED */
 .photo.p2 {
   transform: translateY(28px) rotate(4deg);
 }
@@ -421,76 +347,68 @@ button {
     0 4px 10px rgba(95, 50, 75, 0.1);
 }
 
+/* LEFT PHOTO HOVER */
 .photo.p1:hover {
   transform: translateY(-7px) rotate(-2deg) scale(1.03);
 }
 
+/* RIGHT PHOTO HOVER — UNCHANGED */
 .photo.p2:hover {
   transform: translateY(21px) rotate(2deg) scale(1.03);
 }
 
-
-/* =========================================================
-   IMAGE FRAMES
-   ========================================================= */
-
-.photo-image {
-  width: 100%;
-  height: 145px;
-  display: block;
-  background: #fff;
-}
-
-
-/* =========================================================
-   LEFT PHOTO ONLY
-   ========================================================= */
-
-/*
-   IMPORTANT:
-   The image is no longer translated downward.
-   It remains completely inside the white frame.
-   This prevents the caption from being covered.
-*/
-
-.p1 {
-  overflow: visible;
-}
+/* =========================
+   LEFT IMAGE — 1:1
+========================= */
 
 .p1 .photo-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  display: block;
+
   object-fit: contain;
   object-position: center center;
+
   transform: none;
   background: #fff;
 }
 
-
 /* LEFT CAPTION */
-.photo.p1 label {
+.p1 label {
   display: block;
+  width: 100%;
   position: relative;
   z-index: 5;
+
+  margin-top: 9px;
+  padding: 0;
+
   text-align: center;
   color: var(--muted);
   font-size: 12px;
-  margin-top: 10px;
-  padding-top: 2px;
+  line-height: 1.3;
   font-style: italic;
+
   background: #fff;
 }
 
-
-/* =========================================================
-   RIGHT PHOTO — COMPLETELY UNCHANGED
-   ========================================================= */
+/* =========================
+   RIGHT IMAGE — EXACTLY AS BEFORE
+========================= */
 
 .p2 .photo-image {
+  width: 100%;
+  height: 145px;
+  display: block;
+  background: #fff;
+
   object-fit: cover;
   object-position: center 0%;
   transform: none;
 }
 
-.photo.p2 label {
+.photo label {
   display: block;
   text-align: center;
   color: var(--muted);
@@ -499,163 +417,116 @@ button {
   font-style: italic;
 }
 
-
 .note-tag {
-  position: relative;
-  z-index: 2;
   width: fit-content;
+  max-width: 90%;
   margin: 35px auto 0;
-  padding: 9px 15px;
-  background: #fff0a8;
-  color: #765d36;
-  font-size: 13px;
-  transform: rotate(-2deg);
-  box-shadow: 0 7px 15px rgba(95,50,75,0.1);
-}
-
-.page-foot {
-  position: absolute;
-  bottom: 28px;
-  left: 70px;
-  right: 70px;
-  z-index: 2;
-  color: #a98594;
+  padding: 10px 15px;
+  background: #fff3f7;
+  color: var(--accent-dark);
   font-size: 12px;
-  text-align: center;
-  letter-spacing: 0.05em;
+  transform: rotate(-1deg);
+  box-shadow: 0 5px 15px rgba(95, 50, 75, 0.07);
 }
 
-
-/* =========================================================
-   PAGE 3 — NOTES
-   ========================================================= */
+/* =========================
+   PAGE 3 NOTES
+========================= */
 
 .notes-grid {
-  position: relative;
-  z-index: 2;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 35px;
   max-width: 700px;
-  margin-top: 30px;
 }
 
 .note {
-  border: 1px solid #ecd2dc;
-  background: #fff;
-  border-radius: 8px;
-  padding: 22px;
+  min-height: 135px;
   text-align: left;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 20px;
   cursor: pointer;
-  color: var(--brown);
-  box-shadow: 0 8px 18px rgba(95,50,75,0.07);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  color: var(--ink);
+  font-family: inherit;
+  box-shadow: 0 8px 20px rgba(95, 50, 75, 0.07);
+  transition: 0.3s ease;
 }
 
 .note:hover {
   transform: translateY(-5px) rotate(-1deg);
-  box-shadow: 0 14px 25px rgba(95,50,75,0.12);
+  box-shadow: 0 15px 25px rgba(95, 50, 75, 0.12);
 }
 
 .note span {
   display: block;
-  color: var(--pink);
+  color: var(--accent);
   font-size: 11px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .note strong {
   display: block;
-  font-size: 18px;
-  margin-bottom: 8px;
+  font-size: 17px;
+  margin-bottom: 10px;
 }
 
 .note small {
   color: var(--muted);
+  font-size: 11px;
 }
 
-
-/* =========================================================
+/* =========================
    PAGE 4
-   ========================================================= */
+========================= */
 
 .memory-card {
-  position: relative;
-  z-index: 2;
-  max-width: 680px;
-  margin-top: 35px;
-  padding: 45px;
+  width: min(600px, 100%);
+  margin: 40px auto 0;
+  padding: 45px 35px;
   text-align: center;
-  background:
-    radial-gradient(circle at center, rgba(243,197,213,0.25), transparent 60%),
-    #fff;
-  border: 1px solid #edd6df;
-  box-shadow: 0 14px 30px rgba(95,50,75,0.09);
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(95, 50, 75, 0.08);
 }
 
 .memory-symbol {
-  color: var(--pink);
-  font-size: 35px;
-  margin-bottom: 15px;
+  color: var(--accent);
+  font-size: 28px;
 }
 
 .memory-card p {
-  margin: 0 auto;
-  max-width: 540px;
   color: var(--muted);
-  font-size: 18px;
   line-height: 1.8;
+  font-size: 16px;
 }
 
 .memory-hearts {
-  margin-top: 22px;
-  color: var(--pink);
+  color: var(--accent);
   font-size: 22px;
   letter-spacing: 10px;
 }
 
-
-/* =========================================================
+/* =========================
    PAGE 5
-   ========================================================= */
+========================= */
 
 .cake-area {
-  position: relative;
-  z-index: 2;
   text-align: center;
-  margin-top: 25px;
+  margin: 35px 0 20px;
 }
 
 .cake {
   font-size: 80px;
-  filter: drop-shadow(0 8px 10px rgba(95,50,75,0.12));
-  animation: cakeBounce 2.5s ease-in-out infinite;
-}
-
-@keyframes cakeBounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
+  line-height: 1;
 }
 
 .cake-candle {
-  color: #e9a94d;
-  font-size: 25px;
-  animation: flame 0.8s ease-in-out infinite alternate;
-}
-
-@keyframes flame {
-  from {
-    transform: scale(0.9);
-  }
-
-  to {
-    transform: scale(1.15);
-  }
+  color: var(--accent);
+  font-size: 24px;
+  margin-bottom: -4px;
+  animation: flicker 1.2s infinite ease-in-out;
 }
 
 .cake-area p {
@@ -664,40 +535,50 @@ button {
 }
 
 .wish-btn {
-  position: relative;
-  z-index: 2;
   display: block;
   margin: 25px auto 0;
-  padding: 13px 22px;
   border: none;
-  border-radius: 999px;
-  background: var(--pink);
+  background: var(--accent);
   color: white;
+  padding: 13px 20px;
+  border-radius: 25px;
+  font-family: inherit;
   cursor: pointer;
-  box-shadow: 0 10px 20px rgba(196,95,131,0.25);
-  transition: transform 0.25s ease, background 0.25s ease;
+  box-shadow: 0 8px 20px rgba(185, 104, 136, 0.2);
+  transition: 0.3s ease;
 }
 
 .wish-btn:hover {
+  background: var(--accent-dark);
   transform: translateY(-3px);
-  background: var(--pink-dark);
 }
 
 .wish-text {
-  position: relative;
-  z-index: 2;
-  max-width: 550px;
-  margin: 18px auto 0;
   text-align: center;
-  color: var(--pink-dark);
+  max-width: 500px;
+  margin: 20px auto;
+  color: var(--muted);
   line-height: 1.7;
-  animation: fadeIn 0.5s ease;
 }
 
+/* =========================
+   PAGE FOOT
+========================= */
 
-/* =========================================================
+.page-foot {
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #b49ba6;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
    NAVIGATION
-   ========================================================= */
+========================= */
 
 .page-navigation {
   display: flex;
@@ -707,107 +588,170 @@ button {
 
 .page-navigation button {
   border: 1px solid var(--line);
-  background: rgba(255,255,255,0.8);
-  color: var(--pink-dark);
-  padding: 11px 18px;
-  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--muted);
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: 0.3s ease;
 }
 
 .page-navigation button:hover:not(:disabled) {
+  color: var(--accent-dark);
   transform: translateY(-2px);
-  background: #fff;
 }
 
 .page-navigation button:disabled {
   opacity: 0.4;
-  cursor: not-allowed;
+  cursor: default;
 }
 
-
-/* =========================================================
+/* =========================
    MODAL
-   ========================================================= */
+========================= */
 
 .modal {
   position: fixed;
   inset: 0;
   z-index: 100;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 20px;
-  background: rgba(80, 45, 62, 0.35);
+  background: rgba(70, 40, 55, 0.28);
   backdrop-filter: blur(5px);
 }
 
 .modal-card {
   position: relative;
-  width: min(500px, 92vw);
-  padding: 45px 35px 35px;
-  background: #fffaf7;
-  border-radius: 12px;
-  box-shadow: 0 25px 60px rgba(50,30,45,0.25);
+  width: min(450px, 90vw);
+  padding: 45px 35px;
+  background: #fff;
   text-align: center;
-  animation: modalIn 0.35s ease;
-}
-
-@keyframes modalIn {
-  from {
-    opacity: 0;
-    transform: scale(0.92) translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+  box-shadow: 0 25px 60px rgba(50, 25, 40, 0.25);
+  animation: modalPop 0.35s ease;
 }
 
 .close-modal {
   position: absolute;
+  right: 15px;
   top: 10px;
-  right: 14px;
   border: none;
-  background: transparent;
-  color: var(--muted);
+  background: none;
   font-size: 28px;
+  color: var(--muted);
   cursor: pointer;
 }
 
 .modal-heart {
-  color: var(--pink);
-  font-size: 38px;
-  margin-bottom: 15px;
+  color: var(--accent);
+  font-size: 35px;
+  margin-bottom: 20px;
 }
 
 #modalText {
-  margin: 0;
-  color: var(--brown);
+  color: var(--muted);
   line-height: 1.8;
-  font-size: 17px;
 }
 
+/* =========================
+   ANIMATIONS
+========================= */
 
-/* =========================================================
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageSlide {
+  from {
+    opacity: 0;
+    transform: translateX(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* =========================
    MOBILE
-   ========================================================= */
+========================= */
 
 @media (max-width: 700px) {
 
+  .intro {
+    padding: 15px;
+  }
+
+  .cover-card {
+    padding: 8px;
+  }
+
+  .cover-open-btn {
+    bottom: 18px;
+    padding: 10px 13px;
+    gap: 8px;
+  }
+
+  .cover-open-btn span {
+    font-size: 10px;
+  }
+
   .book-wrap {
     width: 94vw;
-    padding-top: 18px;
+    padding-top: 20px;
   }
 
   .topbar {
     align-items: flex-start;
-    flex-direction: column;
+  }
+
+  .brand {
+    font-size: 14px;
   }
 
   .music-btn {
-    align-self: flex-start;
+    font-size: 10px;
+    padding: 8px 10px;
   }
 
   .progress-area {
@@ -815,41 +759,27 @@ button {
   }
 
   .chapter {
-    grid-column: 1 / -1;
-    text-align: left;
+    display: none;
+  }
+
+  .book {
+    min-height: 650px;
   }
 
   .page {
     min-height: 650px;
-    padding: 40px 25px 70px;
+    padding: 40px 25px 45px;
   }
 
   .page h2 {
-    font-size: clamp(36px, 11vw, 52px);
+    font-size: 39px;
   }
 
-  .page-foot {
-    left: 25px;
-    right: 25px;
+  .copy {
+    font-size: 14px;
   }
 
-  .notes-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .memory-card {
-    padding: 30px 20px;
-  }
-
-  .cover-open-btn {
-    bottom: 18px;
-    padding: 12px 17px;
-    font-size: 12px;
-  }
-
-
-  /* PHOTO GALLERY */
-
+  /* PHOTO GRID */
   .photo-grid {
     gap: 12px;
     margin-top: 25px;
@@ -860,35 +790,35 @@ button {
     padding: 8px 8px 10px;
   }
 
-  .photo-image {
-    height: 125px;
-  }
-
-
   /* LEFT PHOTO ONLY */
-
-  .p1 {
-    overflow: visible;
+  .photo.p1 {
+    width: 145px;
+    padding: 8px;
+    overflow: hidden;
+    box-sizing: border-box;
   }
 
   .p1 .photo-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: contain;
     object-position: center center;
     transform: none;
     background: #fff;
   }
 
-  .photo.p1 label {
-    margin-top: 10px;
-    padding-top: 2px;
+  .p1 label {
+    display: block;
+    width: 100%;
+    margin-top: 9px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.3;
     background: #fff;
-    position: relative;
-    z-index: 5;
   }
 
-
   /* RIGHT PHOTO — UNCHANGED */
-
   .photo.p2 {
     transform: translateY(24px) rotate(4deg);
   }
@@ -897,17 +827,30 @@ button {
     transform: translateY(17px) rotate(2deg) scale(1.03);
   }
 
+  /* RIGHT IMAGE — UNCHANGED */
   .p2 .photo-image {
     object-fit: cover;
     object-position: center 0%;
     transform: none;
   }
+
+  .notes-grid {
+    gap: 12px;
+  }
+
+  .note {
+    min-height: 120px;
+    padding: 15px;
+  }
+
+  .memory-card {
+    padding: 35px 20px;
+  }
 }
 
-
-/* =========================================================
+/* =========================
    SMALL PHONES
-   ========================================================= */
+========================= */
 
 @media (max-width: 390px) {
 
@@ -924,35 +867,28 @@ button {
     width: 137px;
   }
 
-  .photo-image {
-    height: 118px;
-  }
-
-
   /* LEFT PHOTO ONLY */
-
-  .p1 {
-    overflow: visible;
+  .photo.p1 {
+    width: 137px;
+    padding: 8px;
+    overflow: hidden;
   }
 
   .p1 .photo-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: contain;
     object-position: center center;
     transform: none;
-    background: #fff;
   }
 
-  .photo.p1 label {
-    margin-top: 10px;
-    padding-top: 2px;
-    background: #fff;
-    position: relative;
-    z-index: 5;
+  .p1 label {
+    font-size: 10px;
+    margin-top: 8px;
   }
-
 
   /* RIGHT PHOTO — UNCHANGED */
-
   .photo.p2 {
     transform: translateY(21px) rotate(4deg);
   }
@@ -961,6 +897,7 @@ button {
     transform: translateY(15px) rotate(2deg) scale(1.03);
   }
 
+  /* RIGHT IMAGE — UNCHANGED */
   .p2 .photo-image {
     object-fit: cover;
     object-position: center 0%;
