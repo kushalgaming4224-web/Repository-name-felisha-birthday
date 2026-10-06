@@ -441,7 +441,7 @@ button {
 
 
 /* LEFT PHOTO
-   Stronger zoom using transform */
+   Zoomed in + moved slightly downward */
 .p1 {
   overflow: hidden;
 }
@@ -449,11 +449,11 @@ button {
 .p1 .photo-image {
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.18);
+  transform: scale(1.18) translateY(8px);
 }
 
 
-/* RIGHT PHOTO — KEPT EXACTLY AS BEFORE */
+/* RIGHT PHOTO — UNCHANGED */
 .p2 .photo-image {
   object-fit: cover;
   object-position: center 0%;
@@ -835,7 +835,7 @@ button {
   }
 
 
-  /* LEFT PHOTO — STRONGER ZOOM */
+  /* LEFT PHOTO — ZOOMED + MOVED DOWN */
   .p1 {
     overflow: hidden;
   }
@@ -843,7 +843,7 @@ button {
   .p1 .photo-image {
     object-fit: cover;
     object-position: center center;
-    transform: scale(1.18);
+    transform: scale(1.18) translateY(8px);
   }
 
 
@@ -888,7 +888,7 @@ button {
   }
 
 
-  /* LEFT PHOTO — STRONGER ZOOM */
+  /* LEFT PHOTO — ZOOMED + MOVED DOWN */
   .p1 {
     overflow: hidden;
   }
@@ -896,7 +896,7 @@ button {
   .p1 .photo-image {
     object-fit: cover;
     object-position: center center;
-    transform: scale(1.18);
+    transform: scale(1.18) translateY(8px);
   }
 
 
