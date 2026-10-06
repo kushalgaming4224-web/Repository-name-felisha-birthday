@@ -405,10 +405,13 @@ button {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+/* LEFT PHOTO CARD — ONLY LEFT SIDE CHANGED */
 .photo.p1 {
   transform: translateY(0) rotate(-4deg);
+  padding-bottom: 14px;
 }
 
+/* RIGHT PHOTO — COMPLETELY UNCHANGED */
 .photo.p2 {
   transform: translateY(28px) rotate(4deg);
 }
@@ -440,8 +443,9 @@ button {
 }
 
 
-/* LEFT PHOTO
-   Same zoom, moved a little further down */
+/* LEFT PHOTO ONLY
+   Zoom reduced + shifted down.
+   The image stays clipped inside its white frame. */
 .p1 {
   overflow: hidden;
 }
@@ -449,7 +453,7 @@ button {
 .p1 .photo-image {
   object-fit: cover;
   object-position: center center;
-  transform: scale(1.18) translateY(14px);
+  transform: scale(1.08) translateY(18px);
 }
 
 
@@ -461,13 +465,31 @@ button {
 }
 
 
+/* PHOTO LABELS */
 .photo label {
   display: block;
+  position: relative;
+  z-index: 3;
   text-align: center;
   color: var(--muted);
   font-size: 12px;
   margin-top: 9px;
   font-style: italic;
+}
+
+
+/* LEFT PHOTO LABEL — ONLY LEFT SIDE */
+.photo.p1 label {
+  margin-top: 13px;
+  background: #fff;
+  position: relative;
+  z-index: 4;
+}
+
+
+/* RIGHT PHOTO LABEL — UNCHANGED */
+.photo.p2 label {
+  margin-top: 9px;
 }
 
 .note-tag {
@@ -835,15 +857,23 @@ button {
   }
 
 
-  /* LEFT PHOTO — MOVED FURTHER DOWN */
+  /* LEFT PHOTO ONLY */
   .p1 {
     overflow: hidden;
+    padding-bottom: 12px;
   }
 
   .p1 .photo-image {
     object-fit: cover;
     object-position: center center;
-    transform: scale(1.18) translateY(14px);
+    transform: scale(1.08) translateY(15px);
+  }
+
+  .photo.p1 label {
+    margin-top: 12px;
+    background: #fff;
+    position: relative;
+    z-index: 4;
   }
 
 
@@ -888,15 +918,23 @@ button {
   }
 
 
-  /* LEFT PHOTO — MOVED FURTHER DOWN */
+  /* LEFT PHOTO ONLY */
   .p1 {
     overflow: hidden;
+    padding-bottom: 12px;
   }
 
   .p1 .photo-image {
     object-fit: cover;
     object-position: center center;
-    transform: scale(1.18) translateY(14px);
+    transform: scale(1.08) translateY(15px);
+  }
+
+  .photo.p1 label {
+    margin-top: 12px;
+    background: #fff;
+    position: relative;
+    z-index: 4;
   }
 
 
