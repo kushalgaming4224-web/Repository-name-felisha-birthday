@@ -405,13 +405,12 @@ button {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* LEFT PHOTO CARD — ONLY LEFT SIDE CHANGED */
+/* LEFT PHOTO CARD */
 .photo.p1 {
   transform: translateY(0) rotate(-4deg);
-  padding-bottom: 14px;
 }
 
-/* RIGHT PHOTO — COMPLETELY UNCHANGED */
+/* RIGHT PHOTO — DO NOT CHANGE */
 .photo.p2 {
   transform: translateY(28px) rotate(4deg);
 }
@@ -443,33 +442,56 @@ button {
 }
 
 
-/* LEFT PHOTO ONLY
-   Zoom reduced + shifted down.
-   The image stays clipped inside its white frame. */
+/* =========================================================
+   LEFT PHOTO ONLY
+   ========================================================= */
+
+/*
+   IMPORTANT:
+   The image is no longer translated downward.
+   It remains completely inside the white frame.
+   This prevents the caption from being covered.
+*/
+
 .p1 {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .p1 .photo-image {
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
-  transform: scale(1.08) translateY(18px);
+  transform: none;
+  background: #fff;
 }
 
 
-/* RIGHT PHOTO — UNCHANGED */
+/* LEFT CAPTION */
+.photo.p1 label {
+  display: block;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+  padding-top: 2px;
+  font-style: italic;
+  background: #fff;
+}
+
+
+/* =========================================================
+   RIGHT PHOTO — COMPLETELY UNCHANGED
+   ========================================================= */
+
 .p2 .photo-image {
   object-fit: cover;
   object-position: center 0%;
   transform: none;
 }
 
-
-/* PHOTO LABELS */
-.photo label {
+.photo.p2 label {
   display: block;
-  position: relative;
-  z-index: 3;
   text-align: center;
   color: var(--muted);
   font-size: 12px;
@@ -477,20 +499,6 @@ button {
   font-style: italic;
 }
 
-
-/* LEFT PHOTO LABEL — ONLY LEFT SIDE */
-.photo.p1 label {
-  margin-top: 13px;
-  background: #fff;
-  position: relative;
-  z-index: 4;
-}
-
-
-/* RIGHT PHOTO LABEL — UNCHANGED */
-.photo.p2 label {
-  margin-top: 9px;
-}
 
 .note-tag {
   position: relative;
@@ -858,26 +866,29 @@ button {
 
 
   /* LEFT PHOTO ONLY */
+
   .p1 {
-    overflow: hidden;
-    padding-bottom: 12px;
+    overflow: visible;
   }
 
   .p1 .photo-image {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
-    transform: scale(1.08) translateY(15px);
+    transform: none;
+    background: #fff;
   }
 
   .photo.p1 label {
-    margin-top: 12px;
+    margin-top: 10px;
+    padding-top: 2px;
     background: #fff;
     position: relative;
-    z-index: 4;
+    z-index: 5;
   }
 
 
   /* RIGHT PHOTO — UNCHANGED */
+
   .photo.p2 {
     transform: translateY(24px) rotate(4deg);
   }
@@ -919,26 +930,29 @@ button {
 
 
   /* LEFT PHOTO ONLY */
+
   .p1 {
-    overflow: hidden;
-    padding-bottom: 12px;
+    overflow: visible;
   }
 
   .p1 .photo-image {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
-    transform: scale(1.08) translateY(15px);
+    transform: none;
+    background: #fff;
   }
 
   .photo.p1 label {
-    margin-top: 12px;
+    margin-top: 10px;
+    padding-top: 2px;
     background: #fff;
     position: relative;
-    z-index: 4;
+    z-index: 5;
   }
 
 
   /* RIGHT PHOTO — UNCHANGED */
+
   .photo.p2 {
     transform: translateY(21px) rotate(4deg);
   }
