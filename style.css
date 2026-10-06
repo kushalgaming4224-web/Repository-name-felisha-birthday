@@ -26,9 +26,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-
   color: var(--ink);
-
   font-family: 'DM Sans', sans-serif;
 
   background:
@@ -64,20 +62,15 @@ button {
 .ambient {
   position: fixed;
   inset: 0;
-
   overflow: hidden;
   pointer-events: none;
-
   z-index: 0;
 }
 
 .ambient span {
   position: absolute;
-
   color: #e8a5bb66;
-
   font-size: 25px;
-
   animation: float 9s ease-in-out infinite;
 }
 
@@ -123,9 +116,7 @@ button {
 }
 
 @keyframes float {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0) rotate(0);
   }
 
@@ -141,9 +132,7 @@ button {
 
 header {
   width: min(100% - 28px, 620px);
-
   margin: 0 auto;
-
   padding: 16px 0 8px;
 
   display: flex;
@@ -156,9 +145,7 @@ header {
 
 .brand {
   color: #a78998;
-
   font-size: 10px;
-
   letter-spacing: 1px;
 }
 
@@ -168,13 +155,10 @@ header {
 
 .music {
   border: 1px solid #f0dce4;
-
   background: #fffaf5e8;
-
   color: var(--deep-pink);
 
   border-radius: 30px;
-
   padding: 8px 12px;
 
   font-size: 10px;
@@ -188,7 +172,6 @@ header {
 
 .music:hover {
   transform: translateY(-2px);
-
   box-shadow: 0 7px 18px #b8799025;
 }
 
@@ -203,19 +186,15 @@ header {
 
 .intro {
   min-height: calc(100svh - 55px);
-
   width: 100%;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   padding: 12px;
 
   position: relative;
-
   z-index: 1;
 
   animation: coverAppear .8s ease both;
@@ -223,13 +202,11 @@ header {
 
 .cover-card {
   width: min(100%, 700px);
-
   position: relative;
 }
 
 .cover-image-wrap {
   width: 100%;
-
   position: relative;
 
   overflow: hidden;
@@ -249,154 +226,90 @@ header {
   display: block;
 
   width: 100%;
-
   height: auto;
-
   max-width: 100%;
 
   object-fit: contain;
 
   user-select: none;
-
   -webkit-user-drag: none;
 }
 
 
 /* =========================================================
-   REAL CLICKABLE BUTTON OVER THE IMAGE
+   INVISIBLE CLICKABLE BUTTON
+   =========================================================
+   
+   The actual "OPEN YOUR SURPRISE →" design is already
+   inside the image.
+
+   This button is invisible and simply creates a clickable
+   area over that button.
    ========================================================= */
 
 .cover-open-btn {
   position: absolute;
 
-  /*
-    Position of the real button over the
-    "OPEN YOUR SURPRISE" button in your image.
-  */
+  /* Position over the button inside the artwork */
+  left: 51.5%;
+  top: 64.5%;
 
-  left: 58%;
+  width: 30%;
+  height: 8%;
 
-  top: 66%;
-
-  width: 36%;
-
-  height: 10%;
-
-  border: 0;
-
+  border: none;
   border-radius: 999px;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 181, 211, .97),
-      rgba(225, 125, 170, .97)
-    );
+  background: transparent;
 
-  color: white;
+  color: transparent;
 
-  display: flex;
+  padding: 0;
 
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 7px;
-
-  font-family: 'DM Sans', sans-serif;
-
-  font-size: clamp(7px, 1.7vw, 13px);
-
-  font-weight: 700;
-
-  letter-spacing: .4px;
-
-  white-space: nowrap;
-
-  box-shadow:
-    0 5px 18px rgba(190, 90, 135, .38),
-    inset 0 1px 2px rgba(255, 255, 255, .7);
+  display: block;
 
   cursor: pointer;
 
   z-index: 10;
 
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
+  box-shadow: none;
+
+  transition: transform .2s ease;
 }
 
+.cover-open-btn span,
 .cover-open-btn b {
-  font-size: 1.25em;
-
-  font-weight: 600;
-}
-
-.cover-open-btn:hover {
-  transform: translateY(-2px) scale(1.02);
-
-  box-shadow:
-    0 8px 24px rgba(190, 90, 135, .48),
-    inset 0 1px 2px rgba(255, 255, 255, .8);
-}
-
-.cover-open-btn:active {
-  transform: scale(.95);
+  color: transparent;
 }
 
 .cover-open-btn::after {
-  content: "";
-
-  position: absolute;
-
-  inset: -5px;
-
-  border-radius: inherit;
-
-  border: 1px solid rgba(255, 255, 255, .7);
-
-  opacity: .7;
-
-  animation: buttonGlow 2s ease-in-out infinite;
-
-  pointer-events: none;
+  display: none;
 }
 
-@keyframes buttonGlow {
+.cover-open-btn:hover {
+  background: transparent;
+  transform: scale(1.02);
+  box-shadow: none;
+}
 
-  0%,
-  100% {
-    transform: scale(1);
-
-    opacity: .35;
-  }
-
-  50% {
-    transform: scale(1.05);
-
-    opacity: .8;
-  }
+.cover-open-btn:active {
+  transform: scale(.97);
 }
 
 @keyframes coverAppear {
-
   from {
     opacity: 0;
-
     transform: scale(.97);
   }
 
   to {
     opacity: 1;
-
     transform: scale(1);
   }
 }
 
 @keyframes coverFloat {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
 
@@ -427,21 +340,14 @@ header {
 }
 
 @keyframes appear {
-
   from {
     opacity: 0;
-
-    transform:
-      translateY(22px)
-      scale(.97);
+    transform: translateY(22px) scale(.97);
   }
 
   to {
     opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -456,19 +362,16 @@ header {
 
 .progress > span:first-child {
   display: block;
-
   margin-bottom: 7px;
 
   color: var(--muted);
 
   font-size: 10px;
-
   letter-spacing: 1px;
 }
 
 .progress-track {
   width: 100%;
-
   height: 4px;
 
   background: #f1dfe6;
@@ -482,7 +385,6 @@ header {
   display: block;
 
   height: 100%;
-
   width: 20%;
 
   border-radius: inherit;
@@ -514,7 +416,6 @@ header {
 
 .book {
   position: relative;
-
   width: 100%;
 }
 
@@ -557,40 +458,28 @@ header {
 
 .page.active {
   display: block;
-
-  animation:
-    pageIn .45s ease both;
+  animation: pageIn .45s ease both;
 }
 
 .page.leaving {
-  animation:
-    pageOut .35s ease both;
+  animation: pageOut .35s ease both;
 }
 
 @keyframes pageIn {
-
   from {
     opacity: 0;
-
-    transform:
-      translateX(18px)
-      rotateY(-3deg);
+    transform: translateX(18px) rotateY(-3deg);
   }
 
   to {
     opacity: 1;
-
-    transform:
-      translateX(0)
-      rotateY(0);
+    transform: translateX(0) rotateY(0);
   }
 }
 
 @keyframes pageOut {
-
   to {
     opacity: 0;
-
     transform: translateX(-15px);
   }
 }
@@ -604,7 +493,6 @@ header {
   color: var(--deep-pink);
 
   font-size: 9px;
-
   font-weight: 700;
 
   letter-spacing: 2.5px;
@@ -628,7 +516,6 @@ header {
 
 .page h2 em {
   color: var(--deep-pink);
-
   font-weight: 500;
 }
 
@@ -657,7 +544,6 @@ header {
   position: absolute;
 
   right: 24px;
-
   top: 28px;
 
   color: #d987a5;
@@ -675,7 +561,6 @@ header {
   padding: 15px 18px;
 
   border-top: 1px dashed #e3b5c6;
-
   border-bottom: 1px dashed #e3b5c6;
 
   text-align: center;
@@ -693,7 +578,6 @@ header {
   position: absolute;
 
   bottom: 17px;
-
   left: 0;
 
   width: 100%;
@@ -709,7 +593,6 @@ header {
 
 .page-foot span {
   color: var(--pink);
-
   margin-left: 3px;
 }
 
@@ -778,7 +661,6 @@ header {
 
 .photo-placeholder small {
   font-size: 10px;
-
   text-align: center;
 }
 
@@ -800,7 +682,6 @@ header {
 
 .note-tag {
   width: fit-content;
-
   max-width: 100%;
 
   margin: 22px auto;
@@ -885,7 +766,6 @@ header {
   color: #c58aa0;
 
   font-size: 11px;
-
   font-weight: 700;
 }
 
@@ -895,7 +775,6 @@ header {
   font-family: 'Playfair Display', serif;
 
   font-size: 15px;
-
   font-weight: 500;
 }
 
@@ -926,7 +805,6 @@ header {
   flex-direction: column;
 
   justify-content: center;
-
   align-items: center;
 
   gap: 10px;
@@ -942,13 +820,8 @@ header {
   text-align: center;
 }
 
-.memory-placeholder::first-line {
-  font-size: 34px;
-}
-
 .memory-placeholder small {
   color: #b69aa7;
-
   font-size: 10px;
 }
 
@@ -963,7 +836,6 @@ header {
 
 .cake {
   width: 180px;
-
   height: 175px;
 
   position: relative;
@@ -981,7 +853,6 @@ header {
 
 .candle {
   width: 14px;
-
   height: 52px;
 
   position: absolute;
@@ -989,7 +860,6 @@ header {
   z-index: 4;
 
   top: 15px;
-
   left: 50%;
 
   transform: translateX(-50%);
@@ -1013,7 +883,6 @@ header {
   z-index: 5;
 
   top: -8px;
-
   left: 50%;
 
   transform: translateX(-50%);
@@ -1027,24 +896,17 @@ header {
 }
 
 @keyframes flameFlicker {
-
-  0%,
-  100% {
-    transform:
-      translateX(-50%)
-      scale(1);
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
   }
 
   50% {
-    transform:
-      translateX(-50%)
-      scale(1.15);
+    transform: translateX(-50%) scale(1.15);
   }
 }
 
 .icing {
   width: 105px;
-
   height: 27px;
 
   position: relative;
@@ -1063,7 +925,6 @@ header {
 
 .cake-body {
   width: 145px;
-
   height: 70px;
 
   position: relative;
@@ -1088,7 +949,6 @@ header {
   position: absolute;
 
   left: 50%;
-
   top: 50%;
 
   transform: translate(-50%, -50%);
@@ -1100,7 +960,6 @@ header {
 
 .plate {
   width: 175px;
-
   height: 12px;
 
   position: absolute;
@@ -1152,9 +1011,7 @@ header {
 
 .secondary:disabled {
   opacity: .75;
-
   cursor: default;
-
   transform: none;
 }
 
@@ -1177,7 +1034,6 @@ header {
   display: flex;
 
   align-items: center;
-
   justify-content: space-between;
 
   gap: 10px;
@@ -1205,7 +1061,6 @@ header {
 
 .navbtn:hover:not(:disabled) {
   background: #fff0f5;
-
   transform: translateY(-2px);
 }
 
@@ -1215,7 +1070,6 @@ header {
 
 .navbtn:disabled {
   opacity: .4;
-
   cursor: default;
 }
 
@@ -1231,7 +1085,6 @@ header {
   display: block;
 
   width: 7px;
-
   height: 7px;
 
   border-radius: 50%;
@@ -1253,7 +1106,7 @@ header {
 
 
 /* =========================================================
-   MODAL / LOVE NOTES POPUP
+   MODAL
    ========================================================= */
 
 .modal {
@@ -1300,11 +1153,9 @@ header {
   position: absolute;
 
   top: 10px;
-
   right: 15px;
 
   width: 32px;
-
   height: 32px;
 
   border: 0;
@@ -1391,9 +1242,7 @@ footer span {
    ========================================================= */
 
 @keyframes beat {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
   }
 
@@ -1403,9 +1252,7 @@ footer span {
 }
 
 @keyframes twinkle {
-
-  0%,
-  100% {
+  0%, 100% {
     opacity: .55;
 
     transform:
@@ -1431,7 +1278,6 @@ footer span {
 
   header {
     width: calc(100% - 20px);
-
     padding-top: 10px;
   }
 
@@ -1441,13 +1287,11 @@ footer span {
 
   .music {
     padding: 7px 9px;
-
     font-size: 9px;
   }
 
   .intro {
     min-height: calc(100svh - 48px);
-
     padding: 8px;
   }
 
@@ -1459,23 +1303,21 @@ footer span {
     border-radius: 13px;
   }
 
+  /*
+    Invisible clickable area on mobile.
+    This is aligned with the button in your image.
+  */
+
   .cover-open-btn {
-    left: 58%;
+    left: 51.5%;
+    top: 64.5%;
 
-    top: 66%;
-
-    width: 36%;
-
-    height: 10%;
-
-    font-size: 7px;
-
-    gap: 4px;
+    width: 30%;
+    height: 8%;
   }
 
   .book-wrap {
     width: calc(100% - 20px);
-
     padding-top: 12px;
   }
 
@@ -1496,7 +1338,6 @@ footer span {
 
   .copy {
     font-size: 12px;
-
     line-height: 1.85;
   }
 
@@ -1530,7 +1371,6 @@ footer span {
       auto;
 
     padding: 12px;
-
     gap: 7px;
   }
 
@@ -1544,7 +1384,6 @@ footer span {
 
   .navbtn {
     padding: 9px 10px;
-
     font-size: 9px;
   }
 
@@ -1554,7 +1393,6 @@ footer span {
 
   .dots i {
     width: 6px;
-
     height: 6px;
   }
 
@@ -1571,9 +1409,11 @@ footer span {
 @media (max-width: 390px) {
 
   .cover-open-btn {
-    font-size: 6px;
+    left: 51.5%;
+    top: 64.5%;
 
-    gap: 3px;
+    width: 30%;
+    height: 8%;
   }
 
   .page {
@@ -1595,7 +1435,6 @@ footer span {
 
   .navbtn {
     padding: 8px 9px;
-
     font-size: 8px;
   }
 }
