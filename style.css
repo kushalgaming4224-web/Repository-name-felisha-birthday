@@ -238,19 +238,11 @@ header {
 
 /* =========================================================
    INVISIBLE CLICKABLE BUTTON
-   =========================================================
-   
-   The actual "OPEN YOUR SURPRISE →" design is already
-   inside the image.
-
-   This button is invisible and simply creates a clickable
-   area over that button.
    ========================================================= */
 
 .cover-open-btn {
   position: absolute;
 
-  /* Position over the button inside the artwork */
   left: 51.5%;
   top: 64.5%;
 
@@ -632,6 +624,10 @@ header {
   transform: rotate(4deg);
 }
 
+
+/* PHOTO PLACEHOLDER
+   Kept in case you use placeholders elsewhere */
+
 .photo-placeholder {
   min-height: 145px;
 
@@ -663,6 +659,32 @@ header {
   font-size: 10px;
   text-align: center;
 }
+
+
+/* =========================================================
+   REAL PAGE 2 PHOTOS
+   ========================================================= */
+
+.photo-image {
+  display: block;
+
+  width: 100%;
+
+  height: 145px;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   PHOTO CAPTIONS
+   ========================================================= */
 
 .photo label {
   display: block;
@@ -1303,18 +1325,17 @@ footer span {
     border-radius: 13px;
   }
 
-  /*
-    Invisible clickable area on mobile.
-    This is aligned with the button in your image.
-  */
+
+  /* KEEPING YOUR PERFECT MOBILE COVER POSITION */
 
   .cover-open-btn {
-    left: 51.5%;
-    top: 64.5%;
+    left: 57%;
+    top: 65%;
 
-    width: 30%;
-    height: 8%;
+    width: 37%;
+    height: 11%;
   }
+
 
   .book-wrap {
     width: calc(100% - 20px);
@@ -1359,6 +1380,14 @@ footer span {
   .photo-placeholder span {
     font-size: 28px;
   }
+
+
+  /* REAL PHOTOS ON MOBILE */
+
+  .photo-image {
+    height: 125px;
+  }
+
 
   .photo label {
     font-size: 11px;
@@ -1408,12 +1437,14 @@ footer span {
 
 @media (max-width: 390px) {
 
-  .cover-open-btn {
-    left: 51.5%;
-    top: 64.5%;
+  /* KEEPING YOUR PERFECT SMALL-PHONE COVER POSITION */
 
-    width: 30%;
-    height: 8%;
+  .cover-open-btn {
+    left: 57%;
+    top: 65%;
+
+    width: 37%;
+    height: 11%;
   }
 
   .page {
