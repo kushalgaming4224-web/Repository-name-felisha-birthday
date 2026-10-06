@@ -42,7 +42,9 @@
 
     <!-- PAGE 1 -->
     <section class="story-page page-one">
+
       <div class="story-text">
+
         <span class="page-number">01</span>
 
         <h2>To My Favorite Person</h2>
@@ -60,9 +62,11 @@
         <p class="highlight">
           And I'm so lucky that I get to call you mine. ❤️
         </p>
+
       </div>
 
       <div class="decorative-heart">♥</div>
+
     </section>
 
 
@@ -71,8 +75,9 @@
 
       <div class="photos">
 
-        <!-- LEFT PHOTO — UPDATED ONLY THIS IMAGE -->
+        <!-- LEFT PHOTO -->
         <div class="photo p1">
+
           <img
             class="photo-image"
             src="images/felisha-smile-4.jpg.jpeg"
@@ -82,11 +87,13 @@
           <label>
             that pretty smile
           </label>
+
         </div>
 
 
-        <!-- RIGHT PHOTO — KEPT EXACTLY THE SAME -->
+        <!-- RIGHT PHOTO - UNCHANGED -->
         <div class="photo p2">
+
           <img
             class="photo-image"
             src="images/felisha-smile-1.jpg.jpeg"
@@ -96,12 +103,14 @@
           <label>
             my cutie pie
           </label>
+
         </div>
 
       </div>
 
 
       <div class="story-text">
+
         <span class="page-number">02</span>
 
         <h2>That Smile...</h2>
@@ -120,6 +129,7 @@
         <p class="highlight">
           Please never stop smiling. 💕
         </p>
+
       </div>
 
     </section>
@@ -129,6 +139,7 @@
     <section class="story-page page-three">
 
       <div class="story-text">
+
         <span class="page-number">03</span>
 
         <h2>My Cutie Pie</h2>
@@ -147,6 +158,7 @@
         <p class="highlight">
           They're all things I love about you. ❤️
         </p>
+
       </div>
 
       <div class="big-heart">
@@ -160,6 +172,7 @@
     <section class="story-page page-four">
 
       <div class="story-text">
+
         <span class="page-number">04</span>
 
         <h2>Thank You</h2>
@@ -177,6 +190,7 @@
         <p class="highlight">
           You make my world a little brighter. 🌸
         </p>
+
       </div>
 
       <div class="sparkles">
@@ -267,34 +281,53 @@
       if (music) {
         music.play().catch(() => {});
       }
+
     }
 
 
     function showWish() {
 
-      document.getElementById("wishPopup").classList.add("show");
+      document
+        .getElementById("wishPopup")
+        .classList.add("show");
 
       createConfetti();
+
     }
 
 
     function closeWish() {
 
-      document.getElementById("wishPopup").classList.remove("show");
+      document
+        .getElementById("wishPopup")
+        .classList.remove("show");
+
     }
 
 
     function createConfetti() {
 
-      const symbols = ["❤️", "💗", "💕", "✨", "💖"];
+      const symbols = [
+        "❤️",
+        "💗",
+        "💕",
+        "✨",
+        "💖"
+      ];
 
       for (let i = 0; i < 25; i++) {
 
-        const confetti = document.createElement("span");
+        const confetti =
+          document.createElement("span");
 
         confetti.className = "confetti";
+
         confetti.innerText =
-          symbols[Math.floor(Math.random() * symbols.length)];
+          symbols[
+            Math.floor(
+              Math.random() * symbols.length
+            )
+          ];
 
         confetti.style.left =
           Math.random() * 100 + "vw";
@@ -310,22 +343,26 @@
         setTimeout(() => {
           confetti.remove();
         }, 5000);
+
       }
+
     }
 
 
     /* Close popup when clicking outside */
 
-    document.getElementById("wishPopup").addEventListener(
-      "click",
-      function(event) {
+    document
+      .getElementById("wishPopup")
+      .addEventListener(
+        "click",
+        function(event) {
 
-        if (event.target === this) {
-          closeWish();
+          if (event.target === this) {
+            closeWish();
+          }
+
         }
-
-      }
-    );
+      );
 
   </script>
 
