@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
 
 
-/* =========================================================
-   BASIC
-   ========================================================= */
-
 :root {
   --pink: #d987a5;
   --deep-pink: #b65e81;
@@ -15,18 +11,23 @@
   --gold: #d5a85d;
 }
 
+
 * {
   box-sizing: border-box;
 }
+
 
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
   margin: 0;
   min-height: 100vh;
+
   color: var(--ink);
+
   font-family: 'DM Sans', sans-serif;
 
   background:
@@ -45,168 +46,52 @@ body {
   overflow-x: hidden;
 }
 
+
 button {
   font: inherit;
   cursor: pointer;
 }
+
 
 .hidden {
   display: none !important;
 }
 
 
-/* =========================================================
-   FLOATING BACKGROUND
-   ========================================================= */
-
-.ambient {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.ambient span {
-  position: absolute;
-  color: #e8a5bb66;
-  font-size: 25px;
-  animation: float 9s ease-in-out infinite;
-}
-
-.ambient span:nth-child(1) {
-  left: 8%;
-  top: 15%;
-}
-
-.ambient span:nth-child(2) {
-  left: 85%;
-  top: 18%;
-  animation-delay: 1s;
-}
-
-.ambient span:nth-child(3) {
-  left: 90%;
-  top: 68%;
-  animation-delay: 2s;
-}
-
-.ambient span:nth-child(4) {
-  left: 13%;
-  top: 78%;
-  animation-delay: 3s;
-}
-
-.ambient span:nth-child(5) {
-  left: 50%;
-  top: 8%;
-  animation-delay: 1.5s;
-}
-
-.ambient span:nth-child(6) {
-  left: 72%;
-  top: 90%;
-  animation-delay: 2.5s;
-}
-
-.ambient span:nth-child(7) {
-  left: 30%;
-  top: 50%;
-  animation-delay: 4s;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(0);
-  }
-
-  50% {
-    transform: translateY(-22px) rotate(12deg);
-  }
-}
-
-
-/* =========================================================
-   HEADER
-   ========================================================= */
-
-header {
-  width: min(100% - 28px, 620px);
-  margin: 0 auto;
-  padding: 16px 0 8px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  position: relative;
-  z-index: 5;
-}
-
-.brand {
-  color: #a78998;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-
-.brand b {
-  color: var(--deep-pink);
-}
-
-.music {
-  border: 1px solid #f0dce4;
-  background: #fffaf5e8;
-  color: var(--deep-pink);
-
-  border-radius: 30px;
-  padding: 8px 12px;
-
-  font-size: 10px;
-
-  box-shadow: 0 4px 15px #b8799014;
-
-  transition:
-    transform .2s ease,
-    box-shadow .2s ease;
-}
-
-.music:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 7px 18px #b8799025;
-}
-
-.music:active {
-  transform: scale(.97);
-}
-
-
-/* =========================================================
-   COVER PAGE
-   ========================================================= */
+/* =========================================
+   INTRO COVER
+   ========================================= */
 
 .intro {
-  min-height: calc(100svh - 55px);
+  min-height: 100svh;
+
   width: 100%;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   padding: 12px;
 
   position: relative;
+
   z-index: 1;
 
   animation: coverAppear .8s ease both;
 }
 
+
 .cover-card {
   width: min(100%, 700px);
+
   position: relative;
 }
 
+
 .cover-image-wrap {
   width: 100%;
+
   position: relative;
 
   overflow: hidden;
@@ -222,23 +107,27 @@ header {
   animation: coverFloat 5s ease-in-out infinite;
 }
 
+
 .cover-photo {
   display: block;
 
   width: 100%;
+
   height: auto;
+
   max-width: 100%;
 
   object-fit: contain;
 
   user-select: none;
+
   -webkit-user-drag: none;
 }
 
 
-/* =========================================================
-   INVISIBLE CLICKABLE BUTTON
-   ========================================================= */
+/* =========================================
+   COVER BUTTON
+   ========================================= */
 
 .cover-open-btn {
   position: absolute;
@@ -250,6 +139,7 @@ header {
   height: 8%;
 
   border: none;
+
   border-radius: 999px;
 
   background: transparent;
@@ -269,51 +159,73 @@ header {
   transition: transform .2s ease;
 }
 
+
 .cover-open-btn span,
 .cover-open-btn b {
   color: transparent;
 }
 
+
 .cover-open-btn::after {
   display: none;
 }
 
+
 .cover-open-btn:hover {
   background: transparent;
+
   transform: scale(1.02);
+
   box-shadow: none;
 }
+
 
 .cover-open-btn:active {
   transform: scale(.97);
 }
 
+
+/* =========================================
+   COVER ANIMATION
+   ========================================= */
+
 @keyframes coverAppear {
+
   from {
     opacity: 0;
-    transform: scale(.97);
+
+    transform:
+      scale(.96)
+      translateY(15px);
   }
 
   to {
     opacity: 1;
-    transform: scale(1);
+
+    transform:
+      scale(1)
+      translateY(0);
   }
+
 }
 
+
 @keyframes coverFloat {
+
   0%, 100% {
     transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
   }
+
 }
 
 
-/* =========================================================
-   BOOK AREA
-   ========================================================= */
+/* =========================================
+   MAIN BOOK
+   ========================================= */
 
 .book-wrap {
   width: min(100% - 28px, 620px);
@@ -322,61 +234,152 @@ header {
 
   padding: 18px 0 30px;
 
-  min-height: calc(100svh - 55px);
+  min-height: 100svh;
 
   position: relative;
 
   z-index: 1;
 
-  animation: appear .6s ease both;
+  animation: bookAppear .6s ease both;
 }
 
-@keyframes appear {
+
+@keyframes bookAppear {
+
   from {
     opacity: 0;
-    transform: translateY(22px) scale(.97);
+
+    transform:
+      translateY(20px)
+      scale(.98);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+
+    transform:
+      translateY(0)
+      scale(1);
   }
+
 }
 
 
-/* =========================================================
+/* =========================================
+   HEADER
+   ========================================= */
+
+.topbar {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+
+.brand {
+  color: #a78998;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+
+.brand strong {
+  color: var(--deep-pink);
+}
+
+
+/* =========================================
+   MUSIC
+   ========================================= */
+
+.music-btn {
+  border: 1px solid #efd9e2;
+
+  background: rgba(255, 250, 247, .9);
+
+  color: var(--deep-pink);
+
+  border-radius: 30px;
+
+  padding: 9px 14px;
+
+  font-size: 10px;
+
+  box-shadow:
+    0 5px 15px rgba(120, 65, 90, .08);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+
+.music-btn:hover {
+  transform: translateY(-2px);
+
+  background: #fff5f8;
+
+  box-shadow:
+    0 8px 20px rgba(120, 65, 90, .12);
+}
+
+
+.music-btn:active {
+  transform: scale(.97);
+}
+
+
+/* =========================================
    PROGRESS
-   ========================================================= */
+   ========================================= */
 
-.progress {
-  margin: 0 3px 15px;
+.progress-area {
+  margin-bottom: 7px;
 }
 
-.progress > span:first-child {
+
+.progress-count {
   display: block;
+
   margin-bottom: 7px;
 
   color: var(--muted);
 
   font-size: 10px;
+
   letter-spacing: 1px;
 }
 
+
 .progress-track {
   width: 100%;
-  height: 4px;
+
+  height: 5px;
 
   background: #f1dfe6;
 
-  border-radius: 10px;
+  border-radius: 20px;
 
   overflow: hidden;
 }
 
-#progressFill {
+
+.progress-fill {
   display: block;
 
   height: 100%;
+
   width: 20%;
 
   border-radius: inherit;
@@ -388,12 +391,12 @@ header {
       #e9b5a8
     );
 
-  transition: width .35s ease;
+  transition:
+    width .4s ease;
 }
 
-.chapter {
-  display: block;
 
+.chapter {
   margin-top: 8px;
 
   color: var(--deep-pink);
@@ -402,19 +405,62 @@ header {
 }
 
 
-/* =========================================================
+/* =========================================
+   DOTS
+   ========================================= */
+
+.dots {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin: 6px 0 5px;
+}
+
+
+.dot {
+  width: 20px;
+
+  height: 7px;
+
+  padding: 0;
+
+  border: 1px solid #aaa;
+
+  border-radius: 10px;
+
+  background: #f5f5f5;
+
+  transition:
+    width .25s ease,
+    background .25s ease,
+    border-color .25s ease;
+}
+
+
+.dot.selected {
+  background: var(--deep-pink);
+
+  border-color: var(--deep-pink);
+}
+
+
+/* =========================================
    BOOK
-   ========================================================= */
+   ========================================= */
 
 .book {
   position: relative;
+
   width: 100%;
 }
 
 
-/* =========================================================
-   STORY PAGES
-   ========================================================= */
+/* =========================================
+   PAGES
+   ========================================= */
 
 .page {
   display: none;
@@ -425,7 +471,7 @@ header {
 
   padding: 35px 26px 55px;
 
-  border: 1px solid #fff;
+  border: 1px solid rgba(255,255,255,.9);
 
   border-radius: 25px;
 
@@ -443,48 +489,68 @@ header {
     #fffaf6;
 
   box-shadow:
-    0 18px 55px #b8799022;
+    0 18px 55px rgba(184,121,144,.14);
 
   overflow: hidden;
 }
 
+
 .page.active {
   display: block;
-  animation: pageIn .45s ease both;
+
+  animation:
+    pageIn .45s ease both;
 }
+
 
 .page.leaving {
-  animation: pageOut .35s ease both;
+  animation:
+    pageOut .35s ease both;
 }
 
+
 @keyframes pageIn {
+
   from {
     opacity: 0;
-    transform: translateX(18px) rotateY(-3deg);
+
+    transform:
+      translateX(18px)
+      rotateY(-3deg);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0) rotateY(0);
+
+    transform:
+      translateX(0)
+      rotateY(0);
   }
+
 }
+
 
 @keyframes pageOut {
+
   to {
     opacity: 0;
-    transform: translateX(-15px);
+
+    transform:
+      translateX(-18px);
   }
+
 }
 
 
-/* =========================================================
+/* =========================================
    PAGE TEXT
-   ========================================================= */
+   ========================================= */
 
 .page-kicker {
   color: var(--deep-pink);
 
   font-size: 9px;
+
   font-weight: 700;
 
   letter-spacing: 2.5px;
@@ -492,10 +558,13 @@ header {
   text-transform: uppercase;
 }
 
+
 .page h2 {
   margin: 14px 0 15px;
 
-  font-family: 'Playfair Display', serif;
+  font-family:
+    'Playfair Display',
+    serif;
 
   font-weight: 500;
 
@@ -506,10 +575,13 @@ header {
   color: #694b5b;
 }
 
+
 .page h2 em {
   color: var(--deep-pink);
+
   font-weight: 500;
 }
+
 
 .copy {
   max-width: 470px;
@@ -523,53 +595,66 @@ header {
   line-height: 1.95;
 }
 
-.copy.center {
-  text-align: center;
+
+/* =========================================
+   PAGE 1
+   ========================================= */
+
+.hello-decoration {
+  display: flex;
+
+  gap: 10px;
+
+  margin: 20px 0;
+
+  color: #79596a;
+
+  font-size: 23px;
+
+  animation: softPulse 3s ease-in-out infinite;
 }
 
 
-/* =========================================================
-   PAGE 1 DECORATIONS
-   ========================================================= */
+.letter {
+  color: #6d5561;
 
-.mini-flower {
-  position: absolute;
+  font-size: 15px;
 
-  right: 24px;
-  top: 28px;
-
-  color: #d987a5;
-
-  font-size: 25px;
-
-  animation: twinkle 2.5s ease-in-out infinite;
+  line-height: 1.75;
 }
 
-.scribble {
-  max-width: 420px;
 
-  margin: 25px auto;
-
-  padding: 15px 18px;
-
-  border-top: 1px dashed #e3b5c6;
-  border-bottom: 1px dashed #e3b5c6;
-
-  text-align: center;
-
-  color: #b47791;
-
-  font-family: 'Playfair Display', serif;
-
-  font-style: italic;
-
-  font-size: 14px;
+.letter p {
+  margin: 0 0 20px;
 }
+
+
+@keyframes softPulse {
+
+  0%, 100% {
+    opacity: .7;
+
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: translateY(-3px);
+  }
+
+}
+
+
+/* =========================================
+   PAGE FOOT
+   ========================================= */
 
 .page-foot {
   position: absolute;
 
   bottom: 17px;
+
   left: 0;
 
   width: 100%;
@@ -583,15 +668,17 @@ header {
   letter-spacing: 1px;
 }
 
+
 .page-foot span {
   color: var(--pink);
+
   margin-left: 3px;
 }
 
 
-/* =========================================================
-   PAGE 2 — PHOTO GRID
-   ========================================================= */
+/* =========================================
+   PAGE 2 PHOTOS
+   ========================================= */
 
 .photo-grid {
   display: grid;
@@ -605,65 +692,42 @@ header {
   margin: 25px auto 22px;
 }
 
+
 .photo {
   padding: 9px 9px 13px;
 
   background: white;
 
-  box-shadow:
-    0 6px 18px #9b657b1b;
-
   border: 1px solid #f8eaf0;
+
+  box-shadow:
+    0 8px 20px rgba(155,101,123,.12);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
 }
+
+
+.photo:hover {
+  transform:
+    translateY(-4px)
+    rotate(0deg);
+
+  box-shadow:
+    0 12px 25px rgba(155,101,123,.18);
+}
+
 
 .p1 {
   transform: rotate(-4deg);
 }
 
+
 .p2 {
   transform: rotate(4deg);
 }
 
-
-/* PHOTO PLACEHOLDER
-   Kept in case you use placeholders elsewhere */
-
-.photo-placeholder {
-  min-height: 145px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 8px;
-
-  color: #cb8ca5;
-
-  background:
-    linear-gradient(
-      145deg,
-      #fce8ef,
-      #fff3e9
-    );
-}
-
-.photo-placeholder span {
-  font-size: 32px;
-}
-
-.photo-placeholder small {
-  font-size: 10px;
-  text-align: center;
-}
-
-
-/* =========================================================
-   REAL PAGE 2 PHOTOS
-   ========================================================= */
 
 .photo-image {
   display: block;
@@ -682,10 +746,6 @@ header {
 }
 
 
-/* =========================================================
-   PHOTO CAPTIONS
-   ========================================================= */
-
 .photo label {
   display: block;
 
@@ -693,7 +753,9 @@ header {
 
   color: #98788a;
 
-  font-family: 'Playfair Display', serif;
+  font-family:
+    'Playfair Display',
+    serif;
 
   font-style: italic;
 
@@ -702,8 +764,10 @@ header {
   text-align: center;
 }
 
+
 .note-tag {
   width: fit-content;
+
   max-width: 100%;
 
   margin: 22px auto;
@@ -718,21 +782,38 @@ header {
 
   color: #ad7b91;
 
-  font-family: 'Playfair Display', serif;
+  font-family:
+    'Playfair Display',
+    serif;
 
   font-style: italic;
 
   font-size: 11px;
 
   text-align: center;
+
+  animation: softFloat 3s ease-in-out infinite;
 }
 
 
-/* =========================================================
-   PAGE 3 — LOVE NOTES
-   ========================================================= */
+@keyframes softFloat {
 
-.notes {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+}
+
+
+/* =========================================
+   PAGE 3 NOTES
+   ========================================= */
+
+.notes-grid {
   display: grid;
 
   gap: 11px;
@@ -742,12 +823,16 @@ header {
   margin: 25px auto;
 }
 
+
 .note {
   width: 100%;
 
   display: grid;
 
-  grid-template-columns: 34px 1fr auto;
+  grid-template-columns:
+    34px
+    1fr
+    auto;
 
   align-items: center;
 
@@ -771,232 +856,213 @@ header {
     box-shadow .2s ease;
 }
 
+
 .note:hover {
   background: #fbe5ed;
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 7px 20px #b8799020;
+    0 7px 20px rgba(184,121,144,.12);
 }
+
 
 .note:active {
   transform: scale(.98);
 }
 
-.note span {
+
+.note > span {
   color: #c58aa0;
 
   font-size: 11px;
+
   font-weight: 700;
 }
 
-.note b {
+
+.note strong {
   color: #765464;
 
-  font-family: 'Playfair Display', serif;
+  font-family:
+    'Playfair Display',
+    serif;
 
   font-size: 15px;
+
   font-weight: 500;
 }
 
-.note i {
+
+.note small {
   color: #bb91a2;
 
   font-size: 9px;
-
-  font-style: normal;
 }
 
 
-/* =========================================================
-   PAGE 4 — MEMORY
-   ========================================================= */
+/* =========================================
+   PAGE 4 MEMORY
+   ========================================= */
 
-.memory-frame {
+.memory-card {
   max-width: 380px;
 
-  margin: 25px auto;
-}
+  margin: 30px auto;
 
-.memory-placeholder {
-  min-height: 200px;
+  padding: 30px 22px;
 
-  display: flex;
+  border:
+    1px solid #efd5df;
 
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  gap: 10px;
-
-  border: 1px dashed #e3b5c6;
-
-  border-radius: 18px;
-
-  background: #fff4f6;
-
-  color: #bd7a97;
-
-  text-align: center;
-}
-
-.memory-placeholder small {
-  color: #b69aa7;
-  font-size: 10px;
-}
-
-
-/* =========================================================
-   PAGE 5 — BIRTHDAY
-   ========================================================= */
-
-.final-page {
-  text-align: center;
-}
-
-.cake {
-  width: 180px;
-  height: 175px;
-
-  position: relative;
-
-  margin: 20px auto 10px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: flex-end;
-}
-
-.candle {
-  width: 14px;
-  height: 52px;
-
-  position: absolute;
-
-  z-index: 4;
-
-  top: 15px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  border-radius: 5px 5px 2px 2px;
+  border-radius: 20px;
 
   background:
-    repeating-linear-gradient(
-      135deg,
-      #f5c4d1 0 6px,
-      #fff1f5 6px 12px
+    linear-gradient(
+      145deg,
+      #fff4f7,
+      #fffaf5
     );
 
   box-shadow:
-    0 3px 8px #9b657b22;
+    0 12px 30px rgba(184,121,144,.12);
+
+  text-align: center;
+
+  animation:
+    memoryFloat 4s ease-in-out infinite;
 }
 
-.flame {
-  position: absolute;
 
-  z-index: 5;
+.memory-symbol {
+  color: var(--pink);
 
-  top: -8px;
-  left: 50%;
+  font-size: 34px;
 
-  transform: translateX(-50%);
+  animation:
+    twinkle 2.5s ease-in-out infinite;
+}
 
+
+.memory-card p {
+  color: #806777;
+
+  font-family:
+    'Playfair Display',
+    serif;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+.memory-hearts {
+  color: var(--deep-pink);
+
+  letter-spacing: 8px;
+
+  font-size: 17px;
+}
+
+
+@keyframes memoryFloat {
+
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+}
+
+
+/* =========================================
+   PAGE 5
+   ========================================= */
+
+.cake-area {
+  text-align: center;
+
+  margin: 20px 0;
+}
+
+
+.cake-candle {
   color: #e7a64e;
 
-  font-size: 25px;
+  font-size: 28px;
 
   animation:
     flameFlicker 1.2s ease-in-out infinite;
 }
 
-@keyframes flameFlicker {
+
+.cake {
+  font-size: 78px;
+
+  line-height: 1;
+
+  margin: 7px auto;
+
+  filter:
+    drop-shadow(
+      0 8px 12px rgba(120,65,90,.12)
+    );
+
+  animation:
+    cakeFloat 3s ease-in-out infinite;
+}
+
+
+.cake-area p {
+  color: #98788a;
+
+  font-family:
+    'Playfair Display',
+    serif;
+
+  font-size: 14px;
+}
+
+
+@keyframes cakeFloat {
+
   0%, 100% {
-    transform: translateX(-50%) scale(1);
+    transform: translateY(0);
   }
 
   50% {
-    transform: translateX(-50%) scale(1.15);
+    transform: translateY(-6px);
   }
+
 }
 
-.icing {
-  width: 105px;
-  height: 27px;
 
-  position: relative;
+@keyframes flameFlicker {
 
-  z-index: 2;
+  0%, 100% {
+    transform:
+      scale(1)
+      rotate(-2deg);
+  }
 
-  margin-bottom: -3px;
+  50% {
+    transform:
+      scale(1.18)
+      rotate(3deg);
+  }
 
-  border-radius: 10px 10px 7px 7px;
-
-  background: #ffe1e5;
-
-  box-shadow:
-    inset 0 -5px #f1b8c4;
 }
 
-.cake-body {
-  width: 145px;
-  height: 70px;
 
-  position: relative;
+/* =========================================
+   WISH BUTTON
+   ========================================= */
 
-  z-index: 1;
-
-  border-radius: 10px 10px 7px 7px;
-
-  background:
-    linear-gradient(
-      90deg,
-      #e7a1ad,
-      #f7c6ca,
-      #e7a1ad
-    );
-
-  box-shadow:
-    inset 0 -8px #cf8194;
-}
-
-.cake-body span {
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  color: white;
-
-  font-size: 25px;
-}
-
-.plate {
-  width: 175px;
-  height: 12px;
-
-  position: absolute;
-
-  bottom: -5px;
-
-  border-radius: 50%;
-
-  background: #eac6d0;
-
-  box-shadow:
-    0 5px 10px #9b657b22;
-}
-
-.secondary {
+.wish-btn {
   border: 0;
 
   border-radius: 30px;
@@ -1013,49 +1079,60 @@ header {
     );
 
   box-shadow:
-    0 8px 22px #c579963b;
+    0 8px 22px rgba(197,121,150,.23);
 
   transition:
     transform .2s ease,
     box-shadow .2s ease;
 }
 
-.secondary:hover {
+
+.wish-btn:hover {
   transform: translateY(-3px);
 
   box-shadow:
-    0 12px 26px #c5799655;
+    0 12px 26px rgba(197,121,150,.32);
 }
 
-.secondary:active {
+
+.wish-btn:active {
   transform: scale(.97);
 }
 
-.secondary:disabled {
+
+.wish-btn:disabled {
   opacity: .75;
+
   cursor: default;
+
   transform: none;
 }
 
-.wish {
+
+.wish-text {
   color: var(--deep-pink);
 
-  font-family: 'Playfair Display', serif;
+  font-family:
+    'Playfair Display',
+    serif;
 
   font-size: 16px;
+
+  line-height: 1.6;
 
   margin: 15px 0;
 }
 
 
-/* =========================================================
+/* =========================================
    NAVIGATION
-   ========================================================= */
+   ========================================= */
 
-.nav {
+.page-navigation {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 10px;
@@ -1063,7 +1140,8 @@ header {
   margin: 17px 0 0;
 }
 
-.navbtn {
+
+.page-navigation button {
   border: 1px solid #efd7e0;
 
   border-radius: 25px;
@@ -1078,58 +1156,36 @@ header {
 
   transition:
     transform .2s ease,
-    background .2s ease;
+    background .2s ease,
+    box-shadow .2s ease;
 }
 
-.navbtn:hover:not(:disabled) {
+
+.page-navigation button:hover:not(:disabled) {
   background: #fff0f5;
+
   transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 15px rgba(184,121,144,.1);
 }
 
-.navbtn:active:not(:disabled) {
+
+.page-navigation button:active:not(:disabled) {
   transform: scale(.96);
 }
 
-.navbtn:disabled {
+
+.page-navigation button:disabled {
   opacity: .4;
+
   cursor: default;
 }
 
-.dots {
-  display: flex;
 
-  align-items: center;
-
-  gap: 6px;
-}
-
-.dots i {
-  display: block;
-
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: #e8cbd6;
-
-  transition:
-    width .25s ease,
-    background .25s ease;
-}
-
-.dots i.selected {
-  width: 19px;
-
-  border-radius: 10px;
-
-  background: var(--deep-pink);
-}
-
-
-/* =========================================================
+/* =========================================
    MODAL
-   ========================================================= */
+   ========================================= */
 
 .modal {
   position: fixed;
@@ -1144,10 +1200,12 @@ header {
 
   padding: 20px;
 
-  background: #563b4b88;
+  background:
+    rgba(86,59,75,.53);
 
   backdrop-filter: blur(5px);
 }
+
 
 .modal-card {
   width: min(100%, 360px);
@@ -1165,19 +1223,22 @@ header {
   background: #fff9f5;
 
   box-shadow:
-    0 20px 60px #482c3c44;
+    0 20px 60px rgba(72,44,60,.27);
 
   animation:
-    appear .3s ease both;
+    modalAppear .3s ease both;
 }
 
-.close {
+
+.close-modal {
   position: absolute;
 
   top: 10px;
+
   right: 15px;
 
   width: 32px;
+
   height: 32px;
 
   border: 0;
@@ -1193,77 +1254,58 @@ header {
   line-height: 1;
 }
 
-.close:hover {
+
+.close-modal:hover {
   background: #fff0f5;
 }
 
-.modal-flower {
-  color: var(--pink);
-
-  font-size: 28px;
-
-  margin-bottom: 8px;
-}
-
-.modal-card .eyebrow {
-  color: var(--deep-pink);
-
-  font-size: 9px;
-
-  font-weight: 700;
-
-  letter-spacing: 2px;
-}
-
-#modalText {
-  color: #806777;
-
-  font-family: 'Playfair Display', serif;
-
-  font-size: 17px;
-
-  line-height: 1.8;
-}
 
 .modal-heart {
   color: var(--pink);
 
   font-size: 36px;
 
-  animation: beat 1.8s ease-in-out infinite;
+  animation:
+    heartBeat 1.8s ease-in-out infinite;
 }
 
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+#modalText {
+  color: #806777;
 
-footer {
-  position: relative;
+  font-family:
+    'Playfair Display',
+    serif;
 
-  z-index: 2;
+  font-size: 17px;
 
-  padding: 18px 0 25px;
-
-  text-align: center;
-
-  color: #b89cab;
-
-  font-size: 10px;
-
-  letter-spacing: 1px;
-}
-
-footer span {
-  color: var(--pink);
+  line-height: 1.8;
 }
 
 
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
+@keyframes modalAppear {
 
-@keyframes beat {
+  from {
+    opacity: 0;
+
+    transform:
+      scale(.9)
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+
+@keyframes heartBeat {
+
   0%, 100% {
     transform: scale(1);
   }
@@ -1271,76 +1313,69 @@ footer span {
   50% {
     transform: scale(1.15);
   }
-}
 
-@keyframes twinkle {
-  0%, 100% {
-    opacity: .55;
-
-    transform:
-      scale(.85)
-      rotate(0);
-  }
-
-  50% {
-    opacity: 1;
-
-    transform:
-      scale(1.2)
-      rotate(18deg);
-  }
 }
 
 
-/* =========================================================
+/* =========================================
    MOBILE
-   ========================================================= */
+   ========================================= */
 
 @media (max-width: 600px) {
 
-  header {
-    width: calc(100% - 20px);
-    padding-top: 10px;
-  }
-
-  .brand {
-    font-size: 8px;
-  }
-
-  .music {
-    padding: 7px 9px;
-    font-size: 9px;
-  }
-
   .intro {
-    min-height: calc(100svh - 48px);
+    min-height: 100svh;
+
     padding: 8px;
   }
+
 
   .cover-card {
     width: 100%;
   }
+
 
   .cover-image-wrap {
     border-radius: 13px;
   }
 
 
-  /* KEEPING YOUR PERFECT MOBILE COVER POSITION */
+  /* KEEPING YOUR PERFECT MOBILE POSITION */
 
   .cover-open-btn {
     left: 57%;
+
     top: 65%;
 
     width: 37%;
+
     height: 11%;
   }
 
 
   .book-wrap {
     width: calc(100% - 20px);
+
     padding-top: 12px;
   }
+
+
+  .topbar {
+    gap: 8px;
+  }
+
+
+  .brand {
+    font-size: 8px;
+  }
+
+
+  .music-btn {
+    padding: 7px 9px;
+
+    font-size: 9px;
+  }
+
 
   .page {
     min-height: 500px;
@@ -1353,18 +1388,23 @@ footer span {
     border-radius: 20px;
   }
 
+
   .page h2 {
     font-size: 31px;
   }
 
+
   .copy {
     font-size: 12px;
+
     line-height: 1.85;
   }
+
 
   .photo-grid {
     gap: 10px;
   }
+
 
   .photo {
     padding:
@@ -1373,16 +1413,6 @@ footer span {
       11px;
   }
 
-  .photo-placeholder {
-    min-height: 125px;
-  }
-
-  .photo-placeholder span {
-    font-size: 28px;
-  }
-
-
-  /* REAL PHOTOS ON MOBILE */
 
   .photo-image {
     height: 125px;
@@ -1393,6 +1423,7 @@ footer span {
     font-size: 11px;
   }
 
+
   .note {
     grid-template-columns:
       28px
@@ -1400,52 +1431,46 @@ footer span {
       auto;
 
     padding: 12px;
+
     gap: 7px;
   }
 
-  .note b {
+
+  .note strong {
     font-size: 13px;
   }
 
-  .note i {
+
+  .note small {
     font-size: 8px;
   }
 
-  .navbtn {
+
+  .page-navigation button {
     padding: 9px 10px;
+
     font-size: 9px;
   }
 
-  .dots {
-    gap: 4px;
-  }
-
-  .dots i {
-    width: 6px;
-    height: 6px;
-  }
-
-  .dots i.selected {
-    width: 17px;
-  }
 }
 
 
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+/* =========================================
+   SMALL PHONES
+   ========================================= */
 
 @media (max-width: 390px) {
 
-  /* KEEPING YOUR PERFECT SMALL-PHONE COVER POSITION */
-
   .cover-open-btn {
     left: 57%;
+
     top: 65%;
 
     width: 37%;
+
     height: 11%;
   }
+
 
   .page {
     min-height: 490px;
@@ -1456,24 +1481,29 @@ footer span {
       48px;
   }
 
+
   .page h2 {
     font-size: 28px;
   }
+
 
   .copy {
     font-size: 11px;
   }
 
-  .navbtn {
+
+  .page-navigation button {
     padding: 8px 9px;
+
     font-size: 8px;
   }
+
 }
 
 
-/* =========================================================
+/* =========================================
    ACCESSIBILITY
-   ========================================================= */
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1486,4 +1516,5 @@ footer span {
 
     scroll-behavior: auto !important;
   }
+
 }
