@@ -246,7 +246,9 @@ main {
 
   z-index: 1000;
 
-  animation: coverAppear 0.7s ease both;
+  animation:
+    coverAppear
+    0.7s ease both;
 }
 
 
@@ -284,6 +286,8 @@ main {
   user-select: none;
 
   -webkit-user-drag: none;
+
+  z-index: 1;
 }
 
 
@@ -292,84 +296,80 @@ main {
    ===================================================== */
 
 /*
-   IMPORTANT:
+   This button sits over the
+   "OPEN YOUR SURPRISE" text
+   printed inside felisha-cover.png.
 
-   The button below is NOT a visible HTML button.
-
-   Your actual "OPEN YOUR SURPRISE" button is already
-   part of felisha-cover.png.
-
-   This invisible button is placed exactly over it
-   so clicking the artwork opens the next page.
+   It is a REAL button so it can be clicked.
 */
 
 .cover-open {
   position: absolute;
 
-  /*
-     Exact position of the button inside your artwork.
-  */
-
   left: 38.8%;
   top: 49.4%;
-
-  /*
-     Exact approximate size of the artwork button.
-  */
 
   width: 22.2%;
   height: 6.6%;
 
-  transform: none;
-
-  border: none;
-
-  outline: none;
-
-  background: transparent;
-
-  cursor: pointer;
-
-  z-index: 20;
+  z-index: 50;
 
   padding: 0;
   margin: 0;
 
+  background: transparent;
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.85);
+
   border-radius: 60px;
+
+  cursor: pointer;
+
+  outline: none;
+
+  display: block;
 
   -webkit-tap-highlight-color: transparent;
 
   transition:
     background 0.2s ease,
-    box-shadow 0.2s ease;
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 
-/*
-   Keep the image looking exactly the same.
-*/
+/* Mouse over the button */
 
 .cover-open:hover {
-  background: transparent;
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(255, 255, 255, 1);
 }
 
+
+/* When clicked */
 
 .cover-open:active {
-  background: rgba(255, 255, 255, 0.025);
+  background:
+    rgba(255, 255, 255, 0.15);
+
+  transform:
+    scale(0.98);
 }
 
 
-/*
-   When the invisible button receives keyboard focus,
-   the outline now follows the actual artwork button.
-*/
+/* Keyboard focus */
 
 .cover-open:focus-visible {
   outline:
     3px solid
-    rgba(255, 255, 255, 0.85);
+    rgba(255, 255, 255, 0.9);
 
-  outline-offset: 2px;
+  outline-offset: 3px;
 
   border-radius: 60px;
 }
@@ -405,9 +405,11 @@ body:has(
    ===================================================== */
 
 .book-wrap {
-  width: min(920px, calc(100% - 30px));
+  width:
+    min(920px, calc(100% - 30px));
 
-  margin: 20px auto 80px;
+  margin:
+    20px auto 80px;
 
   animation:
     bookIn
@@ -598,7 +600,8 @@ body:has(
 
   font-weight: 500;
 
-  margin: 0 0 20px;
+  margin:
+    0 0 20px;
 
   letter-spacing: -0.04em;
 }
@@ -666,21 +669,27 @@ body:has(
 
   margin-top: 30px;
 
-  padding: 13px 18px;
+  padding:
+    13px 18px;
 
-  background: #fff0f5;
+  background:
+    #fff0f5;
 
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 
-  border-radius: 12px;
+  border-radius:
+    12px;
 
   font-family:
     "Playfair Display",
     serif;
 
-  font-style: italic;
+  font-style:
+    italic;
 
-  transform: rotate(-1deg);
+  transform:
+    rotate(-1deg);
 }
 
 
@@ -734,12 +743,14 @@ body:has(
 
 
 .photo.p1 {
-  transform: rotate(-3deg);
+  transform:
+    rotate(-3deg);
 }
 
 
 .photo.p2 {
-  transform: rotate(3deg);
+  transform:
+    rotate(3deg);
 }
 
 
@@ -789,11 +800,14 @@ body:has(
     "Playfair Display",
     serif;
 
-  font-style: italic;
+  font-style:
+    italic;
 
-  color: #765d67;
+  color:
+    #765d67;
 
-  font-size: 15px;
+  font-size:
+    15px;
 }
 
 
@@ -806,13 +820,17 @@ body:has(
     9px
     14px;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
-  background: #fff0f5;
+  background:
+    #fff0f5;
 
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 
-  font-size: 11px;
+  font-size:
+    11px;
 }
 
 
@@ -833,14 +851,17 @@ body:has(
   justify-content:
     space-between;
 
-  color: #ad969f;
+  color:
+    #ad969f;
 
-  font-size: 11px;
+  font-size:
+    11px;
 }
 
 
 .page-foot span {
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 }
 
 
@@ -902,15 +923,20 @@ body:has(
 .note span {
   display: block;
 
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 
-  font-size: 11px;
+  font-size:
+    11px;
 
-  font-weight: 700;
+  font-weight:
+    700;
 
-  letter-spacing: 0.12em;
+  letter-spacing:
+    0.12em;
 
-  margin-bottom: 9px;
+  margin-bottom:
+    9px;
 }
 
 
@@ -921,20 +947,25 @@ body:has(
     "Playfair Display",
     serif;
 
-  font-size: 21px;
+  font-size:
+    21px;
 
-  margin-bottom: 9px;
+  margin-bottom:
+    9px;
 }
 
 
 .note i {
   display: block;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  font-size: 11px;
+  font-size:
+    11px;
 
-  font-style: normal;
+  font-style:
+    normal;
 }
 
 
@@ -943,7 +974,8 @@ body:has(
    ===================================================== */
 
 .memory-frame {
-  max-width: 680px;
+  max-width:
+    680px;
 
   margin:
     35px
@@ -953,37 +985,48 @@ body:has(
 
 
 .memory-placeholder {
-  min-height: 190px;
+  min-height:
+    190px;
 
   border:
     1px dashed
     #dfb9c7;
 
-  border-radius: 20px;
+  border-radius:
+    20px;
 
   background:
     rgba(255, 247, 250, 0.7);
 
-  display: flex;
+  display:
+    flex;
 
-  flex-direction: column;
+  flex-direction:
+    column;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 12px;
+  gap:
+    12px;
 
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 
-  font-size: 42px;
+  font-size:
+    42px;
 }
 
 
 .memory-placeholder small {
-  font-size: 12px;
+  font-size:
+    12px;
 
-  color: var(--muted);
+  color:
+    var(--muted);
 
   font-family:
     "DM Sans",
@@ -996,11 +1039,14 @@ body:has(
    ===================================================== */
 
 .cake {
-  width: 150px;
+  width:
+    150px;
 
-  height: 130px;
+  height:
+    130px;
 
-  position: relative;
+  position:
+    relative;
 
   margin:
     35px
@@ -1009,17 +1055,23 @@ body:has(
 
 
 .cake-body {
-  position: absolute;
+  position:
+    absolute;
 
-  bottom: 0;
+  bottom:
+    0;
 
-  left: 10px;
+  left:
+    10px;
 
-  width: 130px;
+  width:
+    130px;
 
-  height: 70px;
+  height:
+    70px;
 
-  background: #f1a9bd;
+  background:
+    #f1a9bd;
 
   border-radius:
     10px
@@ -1031,87 +1083,122 @@ body:has(
     inset 0 -12px
     rgba(197, 89, 125, 0.12);
 
-  display: flex;
+  display:
+    flex;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  align-items: center;
+  align-items:
+    center;
 
-  color: white;
+  color:
+    white;
 
-  font-size: 24px;
+  font-size:
+    24px;
 }
 
 
 .icing {
-  position: absolute;
+  position:
+    absolute;
 
-  bottom: 56px;
+  bottom:
+    56px;
 
-  left: 18px;
+  left:
+    18px;
 
-  width: 114px;
+  width:
+    114px;
 
-  height: 22px;
+  height:
+    22px;
 
-  background: #fff0f5;
+  background:
+    #fff0f5;
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 }
 
 
 .plate {
-  position: absolute;
+  position:
+    absolute;
 
-  bottom: -8px;
+  bottom:
+    -8px;
 
-  left: 0;
+  left:
+    0;
 
-  width: 150px;
+  width:
+    150px;
 
-  height: 15px;
+  height:
+    15px;
 
-  background: #f8dce6;
+  background:
+    #f8dce6;
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 }
 
 
 .candle {
-  position: absolute;
+  position:
+    absolute;
 
-  bottom: 78px;
+  bottom:
+    78px;
 
-  left: 68px;
+  left:
+    68px;
 
-  width: 14px;
+  width:
+    14px;
 
-  height: 45px;
+  height:
+    45px;
 
-  background: #fff;
+  background:
+    #fff;
 
-  border-radius: 5px;
+  border-radius:
+    5px;
 
-  z-index: 3;
+  z-index:
+    3;
 }
 
 
 .flame {
-  position: absolute;
+  position:
+    absolute;
 
-  bottom: 118px;
+  bottom:
+    118px;
 
-  left: 67px;
+  left:
+    67px;
 
-  width: 17px;
+  width:
+    17px;
 
-  height: 22px;
+  height:
+    22px;
 
-  background: #f4ad72;
+  background:
+    #f4ad72;
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
-  z-index: 4;
+  z-index:
+    4;
 
   animation:
     flame
@@ -1144,21 +1231,27 @@ body:has(
     1px solid
     var(--line);
 
-  background: white;
+  background:
+    white;
 
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   padding:
     12px
     20px;
 
-  font-family: inherit;
+  font-family:
+    inherit;
 
-  font-weight: 600;
+  font-weight:
+    600;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
   transition:
     0.25s ease;
@@ -1175,22 +1268,27 @@ body:has(
 
 
 .secondary:disabled {
-  opacity: 0.65;
+  opacity:
+    0.65;
 
-  cursor: default;
+  cursor:
+    default;
 }
 
 
 .wish {
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 
   font-family:
     "Playfair Display",
     serif;
 
-  font-style: italic;
+  font-style:
+    italic;
 
-  margin-top: 18px;
+  margin-top:
+    18px;
 }
 
 
@@ -1199,14 +1297,17 @@ body:has(
    ===================================================== */
 
 .nav {
-  display: flex;
+  display:
+    flex;
 
   justify-content:
     space-between;
 
-  align-items: center;
+  align-items:
+    center;
 
-  margin-top: 18px;
+  margin-top:
+    18px;
 }
 
 
@@ -1215,19 +1316,24 @@ body:has(
     1px solid
     var(--line);
 
-  background: white;
+  background:
+    white;
 
-  color: var(--ink);
+  color:
+    var(--ink);
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   padding:
     11px
     17px;
 
-  font-family: inherit;
+  font-family:
+    inherit;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
   transition:
     0.25s ease;
@@ -1244,7 +1350,8 @@ body:has(
 
 
 .navbtn:disabled {
-  opacity: 0.4;
+  opacity:
+    0.4;
 
   cursor:
     not-allowed;
@@ -1252,22 +1359,29 @@ body:has(
 
 
 .dots {
-  display: flex;
+  display:
+    flex;
 
-  gap: 7px;
+  gap:
+    7px;
 }
 
 
 .dots i {
-  display: block;
+  display:
+    block;
 
-  width: 7px;
+  width:
+    7px;
 
-  height: 7px;
+  height:
+    7px;
 
-  background: #ead7df;
+  background:
+    #ead7df;
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
   transition:
     0.25s ease;
@@ -1288,22 +1402,29 @@ body:has(
    ===================================================== */
 
 .modal {
-  position: fixed;
+  position:
+    fixed;
 
-  inset: 0;
+  inset:
+    0;
 
   background:
     rgba(53, 35, 42, 0.35);
 
-  display: flex;
+  display:
+    flex;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  align-items: center;
+  align-items:
+    center;
 
-  padding: 20px;
+  padding:
+    20px;
 
-  z-index: 2000;
+  z-index:
+    2000;
 
   backdrop-filter:
     blur(6px);
@@ -1311,77 +1432,105 @@ body:has(
 
 
 .modal-card {
-  position: relative;
+  position:
+    relative;
 
   width:
     min(500px, 100%);
 
-  background: white;
+  background:
+    white;
 
-  border-radius: 25px;
+  border-radius:
+    25px;
 
-  padding: 35px;
+  padding:
+    35px;
 
   box-shadow:
     0 30px 80px
     rgba(48, 30, 39, 0.25);
 
-  text-align: center;
+  text-align:
+    center;
 }
 
 
 .modal-card .close {
-  position: absolute;
+  position:
+    absolute;
 
-  top: 15px;
-  right: 18px;
+  top:
+    15px;
 
-  width: 35px;
-  height: 35px;
+  right:
+    18px;
 
-  border: none;
+  width:
+    35px;
 
-  background: #fff0f5;
+  height:
+    35px;
 
-  color: var(--pink-dark);
+  border:
+    none;
 
-  border-radius: 50%;
+  background:
+    #fff0f5;
 
-  font-size: 24px;
+  color:
+    var(--pink-dark);
 
-  line-height: 1;
+  border-radius:
+    50%;
 
-  cursor: pointer;
+  font-size:
+    24px;
+
+  line-height:
+    1;
+
+  cursor:
+    pointer;
 }
 
 
 .modal-flower {
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 
-  font-size: 30px;
+  font-size:
+    30px;
 
-  margin-bottom: 10px;
+  margin-bottom:
+    10px;
 }
 
 
 .modal-card .eyebrow {
-  margin-bottom: 15px;
+  margin-bottom:
+    15px;
 }
 
 
 .modal-card p {
-  color: var(--muted);
+  color:
+    var(--muted);
 
-  line-height: 1.7;
+  line-height:
+    1.7;
 }
 
 
 .modal-heart {
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 
-  font-size: 32px;
+  font-size:
+    32px;
 
-  margin-top: 20px;
+  margin-top:
+    20px;
 }
 
 
@@ -1390,13 +1539,17 @@ body:has(
    ===================================================== */
 
 footer {
-  text-align: center;
+  text-align:
+    center;
 
-  padding: 25px;
+  padding:
+    25px;
 
-  color: #ad969f;
+  color:
+    #ad969f;
 
-  font-size: 11px;
+  font-size:
+    11px;
 }
 
 
@@ -1420,12 +1573,14 @@ footer span {
 
 
   .brand {
-    font-size: 12px;
+    font-size:
+      12px;
   }
 
 
   .music span {
-    display: none;
+    display:
+      none;
   }
 
 
@@ -1437,40 +1592,46 @@ footer span {
 
 
   .intro {
-    width: 100vw;
+    width:
+      100vw;
 
-    height: 100dvh;
+    height:
+      100dvh;
 
-    min-height: 100dvh;
+    min-height:
+      100dvh;
   }
 
 
   .full-cover {
-    width: 100%;
-    height: 100%;
+    width:
+      100%;
 
-    object-fit: cover;
+    height:
+      100%;
+
+    object-fit:
+      cover;
 
     object-position:
       center center;
   }
 
 
-  /*
-     MOBILE:
-     Match the button printed inside the artwork.
-  */
+  /* MOBILE COVER BUTTON */
 
   .cover-open {
-    left: 38.5%;
+    left:
+      38.5%;
 
-    top: 49.5%;
+    top:
+      49.5%;
 
-    width: 23%;
+    width:
+      23%;
 
-    height: 7%;
-    
-    transform: none;
+    height:
+      7%;
   }
 
 
@@ -1486,21 +1647,26 @@ footer span {
       22px
       65px;
 
-    min-height: 600px;
+    min-height:
+      600px;
 
-    border-radius: 20px;
+    border-radius:
+      20px;
   }
 
 
   .page h2 {
-    font-size: 43px;
+    font-size:
+      43px;
   }
 
 
   .photo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
-    gap: 22px;
+    gap:
+      22px;
   }
 
 
@@ -1513,28 +1679,35 @@ footer span {
 
   .photo.p1 .photo-image,
   .photo.p2 .photo-image {
-    height: 230px;
+    height:
+      230px;
   }
 
 
   .notes {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
 
   .page-foot {
-    left: 22px;
-    right: 22px;
+    left:
+      22px;
+
+    right:
+      22px;
   }
 
 
   .chapter {
-    display: none;
+    display:
+      none;
   }
 
 
   .progress {
-    gap: 8px;
+    gap:
+      8px;
   }
 
 
@@ -1543,12 +1716,14 @@ footer span {
       9px
       12px;
 
-    font-size: 12px;
+    font-size:
+      12px;
   }
 
 
   .memory-frame {
-    margin-top: 25px;
+    margin-top:
+      25px;
   }
 
 }
@@ -1561,13 +1736,17 @@ footer span {
 @media (max-width: 420px) {
 
   .cover-open {
-    left: 37.5%;
+    left:
+      37.5%;
 
-    top: 49%;
+    top:
+      49%;
 
-    width: 25%;
+    width:
+      25%;
 
-    height: 8%;
+    height:
+      8%;
   }
 
 
@@ -1581,17 +1760,20 @@ footer span {
 
   .photo.p1 .photo-image,
   .photo.p2 .photo-image {
-    height: 210px;
+    height:
+      210px;
   }
 
 
   .page h2 {
-    font-size: 39px;
+    font-size:
+      39px;
   }
 
 
   .memory-placeholder {
-    min-height: 160px;
+    min-height:
+      160px;
   }
 
 }
