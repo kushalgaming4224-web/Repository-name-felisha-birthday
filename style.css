@@ -224,13 +224,6 @@ main {
    FULL SCREEN COVER PAGE
    ===================================================== */
 
-/*
-   The cover is now completely different from
-   the old small-picture layout.
-
-   Your felisha-cover.png fills the entire screen.
-*/
-
 .intro {
   position: fixed;
 
@@ -270,9 +263,9 @@ main {
 }
 
 
-/*
-   Your complete birthday artwork.
-*/
+/* =====================================================
+   COVER IMAGE
+   ===================================================== */
 
 .full-cover {
   position: absolute;
@@ -294,28 +287,40 @@ main {
 }
 
 
+/* =====================================================
+   OPEN YOUR SURPRISE BUTTON
+   ===================================================== */
+
 /*
-   The image already contains the words:
+   IMPORTANT:
 
-   OPEN YOUR SURPRISE →
+   The button below is NOT a visible HTML button.
 
-   This invisible button sits directly
-   over that area.
+   Your actual "OPEN YOUR SURPRISE" button is already
+   part of felisha-cover.png.
 
-   JavaScript still sees the ID "openBtn",
-   so your existing script opens Page 1.
+   This invisible button is placed exactly over it
+   so clicking the artwork opens the next page.
 */
 
 .cover-open {
   position: absolute;
 
-  left: 51.5%;
-  top: 60.5%;
+  /*
+     Exact position of the button inside your artwork.
+  */
 
-  width: 31%;
-  height: 10%;
+  left: 38.8%;
+  top: 49.4%;
 
-  transform: translateX(0);
+  /*
+     Exact approximate size of the artwork button.
+  */
+
+  width: 22.2%;
+  height: 6.6%;
+
+  transform: none;
 
   border: none;
 
@@ -341,32 +346,38 @@ main {
 
 
 /*
-   Very subtle hover effect.
-   The button remains basically invisible.
+   Keep the image looking exactly the same.
 */
 
 .cover-open:hover {
-  background: rgba(255, 255, 255, 0.035);
+  background: transparent;
 }
 
 
 .cover-open:active {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.025);
 }
 
+
+/*
+   When the invisible button receives keyboard focus,
+   the outline now follows the actual artwork button.
+*/
 
 .cover-open:focus-visible {
   outline:
     3px solid
     rgba(255, 255, 255, 0.85);
 
-  outline-offset: 4px;
+  outline-offset: 2px;
+
+  border-radius: 60px;
 }
 
 
-/*
-   Hide the old cover design completely.
-*/
+/* =====================================================
+   HIDE OLD COVER ELEMENTS
+   ===================================================== */
 
 .intro .eyebrow,
 .intro .cover-art,
@@ -378,13 +389,9 @@ main {
 }
 
 
-/*
-   Hide the header while the full-screen
-   cover is being displayed.
-
-   Once JavaScript adds .hidden to .intro,
-   the header automatically comes back.
-*/
+/* =====================================================
+   HIDE HEADER ON COVER
+   ===================================================== */
 
 body:has(
   .intro:not(.hidden)
@@ -736,13 +743,6 @@ body:has(
 }
 
 
-/*
-   LEFT PHOTO
-
-   This is your:
-   images/felisha-smile-4.jpg.jpeg
-*/
-
 .photo.p1 .photo-image {
   width: 100%;
 
@@ -757,16 +757,6 @@ body:has(
   background: #fff;
 }
 
-
-/*
-   RIGHT PHOTO
-
-   This is your:
-   images/felisha-smile-1.jpg.jpeg
-
-   Slightly zoomed out
-   and moved upward.
-*/
 
 .photo.p2 .photo-image {
   width: 100%;
@@ -1422,7 +1412,6 @@ footer span {
 
 @media (max-width: 700px) {
 
-
   header {
     padding:
       18px
@@ -1447,13 +1436,6 @@ footer span {
   }
 
 
-  /*
-     Mobile cover.
-
-     The complete cover still fills
-     the entire phone screen.
-  */
-
   .intro {
     width: 100vw;
 
@@ -1475,20 +1457,20 @@ footer span {
 
 
   /*
-     Mobile clickable area.
+     MOBILE:
+     Match the button printed inside the artwork.
   */
 
   .cover-open {
-    left: 50%;
+    left: 38.5%;
 
-    top: 60.5%;
+    top: 49.5%;
 
-    width: 76%;
+    width: 23%;
 
-    height: 11%;
-
-    transform:
-      translateX(-50%);
+    height: 7%;
+    
+    transform: none;
   }
 
 
@@ -1578,13 +1560,14 @@ footer span {
 
 @media (max-width: 420px) {
 
-
   .cover-open {
-    top: 60%;
+    left: 37.5%;
 
-    width: 80%;
+    top: 49%;
 
-    height: 12%;
+    width: 25%;
+
+    height: 8%;
   }
 
 
