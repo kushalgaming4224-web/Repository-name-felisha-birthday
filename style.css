@@ -116,11 +116,12 @@ header {
 
 
 /* =========================================================
-   AMBIENT DECORATIONS
+   AMBIENT
    ========================================================= */
 
 .ambient {
   position: fixed;
+
   inset: 0;
 
   pointer-events: none;
@@ -221,7 +222,7 @@ main {
 
 
 /* =========================================================
-   FULL SCREEN COVER
+   COVER
    ========================================================= */
 
 .intro {
@@ -230,10 +231,13 @@ main {
   inset: 0;
 
   width: 100vw;
+
   height: 100vh;
+
   height: 100dvh;
 
   margin: 0;
+
   padding: 0;
 
   background: #000;
@@ -261,19 +265,18 @@ main {
 }
 
 
-/*
-  IMPORTANT:
+/* =========================================================
+   COVER CONTAINER
+   ========================================================= */
 
-  The cover artwork is 3:2.
+.cover-container {
 
-  Instead of putting the button relative to the browser
-  viewport, we create a 3:2 stage.
+  /*
+    This matches the original artwork ratio.
 
-  This keeps the clickable button aligned with the
-  actual artwork even when the browser crops the image.
-*/
+    The artwork is approximately 3:2.
+  */
 
-.cover-stage {
   position: absolute;
 
   width: 100vw;
@@ -281,14 +284,15 @@ main {
   aspect-ratio: 3 / 2;
 
   left: 50%;
+
   top: 50%;
 
   transform:
     translate(-50%, -50%);
 
-  overflow: hidden;
-
   z-index: 1;
+
+  overflow: hidden;
 }
 
 
@@ -297,11 +301,13 @@ main {
    ========================================================= */
 
 .full-cover {
+
   position: absolute;
 
   inset: 0;
 
   width: 100%;
+
   height: 100%;
 
   display: block;
@@ -319,51 +325,53 @@ main {
 
 
 /* =========================================================
-   INVISIBLE OPEN BUTTON
+   OPEN YOUR SURPRISE CLICK AREA
    ========================================================= */
 
 /*
-  The artwork itself already contains the words:
 
-  OPEN YOUR SURPRISE ♥ →
+  IMPORTANT:
 
-  This button simply sits on top of those words.
+  The real button inside the artwork is around:
 
-  It is completely invisible.
+  X = 52%
+  Y = 63%
+
+  of the original artwork.
+
+  This invisible button sits directly over it.
+
 */
 
 .cover-open {
+
   position: absolute;
 
-  /*
-    These coordinates are based on the artwork itself,
-    NOT the browser window.
-
-    This is what fixes the previous alignment problem.
-  */
-
   left: 51.5%;
-  top: 70.8%;
+
+  top: 62.5%;
 
   width: 29.5%;
-  height: 8.8%;
 
-  z-index: 20;
+  height: 10%;
+
+  z-index: 100;
+
+  display: block;
 
   padding: 0;
+
   margin: 0;
+
+  border: 0;
+
+  outline: 0;
 
   background: transparent;
 
-  border: none;
-
-  border-radius: 60px;
-
   cursor: pointer;
 
-  outline: none;
-
-  display: block;
+  border-radius: 60px;
 
   appearance: none;
 
@@ -375,39 +383,51 @@ main {
 }
 
 
-/*
-  Keep it invisible when hovering.
-*/
+/* Hover */
 
 .cover-open:hover {
+
   background: transparent;
-  border: none;
+
+  border: 0;
+
+  outline: 0;
+
   box-shadow: none;
+
 }
 
 
-/*
-  Keep it invisible when clicking.
-*/
+/* Click */
 
 .cover-open:active {
+
   background: transparent;
-  border: none;
+
+  border: 0;
+
+  outline: 0;
+
   box-shadow: none;
 
   transform: none;
+
 }
 
 
-/*
-  No ugly focus rectangle.
-*/
+/* Focus */
 
 .cover-open:focus,
 .cover-open:focus-visible {
+
+  background: transparent;
+
+  border: 0;
+
   outline: none;
-  border: none;
+
   box-shadow: none;
+
 }
 
 
@@ -421,14 +441,20 @@ main {
 .intro .subtitle,
 .intro .primary,
 .intro .tiny {
+
   display: none !important;
+
 }
 
 
-/* Hide header while cover is visible */
+/* =========================================================
+   HIDE HEADER ON COVER
+   ========================================================= */
 
 body:has(.intro:not(.hidden)) header {
+
   display: none;
+
 }
 
 
@@ -437,6 +463,7 @@ body:has(.intro:not(.hidden)) header {
    ========================================================= */
 
 .book-wrap {
+
   width:
     min(920px, calc(100% - 30px));
 
@@ -450,20 +477,30 @@ body:has(.intro:not(.hidden)) header {
 
 
 .hidden {
+
   display: none !important;
+
 }
 
 
 @keyframes bookIn {
 
   from {
+
     opacity: 0;
-    transform: translateY(25px);
+
+    transform:
+      translateY(25px);
+
   }
 
   to {
+
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
+
   }
 
 }
@@ -474,6 +511,7 @@ body:has(.intro:not(.hidden)) header {
    ========================================================= */
 
 .progress {
+
   display: flex;
 
   align-items: center;
@@ -489,6 +527,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .progress-track {
+
   height: 3px;
 
   flex: 1;
@@ -502,6 +541,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .progress-track i {
+
   display: block;
 
   width: 20%;
@@ -516,6 +556,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .chapter {
+
   min-width: 120px;
 
   text-align: right;
@@ -527,6 +568,7 @@ body:has(.intro:not(.hidden)) header {
    ========================================================= */
 
 .book {
+
   position: relative;
 
   min-height: 600px;
@@ -534,6 +576,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .page {
+
   display: none;
 
   position: relative;
@@ -563,6 +606,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .page.active {
+
   display: block;
 
   animation:
@@ -574,19 +618,28 @@ body:has(.intro:not(.hidden)) header {
 @keyframes pageIn {
 
   from {
+
     opacity: 0;
-    transform: translateX(18px);
+
+    transform:
+      translateX(18px);
+
   }
 
   to {
+
     opacity: 1;
-    transform: translateX(0);
+
+    transform:
+      translateX(0);
+
   }
 
 }
 
 
 .page.leaving {
+
   animation:
     pageOut
     0.36s ease both;
@@ -596,18 +649,23 @@ body:has(.intro:not(.hidden)) header {
 @keyframes pageOut {
 
   to {
+
     opacity: 0;
-    transform: translateX(-18px);
+
+    transform:
+      translateX(-18px);
+
   }
 
 }
 
 
 /* =========================================================
-   PAGE TEXT
+   TEXT
    ========================================================= */
 
 .page-kicker {
+
   color: var(--pink-dark);
 
   font-size: 10px;
@@ -621,6 +679,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .page h2 {
+
   font-family:
     "Playfair Display",
     serif;
@@ -640,6 +699,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .page h2 em {
+
   color: var(--pink-dark);
 
   font-style: italic;
@@ -647,6 +707,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .copy {
+
   max-width: 590px;
 
   color: var(--muted);
@@ -658,7 +719,9 @@ body:has(.intro:not(.hidden)) header {
 
 
 .copy.center {
+
   margin-left: auto;
+
   margin-right: auto;
 
   text-align: center;
@@ -670,6 +733,7 @@ body:has(.intro:not(.hidden)) header {
    ========================================================= */
 
 .mini-flower {
+
   color: var(--pink-dark);
 
   font-size: 28px;
@@ -697,6 +761,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .scribble {
+
   display: inline-block;
 
   margin-top: 30px;
@@ -726,10 +791,11 @@ body:has(.intro:not(.hidden)) header {
 
 
 /* =========================================================
-   PAGE 2 - PHOTOS
+   PAGE 2
    ========================================================= */
 
 .photo-grid {
+
   display: grid;
 
   grid-template-columns:
@@ -744,6 +810,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .photo {
+
   background: white;
 
   border:
@@ -764,6 +831,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .photo:hover {
+
   transform:
     translateY(-6px)
     rotate(0deg) !important;
@@ -775,18 +843,21 @@ body:has(.intro:not(.hidden)) header {
 
 
 .photo.p1 {
+
   transform:
     rotate(-3deg);
 }
 
 
 .photo.p2 {
+
   transform:
     rotate(3deg);
 }
 
 
 .photo.p1 .photo-image {
+
   width: 100%;
 
   height: 190px;
@@ -802,6 +873,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .photo.p2 .photo-image {
+
   width: 100%;
 
   height: 190px;
@@ -821,6 +893,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .photo label {
+
   display: block;
 
   padding:
@@ -844,6 +917,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .note-tag {
+
   display: inline-block;
 
   margin-top: 35px;
@@ -867,15 +941,17 @@ body:has(.intro:not(.hidden)) header {
 
 
 /* =========================================================
-   PAGE FOOTER
+   PAGE FOOT
    ========================================================= */
 
 .page-foot {
+
   position: absolute;
 
   bottom: 25px;
 
   left: 55px;
+
   right: 55px;
 
   display: flex;
@@ -892,16 +968,18 @@ body:has(.intro:not(.hidden)) header {
 
 
 .page-foot span {
+
   color:
     var(--pink-dark);
 }
 
 
 /* =========================================================
-   PAGE 3 - LOVE NOTES
+   NOTES
    ========================================================= */
 
 .notes {
+
   display: grid;
 
   grid-template-columns:
@@ -916,6 +994,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .note {
+
   appearance: none;
 
   width: 100%;
@@ -944,6 +1023,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .note:hover {
+
   transform:
     translateY(-4px);
 
@@ -953,6 +1033,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .note span {
+
   display: block;
 
   color:
@@ -973,6 +1054,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .note b {
+
   display: block;
 
   font-family:
@@ -988,6 +1070,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .note i {
+
   display: block;
 
   color:
@@ -1002,10 +1085,11 @@ body:has(.intro:not(.hidden)) header {
 
 
 /* =========================================================
-   PAGE 4 - MEMORY
+   MEMORY
    ========================================================= */
 
 .memory-frame {
+
   max-width:
     680px;
 
@@ -1017,6 +1101,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .memory-placeholder {
+
   min-height:
     190px;
 
@@ -1054,6 +1139,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .memory-placeholder small {
+
   font-size:
     12px;
 
@@ -1067,10 +1153,11 @@ body:has(.intro:not(.hidden)) header {
 
 
 /* =========================================================
-   PAGE 5 - CAKE
+   CAKE
    ========================================================= */
 
 .cake {
+
   width:
     150px;
 
@@ -1087,6 +1174,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .cake-body {
+
   position:
     absolute;
 
@@ -1133,6 +1221,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .icing {
+
   position:
     absolute;
 
@@ -1157,6 +1246,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .plate {
+
   position:
     absolute;
 
@@ -1181,6 +1271,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .candle {
+
   position:
     absolute;
 
@@ -1208,6 +1299,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .flame {
+
   position:
     absolute;
 
@@ -1244,25 +1336,30 @@ body:has(.intro:not(.hidden)) header {
 @keyframes flame {
 
   from {
+
     transform:
       scale(0.9)
       rotate(-4deg);
+
   }
 
   to {
+
     transform:
       scale(1.1)
       rotate(4deg);
+
   }
 
 }
 
 
 /* =========================================================
-   WISH BUTTON
+   BUTTONS
    ========================================================= */
 
 .secondary {
+
   border:
     1px solid
     var(--line);
@@ -1295,6 +1392,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .secondary:hover {
+
   transform:
     translateY(-2px);
 
@@ -1304,6 +1402,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .secondary:disabled {
+
   opacity:
     0.65;
 
@@ -1313,6 +1412,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .wish {
+
   color:
     var(--pink-dark);
 
@@ -1333,6 +1433,7 @@ body:has(.intro:not(.hidden)) header {
    ========================================================= */
 
 .nav {
+
   display:
     flex;
 
@@ -1348,6 +1449,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .navbtn {
+
   border:
     1px solid
     var(--line);
@@ -1377,6 +1479,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .navbtn:hover:not(:disabled) {
+
   border-color:
     var(--pink);
 
@@ -1386,6 +1489,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .navbtn:disabled {
+
   opacity:
     0.4;
 
@@ -1395,6 +1499,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .dots {
+
   display:
     flex;
 
@@ -1404,6 +1509,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .dots i {
+
   display:
     block;
 
@@ -1425,6 +1531,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .dots i.selected {
+
   background:
     var(--pink-dark);
 
@@ -1434,10 +1541,11 @@ body:has(.intro:not(.hidden)) header {
 
 
 /* =========================================================
-   NOTE MODAL
+   MODAL
    ========================================================= */
 
 .modal {
+
   position:
     fixed;
 
@@ -1468,6 +1576,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .modal-card {
+
   position:
     relative;
 
@@ -1493,6 +1602,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .modal-card .close {
+
   position:
     absolute;
 
@@ -1532,6 +1642,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .modal-flower {
+
   color:
     var(--pink-dark);
 
@@ -1544,12 +1655,14 @@ body:has(.intro:not(.hidden)) header {
 
 
 .modal-card .eyebrow {
+
   margin-bottom:
     15px;
 }
 
 
 .modal-card p {
+
   color:
     var(--muted);
 
@@ -1559,6 +1672,7 @@ body:has(.intro:not(.hidden)) header {
 
 
 .modal-heart {
+
   color:
     var(--pink-dark);
 
@@ -1575,6 +1689,7 @@ body:has(.intro:not(.hidden)) header {
    ========================================================= */
 
 footer {
+
   text-align:
     center;
 
@@ -1590,87 +1705,99 @@ footer {
 
 
 footer span {
+
   color:
     var(--pink-dark);
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
 
   header {
+
     padding:
       18px
       15px;
+
   }
 
 
   .brand {
+
     font-size:
       12px;
+
   }
 
 
   .music span {
+
     display:
       none;
+
   }
 
 
   .music {
+
     padding:
       9px
       13px;
+
   }
 
 
-  /*
-    On phones the same 3:2 artwork stage is used.
+  .cover-container {
 
-    This means the clickable button stays attached
-    to the artwork instead of drifting away.
-  */
+    width:
+      100vw;
 
-  .cover-stage {
-    width: 100vw;
+    aspect-ratio:
+      3 / 2;
 
-    aspect-ratio: 3 / 2;
+    left:
+      50%;
 
-    left: 50%;
-    top: 50%;
+    top:
+      50%;
 
     transform:
       translate(-50%, -50%);
-  }
 
-
-  .full-cover {
-    width: 100%;
-    height: 100%;
-
-    object-fit: fill;
   }
 
 
   .cover-open {
-    left: 51.5%;
-    top: 70.8%;
 
-    width: 29.5%;
-    height: 8.8%;
+    left:
+      51.5%;
+
+    top:
+      62.5%;
+
+    width:
+      29.5%;
+
+    height:
+      10%;
+
   }
 
 
   .book-wrap {
+
     width:
       calc(100% - 20px);
+
   }
 
 
   .page {
+
     padding:
       30px
       22px
@@ -1681,78 +1808,99 @@ footer span {
 
     border-radius:
       20px;
+
   }
 
 
   .page h2 {
+
     font-size:
       43px;
+
   }
 
 
   .photo-grid {
+
     grid-template-columns:
       1fr;
 
     gap:
       22px;
+
   }
 
 
   .photo.p1,
   .photo.p2 {
+
     transform:
       rotate(0deg);
+
   }
 
 
   .photo.p1 .photo-image,
   .photo.p2 .photo-image {
+
     height:
       230px;
+
   }
 
 
   .notes {
+
     grid-template-columns:
       1fr;
+
   }
 
 
   .page-foot {
+
     left:
       22px;
 
     right:
       22px;
+
   }
 
 
   .chapter {
+
     display:
       none;
+
   }
 
 
   .progress {
+
     gap:
       8px;
+
   }
 
 
   .navbtn {
+
     padding:
       9px
       12px;
 
     font-size:
       12px;
+
   }
 
 
   .memory-frame {
+
     margin-top:
       25px;
+
   }
 
 }
@@ -1764,52 +1912,75 @@ footer span {
 
 @media (max-width: 420px) {
 
-  .cover-stage {
-    width: 100vw;
+  .cover-container {
 
-    aspect-ratio: 3 / 2;
+    width:
+      100vw;
 
-    left: 50%;
-    top: 50%;
+    aspect-ratio:
+      3 / 2;
+
+    left:
+      50%;
+
+    top:
+      50%;
 
     transform:
       translate(-50%, -50%);
+
   }
 
 
   .cover-open {
-    left: 51.5%;
-    top: 70.8%;
 
-    width: 29.5%;
-    height: 8.8%;
+    left:
+      51.5%;
+
+    top:
+      62.5%;
+
+    width:
+      29.5%;
+
+    height:
+      10%;
+
   }
 
 
   .page {
+
     padding:
       25px
       18px
       65px;
+
   }
 
 
   .photo.p1 .photo-image,
   .photo.p2 .photo-image {
+
     height:
       210px;
+
   }
 
 
   .page h2 {
+
     font-size:
       39px;
+
   }
 
 
   .memory-placeholder {
+
     min-height:
       160px;
+
   }
 
 }
