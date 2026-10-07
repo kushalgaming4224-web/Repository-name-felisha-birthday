@@ -13,35 +13,19 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-
   font-family: "DM Sans", sans-serif;
+  color: #4c2b38;
+  background: #f8edf1;
+}
 
-  color: #392b31;
-
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(255, 224, 235, 0.9),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at bottom right,
-      rgba(250, 217, 229, 0.8),
-      transparent 35%
-    ),
-    #fff7fa;
-
-  overflow-x: hidden;
+button {
+  font-family: inherit;
 }
 
 
 /* =========================================
-   COMMON
+   UTILITY
 ========================================= */
-
-button {
-  font: inherit;
-}
 
 .hidden {
   display: none !important;
@@ -55,69 +39,58 @@ button {
 .ambient {
   position: fixed;
   inset: 0;
-
-  pointer-events: none;
-
-  z-index: 0;
-
   overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .ambient span {
   position: absolute;
-
-  color: rgba(207, 95, 133, 0.16);
-
-  font-size: 25px;
-
-  animation: floatAmbient 8s ease-in-out infinite;
+  color: rgba(180, 100, 130, 0.15);
+  font-size: 24px;
+  animation: floatAmbient 10s ease-in-out infinite;
 }
 
 .ambient span:nth-child(1) {
   left: 8%;
-  top: 30%;
+  top: 20%;
+  animation-delay: 0s;
 }
 
 .ambient span:nth-child(2) {
-  left: 88%;
-  top: 25%;
-
-  animation-delay: 1s;
+  left: 20%;
+  top: 75%;
+  animation-delay: 1.5s;
 }
 
 .ambient span:nth-child(3) {
-  left: 5%;
-  top: 70%;
-
-  animation-delay: 2s;
-}
-
-.ambient span:nth-child(4) {
-  right: 6%;
-  top: 56%;
-
+  left: 45%;
+  top: 15%;
   animation-delay: 3s;
 }
 
-.ambient span:nth-child(5) {
-  left: 15%;
-  bottom: 10%;
+.ambient span:nth-child(4) {
+  left: 65%;
+  top: 70%;
+  animation-delay: 2s;
+}
 
+.ambient span:nth-child(5) {
+  left: 82%;
+  top: 22%;
   animation-delay: 4s;
 }
 
 .ambient span:nth-child(6) {
-  right: 14%;
-  bottom: 18%;
-
+  left: 90%;
+  top: 60%;
   animation-delay: 5s;
 }
 
 .ambient span:nth-child(7) {
-  left: 48%;
-  top: 8%;
-
-  animation-delay: 6s;
+  left: 35%;
+  top: 88%;
+  animation-delay: 2.5s;
 }
 
 @keyframes floatAmbient {
@@ -127,86 +100,58 @@ button {
   }
 
   50% {
-    transform: translateY(-12px) rotate(8deg);
+    transform: translateY(-25px) rotate(8deg);
   }
 }
 
 
 /* =========================================
-   INTRO COVER
+   INTRO / FULL SCREEN COVER
 ========================================= */
 
 .intro {
-  position: relative;
-
+  position: fixed;
+  inset: 0;
   width: 100%;
   height: 100vh;
-
-  min-height: 600px;
-
+  height: 100dvh;
   overflow: hidden;
-
-  background: #fff5f8;
+  background: #f8edf1;
+  z-index: 1000;
 }
 
 .full-cover {
   width: 100%;
   height: 100%;
-
   display: block;
-
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-
   pointer-events: none;
 }
 
-
-/*
-  The entire cover is clickable.
-
-  This keeps the artwork exactly as it is,
-  while allowing the existing "OPEN YOUR
-  SURPRISE" area in the artwork to work.
-*/
-
 .cover-click-all {
   position: absolute;
-
   inset: 0;
-
   z-index: 100;
-
   width: 100%;
   height: 100%;
-
   padding: 0;
   margin: 0;
-
   border: 0;
-
   background: transparent;
-
   cursor: pointer;
 }
 
 
 /* =========================================
-   MAIN BOOK
+   BOOK WRAPPER
 ========================================= */
 
 .book-wrap {
   position: relative;
-
   z-index: 2;
-
-  width: 100%;
-
-  max-width: 1050px;
-
-  margin: 0 auto;
-
-  padding: 28px 24px 50px;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 
@@ -215,293 +160,263 @@ button {
 ========================================= */
 
 .topbar {
-  display: flex;
+  width: min(1100px, 100%);
+  margin: 0 auto 18px;
 
+  display: flex;
   align-items: center;
   justify-content: space-between;
-
-  margin-bottom: 22px;
-
-  padding: 0 8px;
+  gap: 20px;
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
   font-family: "Cormorant Garamond", serif;
-
-  font-size: 25px;
-
+  font-size: 22px;
   font-weight: 600;
+}
 
-  color: #4a3039;
+.brand-heart {
+  color: #b85d7d;
+  font-size: 25px;
 }
 
 .music {
-  padding: 10px 17px;
-
-  border: 1px solid #e5cbd4;
+  border: 1px solid #dfb9c7;
+  background: rgba(255, 255, 255, 0.75);
+  color: #6b3c4c;
 
   border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.75);
-
-  color: #5c404a;
+  padding: 9px 15px;
 
   cursor: pointer;
-
   transition: 0.25s ease;
 }
 
 .music:hover {
   transform: translateY(-2px);
-
   background: #fff;
-
-  border-color: #d99db2;
 }
 
 
 /* =========================================
-   BOOK
+   BOOK SHELL
 ========================================= */
+
+.book-shell {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
 
 .book {
   position: relative;
-
   width: 100%;
-}
-
-
-/* =========================================
-   PAGE
-========================================= */
-
-.page {
-  position: relative;
-
-  min-height: 735px;
-
-  padding: 65px 58px 55px;
-
-  border: 1px solid #ecd6df;
-
-  border-radius: 30px;
 
   background:
     linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.98),
-      rgba(255, 251, 252, 0.98)
+      rgba(255, 246, 249, 0.98)
     );
 
-  box-shadow:
-    0 25px 70px
-    rgba(91, 53, 68, 0.10);
+  border: 1px solid rgba(223, 185, 199, 0.75);
+  border-radius: 28px;
 
-  display: none;
+  box-shadow:
+    0 25px 70px rgba(76, 43, 56, 0.13);
 
   overflow: hidden;
 }
 
+
+/* =========================================
+   PAGES
+========================================= */
+
+.page {
+  display: none;
+  min-height: 650px;
+}
+
 .page.active {
   display: block;
-
-  animation: pageIn 0.45s ease;
+  animation: pageIn 0.55s ease both;
 }
 
 .page.leaving {
-  animation: pageOut 0.3s ease;
+  animation: pageOut 0.3s ease both;
 }
 
 @keyframes pageIn {
   from {
     opacity: 0;
-
-    transform:
-      translateX(20px);
+    transform: translateX(25px);
   }
 
   to {
     opacity: 1;
-
-    transform:
-      translateX(0);
+    transform: translateX(0);
   }
 }
 
 @keyframes pageOut {
   from {
     opacity: 1;
+    transform: translateX(0);
   }
 
   to {
     opacity: 0;
+    transform: translateX(-25px);
   }
 }
 
+.page-inner {
+  min-height: 650px;
 
-/* =========================================
-   PAGE CONTENT
-========================================= */
+  padding: 70px 75px;
 
-.page-content {
-  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  margin: 0 auto;
+  text-align: center;
 }
 
-.eyebrow {
-  margin-bottom: 20px;
 
-  color: #c95d80;
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.eyebrow {
+  margin: 0 0 15px;
+
+  color: #a85d76;
+
+  text-transform: uppercase;
+  letter-spacing: 3px;
 
   font-size: 12px;
-
   font-weight: 600;
+}
 
-  letter-spacing: 4px;
+h1,
+h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  line-height: 0.98;
+
+  color: #512d3b;
 }
 
 h1 {
-  margin: 0;
-
-  max-width: 760px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(55px, 7vw, 78px);
-
-  line-height: 0.88;
-
-  font-weight: 600;
-
-  letter-spacing: -2px;
-
-  color: #34272d;
+  font-size: clamp(58px, 8vw, 92px);
 }
 
-h1 em {
+h2 {
+  font-size: clamp(46px, 6vw, 72px);
+}
+
+h1 span,
+h2 span {
   display: block;
-
-  color: #c85c7f;
-
-  font-weight: 500;
+  color: #b85d7d;
 }
 
 .lead {
-  max-width: 650px;
+  max-width: 600px;
+  margin: 28px auto 0;
 
-  margin: 35px 0 30px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #775563;
+}
 
-  color: #795f69;
+.body-copy {
+  max-width: 620px;
+  margin: 25px auto 0;
 
-  font-size: 17px;
-
+  color: #775563;
+  font-size: 16px;
   line-height: 1.8;
 }
 
+.divider {
+  margin: 28px auto 5px;
 
-/* =========================================
-   PAGE 1 LETTER
-========================================= */
-
-.letter {
-  max-width: 680px;
-
-  margin-top: 45px;
-
-  padding: 32px 35px;
-
-  border-left: 3px solid #e4a7bb;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(252, 232, 239, 0.65),
-      rgba(255, 255, 255, 0)
-    );
-
-  color: #634b55;
-
-  font-size: 16px;
-
-  line-height: 1.9;
-}
-
-.letter p {
-  margin: 0 0 18px;
+  color: #b85d7d;
+  font-size: 26px;
 }
 
 .signature {
-  margin-top: 25px;
+  margin-top: 30px;
 
   font-family: "Cormorant Garamond", serif;
-
   font-size: 25px;
+  font-style: italic;
+  color: #8e5366;
+}
 
+.small-note {
+  margin: 25px auto 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
   font-style: italic;
 
-  color: #bd5878;
+  color: #8e5366;
 }
 
 
 /* =========================================
-   PAGE 2 PHOTOS
+   PAGE 2 PHOTO GRID
 ========================================= */
 
 .photo-grid {
+  width: min(680px, 100%);
+
+  margin: 35px auto 0;
+
   display: grid;
-
   grid-template-columns: repeat(2, 1fr);
-
-  gap: 24px;
-
-  max-width: 760px;
-
-  margin: 45px auto 20px;
+  gap: 18px;
 }
 
 .photo-card {
+  position: relative;
+
   overflow: hidden;
 
   border-radius: 22px;
+  background: #f4e4e9;
 
-  border: 1px solid #e7c8d3;
-
-  background: #fff;
+  border: 1px solid #dfb9c7;
 
   box-shadow:
-    0 15px 35px
-    rgba(76, 43, 56, 0.10);
+    0 12px 30px rgba(76, 43, 56, 0.09);
+
+  aspect-ratio: 1 / 1;
 }
 
 .photo-card img {
+  width: 100%;
+  height: 100%;
+
   display: block;
 
-  width: 100%;
-
-  height: 310px;
-
   object-fit: cover;
-
   object-position: center;
 
-  transition: 0.35s ease;
+  transition: 0.4s ease;
 }
 
 .photo-card:hover img {
-  transform: scale(1.035);
-}
-
-.photo-caption {
-  text-align: center;
-
-  margin-top: 22px;
-
-  color: #806873;
-
-  font-size: 14px;
-
-  line-height: 1.7;
+  transform: scale(1.04);
 }
 
 
@@ -510,101 +425,80 @@ h1 em {
 ========================================= */
 
 .notes {
-  display: grid;
+  width: min(650px, 100%);
 
-  gap: 16px;
+  margin: 30px auto 0;
 
-  max-width: 720px;
-
-  margin: 42px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .note {
   width: 100%;
 
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 45px 1fr 25px;
   align-items: center;
 
-  gap: 18px;
-
-  padding: 20px 23px;
-
-  border: 1px solid #efd6df;
-
-  border-radius: 20px;
-
-  background: #fff8fa;
-
-  color: #503941;
+  gap: 10px;
 
   text-align: left;
 
+  border: 1px solid #e3c2ce;
+  border-radius: 18px;
+
+  padding: 15px 17px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  color: #593440;
+
   cursor: pointer;
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .note:hover {
   transform: translateY(-3px);
 
-  background: #fff;
-
   box-shadow:
-    0 14px 30px
-    rgba(87, 47, 63, 0.09);
+    0 10px 25px rgba(76, 43, 56, 0.08);
+
+  background: #fff;
 }
 
 .note-icon {
-  flex-shrink: 0;
-
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
 
   display: grid;
-
   place-items: center;
 
   border-radius: 50%;
 
-  background: #fde8ef;
-
-  color: #c85c7f;
+  background: #f8e3ea;
+  color: #b85d7d;
 
   font-size: 20px;
 }
 
 .note strong {
   display: block;
-
-  margin-bottom: 4px;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 22px;
-
-  font-weight: 600;
+  font-size: 15px;
 }
 
 .note small {
   display: block;
+  margin-top: 3px;
 
-  color: #8b717a;
-
-  font-size: 13px;
+  color: #9a7280;
+  font-size: 12px;
 }
 
-.tap-hint {
-  margin-top: 20px;
-
-  text-align: center;
-
-  color: #ad8d98;
-
-  font-size: 13px;
+.note-arrow {
+  color: #b85d7d;
+  font-size: 20px;
 }
 
 
@@ -618,27 +512,22 @@ h1 em {
   margin: 35px auto 25px;
 
   display: flex;
-
   justify-content: center;
-
   align-items: center;
 }
 
 
 /*
-  UPDATED MEMORY IMAGE
-
-  The old version used a fixed height with
-  object-fit: cover, which cropped the image.
-
-  This version keeps the full image visible.
+  MEMORY IMAGE
+  -----------------------------
+  Smaller size.
+  Full image remains visible.
+  No cropping.
 */
 
 .memory-image {
-  width: 430px;
-
-  max-width: 100%;
-
+  width: 300px;
+  max-width: 80%;
   height: auto;
 
   display: block;
@@ -646,7 +535,6 @@ h1 em {
   margin: 0 auto;
 
   object-fit: contain;
-
   object-position: center;
 
   border-radius: 20px;
@@ -668,69 +556,6 @@ h1 em {
     rgba(76, 43, 56, 0.14);
 }
 
-.memory-text {
-  max-width: 680px;
-
-  margin: 22px auto 0;
-
-  text-align: center;
-
-  color: #806873;
-
-  font-size: 15px;
-
-  line-height: 1.8;
-}
-
-.future-note {
-  display: table;
-
-  margin: 38px 0 0;
-
-  padding: 15px 20px;
-
-  border-radius: 13px;
-
-  background: #fff0f5;
-
-  color: #c85c7f;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 20px;
-
-  font-style: italic;
-
-  font-weight: 600;
-}
-
-.future-label {
-  margin-top: 10px;
-
-  color: #987d87;
-
-  font-size: 12px;
-}
-
-
-/* =========================================
-   PAGE 5 BIRTHDAY
-========================================= */
-
-.birthday-page {
-  text-align: center;
-}
-
-.birthday-page h1 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.birthday-page .lead {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 
 /* =========================================
    CAKE
@@ -740,116 +565,108 @@ h1 em {
   position: relative;
 
   width: 180px;
+  height: 180px;
 
-  margin: 35px auto 28px;
-
-  text-align: center;
-}
-
-.cake-top {
-  position: relative;
-
-  width: 150px;
-  height: 55px;
-
-  margin: 0 auto;
-
-  border-radius: 50% 50% 35% 35%;
-
-  background:
-    linear-gradient(
-      #f7cbd9,
-      #eaa9be
-    );
-
-  border: 2px solid #df9eb6;
-}
-
-.cake-top::after {
-  content: "";
-
-  position: absolute;
-
-  left: 20px;
-  right: 20px;
-
-  bottom: -14px;
-
-  height: 28px;
-
-  border-radius: 50%;
-
-  background: #d889a5;
+  margin: 35px auto 20px;
 }
 
 .cake-body {
-  width: 150px;
-  height: 90px;
+  position: absolute;
 
-  margin: 0 auto;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
 
-  padding-top: 35px;
+  height: 75px;
 
-  border-radius: 0 0 25px 25px;
+  border-radius: 15px 15px 22px 22px;
 
   background:
     linear-gradient(
-      #f5bfd1,
-      #df91ad
+      to bottom,
+      #f2b8c9,
+      #df91aa
     );
 
-  color: white;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 28px;
+  box-shadow:
+    0 12px 25px rgba(76, 43, 56, 0.12);
 }
 
-.candle {
+.cake-top {
+  position: absolute;
+
+  left: 25px;
+  right: 25px;
+  bottom: 88px;
+
+  height: 35px;
+
+  border-radius: 50%;
+
+  background: #ffe9ef;
+
+  border: 2px solid #e9b4c5;
+
+  z-index: 2;
+}
+
+.cake-plate {
+  position: absolute;
+
+  left: 5px;
+  right: 5px;
+  bottom: 10px;
+
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: #f7dce5;
+
+  border: 1px solid #dfb9c7;
+}
+
+.cake-candle {
   position: absolute;
 
   left: 50%;
+  bottom: 120px;
 
-  top: -38px;
-
-  transform: translateX(-50%);
-
-  width: 15px;
+  width: 10px;
   height: 45px;
 
-  border-radius: 8px;
+  transform: translateX(-50%);
 
-  background: #f3d8a9;
+  border-radius: 5px;
+
+  background: #fff0b8;
+
+  z-index: 4;
 }
 
-.flame {
+.cake-candle span {
   position: absolute;
 
   left: 50%;
-
-  top: -26px;
+  bottom: 38px;
 
   transform: translateX(-50%);
 
-  color: #d76b83;
+  color: #f1a04a;
 
   font-size: 22px;
 
-  animation: flicker 1s ease-in-out infinite;
+  animation: candleGlow 1s ease-in-out infinite;
 }
 
-@keyframes flicker {
+@keyframes candleGlow {
   0%,
   100% {
-    transform:
-      translateX(-50%)
-      scale(1);
+    transform: translateX(-50%) scale(1);
   }
 
   50% {
-    transform:
-      translateX(-50%)
-      scale(1.15);
+    transform: translateX(-50%) scale(1.15);
   }
 }
 
@@ -859,23 +676,25 @@ h1 em {
 ========================================= */
 
 .wish-btn {
-  padding: 14px 27px;
+  align-self: center;
 
-  border: 1px solid #d98ba5;
+  margin: 25px auto 0;
 
+  padding: 13px 22px;
+
+  border: 1px solid #c97996;
   border-radius: 999px;
 
-  background: #d46a8c;
-
+  background: #b85d7d;
   color: white;
 
+  font-size: 15px;
   font-weight: 600;
 
   cursor: pointer;
 
   box-shadow:
-    0 10px 25px
-    rgba(188, 77, 111, 0.20);
+    0 10px 25px rgba(184, 93, 125, 0.25);
 
   transition: 0.25s ease;
 }
@@ -883,53 +702,32 @@ h1 em {
 .wish-btn:hover {
   transform: translateY(-3px);
 
-  background: #c95d80;
-
   box-shadow:
-    0 14px 30px
-    rgba(188, 77, 111, 0.25);
+    0 14px 30px rgba(184, 93, 125, 0.32);
 }
 
 .wish-btn:disabled {
   cursor: default;
-
   opacity: 0.85;
 }
 
 .wish-text {
-  margin-top: 18px;
+  margin: 18px 0 0;
 
-  color: #c65b7c;
+  color: #b85d7d;
+
+  font-weight: 600;
+}
+
+.final-message {
+  margin: 30px auto 0;
 
   font-family: "Cormorant Garamond", serif;
 
-  font-size: 23px;
+  font-size: 24px;
+  line-height: 1.4;
 
-  font-style: italic;
-}
-
-
-/* =========================================
-   PAGE FOOTER
-========================================= */
-
-.page-footer {
-  position: absolute;
-
-  left: 58px;
-  right: 58px;
-
-  bottom: 30px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  color: #a1848e;
-
-  font-size: 12px;
+  color: #714253;
 }
 
 
@@ -938,111 +736,100 @@ h1 em {
 ========================================= */
 
 .navigation {
-  display: grid;
+  width: min(900px, 100%);
 
+  margin: 18px auto 0;
+
+  display: grid;
   grid-template-columns: 1fr auto 1fr;
 
   align-items: center;
 
-  gap: 25px;
-
-  margin-top: 20px;
+  gap: 20px;
 }
 
 .nav-btn {
   justify-self: start;
 
-  min-width: 108px;
-
-  padding: 12px 17px;
-
-  border: 1px solid #e5ccd5;
-
-  border-radius: 999px;
+  border: 1px solid #dfb9c7;
 
   background: rgba(255, 255, 255, 0.8);
 
-  color: #45343b;
+  color: #6b3c4c;
+
+  border-radius: 999px;
+
+  padding: 10px 16px;
 
   cursor: pointer;
 
   transition: 0.25s ease;
 }
 
-.nav-btn:last-child {
+.nav-btn.primary {
   justify-self: end;
+
+  background: #b85d7d;
+  color: white;
+
+  border-color: #b85d7d;
 }
 
-.nav-btn:hover {
+.nav-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-
-  border-color: #d99bb0;
-
-  background: #fff;
 }
 
 .nav-btn:disabled {
-  opacity: 0.45;
-
+  opacity: 0.4;
   cursor: default;
-
-  transform: none;
 }
 
 .page-status {
   text-align: center;
 }
 
+#chapter {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #8e5366;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+}
+
 .page-count {
-  margin-bottom: 6px;
-
-  color: #967782;
-
+  color: #a57b89;
   font-size: 12px;
 }
 
 .progress {
   width: 130px;
-
   height: 3px;
 
-  margin: 0 auto 9px;
+  margin: 7px auto;
 
-  overflow: hidden;
+  background: #ead6dd;
 
   border-radius: 999px;
 
-  background: #efdde4;
+  overflow: hidden;
 }
 
-.progress span {
-  display: block;
-
+.progress-fill {
   width: 20%;
-
   height: 100%;
 
-  border-radius: inherit;
+  background: #b85d7d;
 
-  background: #cc6686;
-
-  transition: width 0.3s ease;
-}
-
-.chapter {
-  margin-bottom: 8px;
-
-  color: #9b7c87;
-
-  font-size: 11px;
+  transition: width 0.4s ease;
 }
 
 .dots {
   display: flex;
-
   justify-content: center;
-
-  gap: 7px;
+  gap: 6px;
 }
 
 .dots button {
@@ -1052,10 +839,9 @@ h1 em {
   padding: 0;
 
   border: 0;
-
   border-radius: 50%;
 
-  background: #e3cbd4;
+  background: #ddbdc9;
 
   cursor: pointer;
 
@@ -1063,10 +849,10 @@ h1 em {
 }
 
 .dots button.active {
-  width: 9px;
-  height: 9px;
+  width: 20px;
+  border-radius: 999px;
 
-  background: #c95d80;
+  background: #b85d7d;
 }
 
 
@@ -1076,19 +862,16 @@ h1 em {
 
 .modal {
   position: fixed;
-
   inset: 0;
 
-  z-index: 500;
+  z-index: 2000;
 
   display: grid;
-
   place-items: center;
 
   padding: 20px;
 
-  background:
-    rgba(60, 34, 44, 0.30);
+  background: rgba(54, 29, 39, 0.45);
 
   backdrop-filter: blur(5px);
 }
@@ -1096,35 +879,32 @@ h1 em {
 .modal-card {
   position: relative;
 
-  width: min(520px, 100%);
+  width: min(500px, 100%);
 
-  padding: 45px 38px 38px;
-
-  border: 1px solid #ead0da;
+  padding: 45px 35px 35px;
 
   border-radius: 25px;
 
-  background: #fffafb;
+  background: #fff8fa;
+
+  border: 1px solid #e4bfcc;
 
   box-shadow:
-    0 30px 80px
-    rgba(66, 35, 47, 0.20);
+    0 25px 70px rgba(54, 29, 39, 0.2);
 
   text-align: center;
 
-  animation: modalIn 0.3s ease;
+  animation: modalIn 0.3s ease both;
 }
 
 @keyframes modalIn {
   from {
     opacity: 0;
-
-    transform: scale(0.94);
+    transform: scale(0.92);
   }
 
   to {
     opacity: 1;
-
     transform: scale(1);
   }
 }
@@ -1132,8 +912,8 @@ h1 em {
 .modal-close {
   position: absolute;
 
-  top: 13px;
-  right: 16px;
+  top: 12px;
+  right: 15px;
 
   width: 35px;
   height: 35px;
@@ -1142,13 +922,11 @@ h1 em {
 
   border-radius: 50%;
 
-  background: #fff0f4;
+  background: #f5e1e8;
 
-  color: #a85b74;
+  color: #7d4a5b;
 
-  font-size: 23px;
-
-  line-height: 1;
+  font-size: 24px;
 
   cursor: pointer;
 }
@@ -1156,15 +934,15 @@ h1 em {
 .modal-heart {
   margin-bottom: 15px;
 
-  color: #d06486;
+  color: #b85d7d;
 
-  font-size: 35px;
+  font-size: 38px;
 }
 
 #modalText {
   margin: 0;
 
-  color: #674d58;
+  color: #69404e;
 
   font-family: "Cormorant Garamond", serif;
 
@@ -1175,239 +953,177 @@ h1 em {
 
 
 /* =========================================
-   SITE FOOTER
+   FOOTER
 ========================================= */
 
-.site-footer {
-  margin-top: 25px;
+footer {
+  padding: 22px 0 10px;
 
   text-align: center;
 
-  color: #ad8d98;
+  color: #a57b89;
 
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: 18px;
-
-  font-style: italic;
+  font-size: 12px;
 }
 
 
 /* =========================================
-   MOBILE
+   CONFETTI
+========================================= */
+
+.confetti {
+  position: fixed;
+
+  top: -20px;
+
+  z-index: 3000;
+
+  pointer-events: none;
+
+  animation:
+    confettiFall
+    3.5s linear
+    forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform:
+      translateY(110vh)
+      rotate(720deg);
+    opacity: 0;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE
 ========================================= */
 
 @media (max-width: 700px) {
 
-  .intro {
-    min-height: 500px;
-  }
-
   .book-wrap {
-    padding:
-      18px
-      14px
-      35px;
+    padding: 12px;
   }
 
   .topbar {
-    padding: 0 2px;
+    margin-bottom: 12px;
   }
 
   .brand {
-    font-size: 21px;
+    font-size: 19px;
   }
 
   .music {
-    padding: 8px 13px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
 
-    font-size: 13px;
+  .book {
+    border-radius: 20px;
   }
 
   .page {
-    min-height: 720px;
+    min-height: 620px;
+  }
 
-    padding:
-      45px
-      25px
-      65px;
+  .page-inner {
+    min-height: 620px;
 
-    border-radius: 23px;
+    padding: 50px 25px;
   }
 
   h1 {
-    font-size: clamp(
-      47px,
-      14vw,
-      68px
-    );
+    font-size: 55px;
+  }
 
-    letter-spacing: -1px;
+  h2 {
+    font-size: 45px;
   }
 
   .lead {
-    font-size: 15px;
-
-    margin-top: 28px;
+    font-size: 16px;
   }
 
-
-  /* Page 2 */
+  .body-copy {
+    font-size: 15px;
+  }
 
   .photo-grid {
     grid-template-columns: 1fr;
-
-    gap: 18px;
-
-    margin-top: 30px;
+    width: min(350px, 100%);
   }
 
-  .photo-card img {
-    height: 280px;
-  }
-
-
-  /* Page 4 */
-
-  .memory-frame {
-    margin-top: 30px;
-  }
-
+  /*
+    Memory image stays zoomed out
+    and is never cropped.
+  */
   .memory-image {
-    width: 100%;
-
-    max-width: 430px;
-
+    width: 300px;
+    max-width: 80%;
     height: auto;
   }
 
-  .memory-text {
-    font-size: 14px;
+  .navigation {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
-
-  /* Navigation */
-
-  .navigation {
-    grid-template-columns:
-      auto 1fr auto;
-
-    gap: 8px;
+  .page-status {
+    grid-column: 1 / -1;
+    grid-row: 1;
   }
 
   .nav-btn {
-    min-width: 0;
-
-    padding:
-      11px
-      13px;
-
-    font-size: 13px;
+    grid-row: 2;
   }
 
-  .progress {
-    width: 85px;
+  .nav-btn.primary {
+    grid-column: 2;
   }
 
-  .chapter {
-    display: none;
-  }
-
-  .page-footer {
-    left: 25px;
-    right: 25px;
-  }
-
-
-  /* Letter */
-
-  .letter {
-    padding:
-      23px
-      22px;
-
-    font-size: 15px;
-  }
-
-
-  /* Notes */
-
-  .note {
-    padding:
-      17px;
-
-    gap: 13px;
-  }
-
-  .note strong {
-    font-size: 20px;
+  .nav-btn:not(.primary) {
+    grid-column: 1;
   }
 
 }
 
 
-/* =========================================
-   SMALL PHONES
-========================================= */
-
 @media (max-width: 420px) {
 
-  .page {
-    min-height: 690px;
-
-    padding:
-      38px
-      19px
-      65px;
-  }
-
-  .eyebrow {
-    font-size: 10px;
-
-    letter-spacing: 3px;
+  .page-inner {
+    padding: 42px 18px;
   }
 
   h1 {
-    font-size: 45px;
+    font-size: 48px;
   }
 
-  .photo-card img {
-    height: 235px;
+  h2 {
+    font-size: 39px;
+  }
+
+  .notes {
+    gap: 9px;
+  }
+
+  .note {
+    padding: 12px;
+  }
+
+  .note-icon {
+    width: 34px;
+    height: 34px;
   }
 
   .memory-image {
-    width: 100%;
-
-    max-width: 360px;
-
+    width: 280px;
+    max-width: 85%;
     height: auto;
   }
 
-  .page-footer {
-    left: 19px;
-    right: 19px;
-  }
-
-  .navigation {
-    gap: 5px;
-  }
-
-  .nav-btn {
-    padding:
-      10px
-      10px;
-
-    font-size: 12px;
-  }
-
-  .progress {
-    width: 60px;
-  }
-
-  .letter {
-    padding:
-      20px
-      18px;
+  .final-message {
+    font-size: 21px;
   }
 
 }
