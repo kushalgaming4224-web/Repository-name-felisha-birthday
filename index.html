@@ -82,7 +82,7 @@
 
 
     <!-- =====================================================
-         COVER
+         FULL SCREEN COVER
          ===================================================== -->
 
     <section
@@ -90,40 +90,29 @@
       id="intro"
     >
 
+      <img
+        class="full-cover"
+        src="images/felisha-cover.png"
+        alt="Happy Birthday Felisha"
+      >
+
 
       <!--
+        THIS IS THE CLICK AREA.
 
-        The image itself.
+        It covers the entire artwork.
+        The artwork itself stays completely unchanged.
 
-        We use a separate wrapper so the clickable
-        area stays attached to the artwork.
-
+        Clicking anywhere on the cover will open
+        the birthday book.
       -->
 
-      <div class="cover-container">
-
-
-        <img
-          class="full-cover"
-          src="images/felisha-cover.png"
-          alt="Happy Birthday Felisha"
-        >
-
-
-        <!-- =================================================
-             OPEN YOUR SURPRISE CLICK AREA
-             ================================================= -->
-
-        <button
-          id="openBtn"
-          class="cover-open"
-          type="button"
-          aria-label="Open your surprise"
-        >
-        </button>
-
-
-      </div>
+      <button
+        id="openBtn"
+        class="cover-click-all"
+        type="button"
+        aria-label="Open your surprise"
+      ></button>
 
 
     </section>
@@ -791,7 +780,7 @@
 
 
   <!-- =====================================================
-       DIRECT COVER BUTTON FIX
+       EXTRA COVER SAFETY FIX
        ===================================================== -->
 
   <script>
