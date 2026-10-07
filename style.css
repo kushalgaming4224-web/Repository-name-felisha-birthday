@@ -222,7 +222,7 @@ main {
 
 
 /* =========================================================
-   COVER
+   FULL SCREEN COVER
    ========================================================= */
 
 .intro {
@@ -231,13 +231,10 @@ main {
   inset: 0;
 
   width: 100vw;
-
   height: 100vh;
-
   height: 100dvh;
 
   margin: 0;
-
   padding: 0;
 
   background: #000;
@@ -266,38 +263,7 @@ main {
 
 
 /* =========================================================
-   COVER CONTAINER
-   ========================================================= */
-
-.cover-container {
-
-  /*
-    This matches the original artwork ratio.
-
-    The artwork is approximately 3:2.
-  */
-
-  position: absolute;
-
-  width: 100vw;
-
-  aspect-ratio: 3 / 2;
-
-  left: 50%;
-
-  top: 50%;
-
-  transform:
-    translate(-50%, -50%);
-
-  z-index: 1;
-
-  overflow: hidden;
-}
-
-
-/* =========================================================
-   COVER IMAGE
+   FULL SCREEN COVER IMAGE
    ========================================================= */
 
 .full-cover {
@@ -307,106 +273,101 @@ main {
   inset: 0;
 
   width: 100%;
-
   height: 100%;
 
   display: block;
 
-  object-fit: fill;
+  /*
+    The artwork fills the entire browser screen.
+  */
 
-  object-position: center;
+  object-fit: cover;
+
+  object-position: center center;
 
   user-select: none;
 
   -webkit-user-drag: none;
+
+  pointer-events: none;
 
   z-index: 1;
 }
 
 
 /* =========================================================
-   OPEN YOUR SURPRISE CLICK AREA
+   FULL SCREEN CLICK AREA
    ========================================================= */
 
 /*
+   IMPORTANT:
 
-  IMPORTANT:
+   This transparent button covers the ENTIRE cover.
 
-  The real button inside the artwork is around:
+   This means we don't have to guess the exact position
+   of the "OPEN YOUR SURPRISE" artwork anymore.
 
-  X = 52%
-  Y = 63%
+   Clicking the artwork button will work.
 
-  of the original artwork.
-
-  This invisible button sits directly over it.
-
+   Clicking anywhere else on the cover will also work.
 */
 
-.cover-open {
+.cover-click-all {
 
   position: absolute;
 
-  left: 51.5%;
+  inset: 0;
 
-  top: 62.5%;
-
-  width: 29.5%;
-
-  height: 10%;
-
-  z-index: 100;
-
-  display: block;
+  width: 100%;
+  height: 100%;
 
   padding: 0;
-
   margin: 0;
 
   border: 0;
 
-  outline: 0;
+  outline: none;
 
   background: transparent;
 
   cursor: pointer;
 
-  border-radius: 60px;
-
   appearance: none;
 
   -webkit-appearance: none;
 
+  z-index: 100;
+
+  display: block;
+
+  border-radius: 0;
+
+  box-shadow: none;
+
   -webkit-tap-highlight-color: transparent;
-
-  box-shadow: none;
 }
 
 
-/* Hover */
-
-.cover-open:hover {
+.cover-click-all:hover {
 
   background: transparent;
 
   border: 0;
 
-  outline: 0;
+  outline: none;
 
   box-shadow: none;
 
 }
 
 
-/* Click */
-
-.cover-open:active {
+.cover-click-all:active {
 
   background: transparent;
 
   border: 0;
 
-  outline: 0;
+  outline: none;
 
   box-shadow: none;
 
@@ -415,10 +376,8 @@ main {
 }
 
 
-/* Focus */
-
-.cover-open:focus,
-.cover-open:focus-visible {
+.cover-click-all:focus,
+.cover-click-all:focus-visible {
 
   background: transparent;
 
@@ -440,7 +399,8 @@ main {
 .intro h1,
 .intro .subtitle,
 .intro .primary,
-.intro .tiny {
+.intro .tiny,
+.intro .cover-open {
 
   display: none !important;
 
@@ -1751,39 +1711,19 @@ footer span {
   }
 
 
-  .cover-container {
+  /*
+     Cover remains completely full screen
+     on phones as well.
+  */
 
-    width:
-      100vw;
+  .full-cover {
 
-    aspect-ratio:
-      3 / 2;
+    width: 100%;
+    height: 100%;
 
-    left:
-      50%;
+    object-fit: cover;
 
-    top:
-      50%;
-
-    transform:
-      translate(-50%, -50%);
-
-  }
-
-
-  .cover-open {
-
-    left:
-      51.5%;
-
-    top:
-      62.5%;
-
-    width:
-      29.5%;
-
-    height:
-      10%;
+    object-position: center center;
 
   }
 
@@ -1912,39 +1852,14 @@ footer span {
 
 @media (max-width: 420px) {
 
-  .cover-container {
+  .full-cover {
 
-    width:
-      100vw;
+    width: 100%;
+    height: 100%;
 
-    aspect-ratio:
-      3 / 2;
+    object-fit: cover;
 
-    left:
-      50%;
-
-    top:
-      50%;
-
-    transform:
-      translate(-50%, -50%);
-
-  }
-
-
-  .cover-open {
-
-    left:
-      51.5%;
-
-    top:
-      62.5%;
-
-    width:
-      29.5%;
-
-    height:
-      10%;
+    object-position: center center;
 
   }
 
