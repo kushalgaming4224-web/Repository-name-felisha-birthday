@@ -1,302 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
-  <meta
-    name="theme-color"
-    content="#fff0f5"
-  >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>For Felisha ♡</title>
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-</head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
 
-  <!-- =====================================================
-       AMBIENT BACKGROUND
-       ===================================================== -->
-
-  <div
-    class="ambient"
-    aria-hidden="true"
-  >
+  <!-- Ambient background -->
+  <div class="ambient" aria-hidden="true">
     <span>♡</span>
-    <span>✦</span>
+    <span>✧</span>
+    <span>♡</span>
     <span>✿</span>
     <span>♡</span>
     <span>✧</span>
-    <span>❀</span>
     <span>♡</span>
   </div>
 
 
-  <!-- =====================================================
-       HEADER
-       ===================================================== -->
+  <!-- =========================
+       INTRO / COVER
+  ========================== -->
 
-  <header>
+  <section class="intro" id="intro">
 
-    <div class="brand">
-      a little world for <b>Felisha</b> <span>♡</span>
-    </div>
+    <img
+      class="full-cover"
+      src="images/felisha-cover.png"
+      alt="Happy Birthday Felisha"
+    >
 
     <button
-      id="musicBtn"
-      class="music"
-      aria-pressed="false"
-    >
-      ♫
-      <span>
-        Play a little melody
-      </span>
-    </button>
+      id="openBtn"
+      class="cover-click-all"
+      type="button"
+      aria-label="Open your surprise"
+    ></button>
 
-  </header>
+  </section>
 
 
-  <main>
+  <!-- =========================
+       MAIN BOOK
+  ========================== -->
 
-    <!-- =====================================================
-         FULL SCREEN COVER
-         ===================================================== -->
+  <main class="book-wrap hidden" id="bookWrap">
 
-    <section
-      class="intro"
-      id="intro"
-    >
+    <!-- Header -->
+    <header class="topbar">
 
-      <img
-        class="full-cover"
-        src="images/felisha-cover.png"
-        alt="Happy Birthday Felisha"
-      >
-
-      <button
-        id="openBtn"
-        class="cover-click-all"
-        type="button"
-        aria-label="Open your surprise"
-      ></button>
-
-    </section>
-
-
-    <!-- =====================================================
-         BOOK
-         ===================================================== -->
-
-    <section
-      class="book-wrap hidden"
-      id="bookWrap"
-      aria-live="polite"
-    >
-
-      <!-- =================================================
-           PROGRESS
-           ================================================= -->
-
-      <div class="progress">
-
-        <span id="pageCount">
-          01 / 05
-        </span>
-
-        <div class="progress-track">
-          <i id="progressFill"></i>
-        </div>
-
-        <span
-          class="chapter"
-          id="chapter"
-        >
-          A little hello
-        </span>
-
+      <div class="brand">
+        For Felisha ♡
       </div>
 
-
-      <!-- =================================================
-           BOOK PAGES
-           ================================================= -->
-
-      <div
-        class="book"
-        id="book"
+      <button
+        class="music"
+        id="musicBtn"
+        type="button"
       >
+        ♫ Music
+      </button>
 
-        <!-- =================================================
-             PAGE 1
-             ================================================= -->
+    </header>
 
-        <article
-          class="page active"
-          data-page="0"
-        >
 
-          <div class="page-kicker">
-            01 · JUST FOR YOU
+    <!-- Book -->
+    <section class="book">
+
+      <!-- =========================
+           PAGE 1
+      ========================== -->
+
+      <article class="page active">
+
+        <div class="page-content">
+
+          <div class="eyebrow">
+            01 · HELLO
           </div>
 
-          <div class="mini-flower">
-            ✿
-          </div>
+          <h1>
+            A little hello
+            <em>for you</em>
+          </h1>
 
-          <h2>
-            To my<br>
-            <em>
-              Cutie pie
-            </em>
-          </h2>
-
-          <p class="copy">
-
-            Today is all about you, Felisha.
-
-            I wanted to make you something you could
-            open, explore, and keep close—a tiny corner
-            of the internet that belongs just to us.
-
+          <p class="lead">
+            I made this little corner of the internet
+            just for you.
           </p>
 
-          <div class="scribble">
-            You deserve to feel special. Always. ♡
+          <div class="letter">
+
+            <p>
+              Somewhere between all the ordinary days,
+              you became one of my favourite parts of life.
+            </p>
+
+            <p>
+              So I wanted to make you something small,
+              sweet, and completely yours.
+            </p>
+
+            <div class="signature">
+              — with love ♡
+            </div>
+
           </div>
 
-          <div class="page-foot">
+        </div>
 
-            turn the page, lovely
+        <div class="page-footer">
+          <span>A tiny surprise</span>
+          <span>♡</span>
+        </div>
 
-            <span>
-              ♡
-            </span>
+      </article>
 
+
+      <!-- =========================
+           PAGE 2
+      ========================== -->
+
+      <article class="page">
+
+        <div class="page-content">
+
+          <div class="eyebrow">
+            02 · YOU
           </div>
 
-        </article>
+          <h1>
+            Your smile
+            <em>is my favourite</em>
+          </h1>
 
-
-        <!-- =================================================
-             PAGE 2
-             ================================================= -->
-
-        <article
-          class="page"
-          data-page="1"
-        >
-
-          <div class="page-kicker">
-            02 · YOUR SMILE
-          </div>
-
-          <h2>
-            My favourite<br>
-            <em>
-              sight
-            </em>
-          </h2>
-
-          <p class="copy">
-
-            A little gallery of the girl who makes
-            ordinary moments feel brighter.
-
+          <p class="lead">
+            Some things don't need a long explanation.
+            Your smile is one of them.
           </p>
 
 
           <div class="photo-grid">
 
-            <!-- LEFT PHOTO -->
-
-            <div class="photo p1">
-
+            <div class="photo-card">
               <img
-                class="photo-image"
                 src="images/felisha-smile-4.jpg.jpeg"
-                alt="Felisha's pretty smile"
+                alt="Felisha smiling"
               >
-
-              <label>
-                that pretty smile
-              </label>
-
             </div>
 
-
-            <!-- RIGHT PHOTO -->
-
-            <div class="photo p2">
-
+            <div class="photo-card">
               <img
-                class="photo-image"
                 src="images/felisha-smile-1.jpg.jpeg"
-                alt="Felisha, my cutie pie"
+                alt="Felisha smiling"
               >
-
-              <label>
-                my cutie pie
-              </label>
-
             </div>
 
           </div>
 
 
-          <div class="note-tag">
-            P.S. You're prettier than this whole page.
-          </div>
+          <p class="photo-caption">
+            Two little moments I wanted to keep here forever. ♡
+          </p>
+
+        </div>
+
+        <div class="page-footer">
+          <span>Your smile</span>
+          <span>♡</span>
+        </div>
+
+      </article>
 
 
-          <div class="page-foot">
+      <!-- =========================
+           PAGE 3
+      ========================== -->
 
-            a page full of you
+      <article class="page">
 
-            <span>
-              ♡
-            </span>
+        <div class="page-content">
 
-          </div>
-
-        </article>
-
-
-        <!-- =================================================
-             PAGE 3
-             ================================================= -->
-
-        <article
-          class="page"
-          data-page="2"
-        >
-
-          <div class="page-kicker">
+          <div class="eyebrow">
             03 · LITTLE THINGS
           </div>
 
-          <h2>
-            Reasons I<br>
-            <em>
-              adore you
-            </em>
-          </h2>
+          <h1>
+            Little things
+            <em>I love about you</em>
+          </h1>
 
-          <p class="copy">
-
-            Tap a little note.
-            I hope each one makes you smile.
-
+          <p class="lead">
+            It is always the little things that end up
+            meaning the most.
           </p>
 
 
@@ -304,101 +213,75 @@
 
             <button
               class="note"
-              data-note="Your smile has a way of making my day better, even when nothing else goes right. ♡"
+              type="button"
+              data-note="The way your smile can instantly make an ordinary day feel better. ♡"
             >
-
+              <span class="note-icon">♡</span>
               <span>
-                01
+                <strong>Your smile</strong>
+                <small>the easiest reason to smile</small>
               </span>
-
-              <b>
-                Your smile
-              </b>
-
-              <i>
-                tap to open ↗
-              </i>
-
             </button>
 
 
             <button
               class="note"
-              data-note="I love how you are simply, wonderfully you. Never feel like you need to be anyone else. ✿"
+              type="button"
+              data-note="I love how you can make even the smallest moments feel special. ✧"
             >
-
+              <span class="note-icon">✧</span>
               <span>
-                02
+                <strong>The little moments</strong>
+                <small>the ones I want to remember</small>
               </span>
-
-              <b>
-                The real you
-              </b>
-
-              <i>
-                tap to open ↗
-              </i>
-
             </button>
 
 
             <button
               class="note"
-              data-note="Even the smallest moments feel memorable when I get to share them with you. ✨"
+              type="button"
+              data-note="You make life feel warmer just by being yourself. ♡"
             >
-
+              <span class="note-icon">♡</span>
               <span>
-                03
+                <strong>Just you</strong>
+                <small>exactly as you are</small>
               </span>
-
-              <b>
-                Our little moments
-              </b>
-
-              <i>
-                tap to open ↗
-              </i>
-
             </button>
 
           </div>
 
+          <p class="tap-hint">
+            Tap a note ♡
+          </p>
 
-          <div class="page-foot">
+        </div>
 
-            little notes, big feelings
+        <div class="page-footer">
+          <span>Little things</span>
+          <span>♡</span>
+        </div>
 
-            <span>
-              ♡
-            </span>
-
-          </div>
-
-        </article>
+      </article>
 
 
-        <!-- =================================================
-             PAGE 4
-             ================================================= -->
+      <!-- =========================
+           PAGE 4
+      ========================== -->
 
-        <article
-          class="page"
-          data-page="3"
-        >
+      <article class="page">
 
-          <div class="page-kicker">
+        <div class="page-content">
+
+          <div class="eyebrow">
             04 · US
           </div>
 
-          <h2>
-            More memories<br>
-            <em>
-              to make
-            </em>
-          </h2>
+          <h1>
+            More memories
+            <em>to make</em>
+          </h1>
 
-
-          <!-- MEMORY PHOTO -->
 
           <div class="memory-frame">
 
@@ -411,258 +294,208 @@
           </div>
 
 
-          <p class="copy center">
-
-            I hope we get to collect so many more
-            laughs, adventures, silly moments, and
-            beautiful memories together.
-
-            One day at a time, with you.
-
+          <p class="memory-text">
+            I hope we get to collect so many more laughs,
+            adventures, silly moments, and beautiful
+            memories together. One day at a time, with you.
           </p>
 
 
-          <div class="scribble">
+          <div class="future-note">
             My favourite story is still being written. ♡
           </div>
 
 
-          <div class="page-foot">
-
+          <div class="future-label">
             to all the days ahead
-
-            <span>
-              ♡
-            </span>
-
           </div>
 
-        </article>
+        </div>
+
+        <div class="page-footer">
+          <span></span>
+          <span>♡</span>
+        </div>
+
+      </article>
 
 
-        <!-- =================================================
-             PAGE 5
-             ================================================= -->
+      <!-- =========================
+           PAGE 5
+      ========================== -->
 
-        <article
-          class="page final-page"
-          data-page="4"
-        >
+      <article class="page">
 
-          <div class="page-kicker">
+        <div class="page-content birthday-page">
+
+          <div class="eyebrow">
             05 · YOUR DAY
           </div>
 
+          <h1>
+            Happy Birthday
+            <em>Felisha ♡</em>
+          </h1>
 
-          <div
-            class="cake"
-            aria-label="Birthday cake"
-          >
+          <p class="lead">
+            Today is all about celebrating you.
+          </p>
 
-            <div
-              class="flame"
-              id="flame"
-            >
-              ✦
+
+          <div class="cake">
+
+            <div class="cake-top">
+              <span class="candle">
+                <span class="flame" id="flame">♥</span>
+              </span>
             </div>
-
-            <div class="candle"></div>
-
-            <div class="icing"></div>
 
             <div class="cake-body">
-
-              <span>
-                ♡
-              </span>
-
+              ♡
             </div>
-
-            <div class="plate"></div>
 
           </div>
 
 
-          <h2>
-            Make a wish,<br>
-            <em>
-              Felisha
-            </em>
-          </h2>
-
-
-          <p class="copy center">
-
-            Happy birthday, my Cutie pie.
-
-            I hope this year brings you all the
-            happiness, love, and lovely surprises
-            your heart can hold.
-
-          </p>
-
-
           <button
+            class="wish-btn"
             id="wishBtn"
-            class="secondary"
+            type="button"
           >
-            Blow out the candle ✨
+            Make a wish ✨
           </button>
 
 
           <p
+            class="wish-text hidden"
             id="wishText"
-            class="wish hidden"
           >
-            Whatever you wished for,
-            I hope it finds you. ♡
+            Wish sent with love. ♡
           </p>
 
+        </div>
 
-          <div class="page-foot">
+        <div class="page-footer">
+          <span>Happy Birthday</span>
+          <span>♡</span>
+        </div>
 
-            with all my heart, always
-
-            <span>
-              ♡
-            </span>
-
-          </div>
-
-        </article>
-
-      </div>
-
-
-      <!-- =================================================
-           NAVIGATION
-           ================================================= -->
-
-      <div class="nav">
-
-        <button
-          id="prevBtn"
-          class="navbtn"
-          disabled
-        >
-          ← Previous
-        </button>
-
-
-        <span
-          class="dots"
-          id="dots"
-        >
-
-          <i class="selected"></i>
-          <i></i>
-          <i></i>
-          <i></i>
-          <i></i>
-
-        </span>
-
-
-        <button
-          id="nextBtn"
-          class="navbtn"
-        >
-          Next page →
-        </button>
-
-      </div>
+      </article>
 
     </section>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <div class="navigation">
+
+      <button
+        id="prevBtn"
+        class="nav-btn"
+        type="button"
+      >
+        ← Previous
+      </button>
+
+
+      <div class="page-status">
+
+        <div class="page-count" id="pageCount">
+          1 / 5
+        </div>
+
+        <div class="progress">
+          <span id="progressFill"></span>
+        </div>
+
+        <div class="chapter" id="chapter">
+          A little hello
+        </div>
+
+        <div class="dots" id="dots">
+
+          <button type="button" aria-label="Page 1"></button>
+          <button type="button" aria-label="Page 2"></button>
+          <button type="button" aria-label="Page 3"></button>
+          <button type="button" aria-label="Page 4"></button>
+          <button type="button" aria-label="Page 5"></button>
+
+        </div>
+
+      </div>
+
+
+      <button
+        id="nextBtn"
+        class="nav-btn"
+        type="button"
+      >
+        Next page →
+      </button>
+
+    </div>
+
+
+    <footer class="site-footer">
+      Made with love for Felisha ♡
+    </footer>
 
   </main>
 
 
-  <!-- =====================================================
+  <!-- =========================
        NOTE MODAL
-       ===================================================== -->
+  ========================== -->
 
   <div
     class="modal hidden"
     id="modal"
+    role="dialog"
+    aria-modal="true"
   >
 
     <div class="modal-card">
 
       <button
-        class="close"
         id="closeModal"
+        class="modal-close"
+        type="button"
         aria-label="Close"
       >
         ×
       </button>
 
-      <div class="modal-flower">
-        ✿
-      </div>
-
-      <p class="eyebrow">
-        A LITTLE NOTE FOR YOU
-      </p>
-
-      <p id="modalText"></p>
-
       <div class="modal-heart">
         ♡
       </div>
+
+      <p id="modalText"></p>
 
     </div>
 
   </div>
 
 
-  <footer>
-
-    made gently, with love
-
-    <span>
-      ♡
-    </span>
-
-  </footer>
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
-
   <script src="script.js"></script>
 
 
-  <!-- =====================================================
-       EXTRA COVER SAFETY FIX
-       ===================================================== -->
-
+  <!-- Safety listener for the cover -->
   <script>
+    document.getElementById("openBtn").addEventListener("click", function () {
+      const intro = document.getElementById("intro");
+      const book = document.getElementById("bookWrap");
 
-    document
-      .getElementById("openBtn")
-      .addEventListener("click", function () {
+      intro.classList.add("hidden");
+      book.classList.remove("hidden");
 
-        const intro =
-          document.getElementById("intro");
-
-        const book =
-          document.getElementById("bookWrap");
-
-        intro.classList.add("hidden");
-
-        book.classList.remove("hidden");
-
-        window.scrollTo({
-          top: 0,
-          behavior: "instant"
-        });
-
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
       });
-
+    });
   </script>
 
-
 </body>
-
 </html>
