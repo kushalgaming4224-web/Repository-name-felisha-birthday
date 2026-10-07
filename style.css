@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
+
 :root {
   --bg: #fff7fa;
   --paper: #fffdfd;
@@ -12,39 +13,62 @@
   --shadow: 0 25px 70px rgba(103, 62, 78, 0.14);
 }
 
+
 * {
   box-sizing: border-box;
 }
+
 
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
   margin: 0;
   min-height: 100vh;
+
   background:
-    radial-gradient(circle at 10% 10%, rgba(248, 210, 224, 0.45), transparent 28%),
-    radial-gradient(circle at 90% 85%, rgba(245, 220, 230, 0.5), transparent 30%),
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(248, 210, 224, 0.45),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 85%,
+      rgba(245, 220, 230, 0.5),
+      transparent 30%
+    ),
     var(--bg);
+
   color: var(--ink);
+
   font-family: "DM Sans", sans-serif;
+
   overflow-x: hidden;
 }
 
-/* ---------------- HEADER ---------------- */
+
+/* =====================================================
+   HEADER
+   ===================================================== */
 
 header {
   width: 100%;
   max-width: 1180px;
+
   margin: 0 auto;
+
   padding: 24px 28px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   position: relative;
   z-index: 10;
 }
+
 
 .brand {
   font-size: 14px;
@@ -52,53 +76,79 @@ header {
   letter-spacing: 0.02em;
 }
 
+
 .brand b {
   color: var(--ink);
 }
+
 
 .brand span {
   color: var(--pink-dark);
   font-size: 18px;
 }
 
+
 .music {
   border: 1px solid var(--line);
+
   background: rgba(255, 255, 255, 0.75);
+
   color: var(--ink);
+
   border-radius: 999px;
+
   padding: 10px 16px;
+
   cursor: pointer;
+
   font-family: inherit;
+
   transition: 0.25s ease;
+
   backdrop-filter: blur(10px);
 }
+
 
 .music:hover {
   transform: translateY(-2px);
   border-color: var(--pink);
 }
 
-/* ---------------- AMBIENT DECORATIONS ---------------- */
+
+/* =====================================================
+   AMBIENT DECORATIONS
+   ===================================================== */
 
 .ambient {
   position: fixed;
   inset: 0;
+
   pointer-events: none;
+
   overflow: hidden;
+
   z-index: 0;
 }
 
+
 .ambient span {
   position: absolute;
+
   color: rgba(218, 122, 153, 0.18);
+
   font-size: 22px;
-  animation: floatAmbient 8s ease-in-out infinite;
+
+  animation:
+    floatAmbient
+    8s ease-in-out infinite;
 }
+
 
 .ambient span:nth-child(1) {
   left: 8%;
   top: 20%;
 }
+
 
 .ambient span:nth-child(2) {
   left: 88%;
@@ -106,11 +156,13 @@ header {
   animation-delay: 1s;
 }
 
+
 .ambient span:nth-child(3) {
   left: 15%;
   top: 75%;
   animation-delay: 2s;
 }
+
 
 .ambient span:nth-child(4) {
   left: 82%;
@@ -118,11 +170,13 @@ header {
   animation-delay: 3s;
 }
 
+
 .ambient span:nth-child(5) {
   left: 50%;
   top: 12%;
   animation-delay: 4s;
 }
+
 
 .ambient span:nth-child(6) {
   left: 93%;
@@ -130,262 +184,237 @@ header {
   animation-delay: 2.5s;
 }
 
+
 .ambient span:nth-child(7) {
   left: 4%;
   top: 48%;
   animation-delay: 1.5s;
 }
 
+
 @keyframes floatAmbient {
+
   0%,
   100% {
-    transform: translateY(0) rotate(0deg);
+    transform:
+      translateY(0)
+      rotate(0deg);
   }
 
   50% {
-    transform: translateY(-18px) rotate(8deg);
+    transform:
+      translateY(-18px)
+      rotate(8deg);
   }
+
 }
 
-/* ---------------- MAIN ---------------- */
+
+/* =====================================================
+   MAIN
+   ===================================================== */
 
 main {
   position: relative;
   z-index: 1;
 }
 
-/* ---------------- INTRO / COVER ---------------- */
+
+/* =====================================================
+   FULL SCREEN COVER PAGE
+   ===================================================== */
+
+/*
+   The cover is now completely different from
+   the old small-picture layout.
+
+   Your felisha-cover.png fills the entire screen.
+*/
 
 .intro {
-  min-height: calc(100vh - 80px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px 20px 60px;
-  animation: introIn 0.9s ease both;
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  display: block;
+
+  background: #000;
+
+  overflow: hidden;
+
+  z-index: 1000;
+
+  animation: coverAppear 0.7s ease both;
 }
 
-@keyframes introIn {
+
+@keyframes coverAppear {
+
   from {
     opacity: 0;
-    transform: translateY(20px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
+
 }
 
-.eyebrow {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  color: var(--pink-dark);
-  margin-bottom: 20px;
-}
 
-/* ---------------- COVER ART ---------------- */
+/*
+   Your complete birthday artwork.
+*/
 
-.cover-art {
-  position: relative;
-  width: min(80vw, 440px);
-  height: min(55vh, 440px);
-  min-height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
+.full-cover {
+  position: absolute;
 
-.cover-photo {
+  inset: 0;
+
   width: 100%;
   height: 100%;
-  max-width: 440px;
-  max-height: 440px;
-  object-fit: contain;
-  object-position: center;
+
   display: block;
+
+  object-fit: cover;
+
+  object-position: center center;
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/*
+   The image already contains the words:
+
+   OPEN YOUR SURPRISE →
+
+   This invisible button sits directly
+   over that area.
+
+   JavaScript still sees the ID "openBtn",
+   so your existing script opens Page 1.
+*/
+
+.cover-open {
+  position: absolute;
+
+  left: 51.5%;
+  top: 60.5%;
+
+  width: 31%;
+  height: 10%;
+
+  transform: translateX(0);
+
   border: none;
-  border-radius: 0;
-  box-shadow: none;
-  position: relative;
-  z-index: 3;
-}
 
-.orbit {
-  position: absolute;
-  border: 1px solid rgba(217, 122, 153, 0.2);
-  border-radius: 50%;
-  pointer-events: none;
-}
+  outline: none;
 
-.orbit1 {
-  width: 88%;
-  height: 88%;
-  animation: orbitSpin 18s linear infinite;
-}
+  background: transparent;
 
-.orbit2 {
-  width: 105%;
-  height: 105%;
-  border-style: dashed;
-  animation: orbitSpinReverse 24s linear infinite;
-}
-
-@keyframes orbitSpin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes orbitSpinReverse {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-.cover-heart {
-  position: absolute;
-  right: 5%;
-  bottom: 5%;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: rgba(255, 235, 241, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--pink-dark);
-  font-size: 28px;
-  z-index: 5;
-  box-shadow: 0 10px 30px rgba(184, 91, 124, 0.15);
-  animation: heartFloat 3s ease-in-out infinite;
-}
-
-@keyframes heartFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-.spark {
-  position: absolute;
-  color: var(--pink-dark);
-  z-index: 5;
-  animation: sparkle 2.5s ease-in-out infinite;
-}
-
-.s1 {
-  left: 4%;
-  top: 18%;
-  font-size: 20px;
-}
-
-.s2 {
-  right: 4%;
-  top: 28%;
-  font-size: 18px;
-  animation-delay: 0.7s;
-}
-
-.s3 {
-  left: 12%;
-  bottom: 13%;
-  font-size: 17px;
-  animation-delay: 1.2s;
-}
-
-@keyframes sparkle {
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: scale(0.8);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-.intro h1 {
-  margin: 8px 0 12px;
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
-  font-size: clamp(42px, 7vw, 72px);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-}
-
-.intro h1 em {
-  color: var(--pink-dark);
-  font-style: italic;
-}
-
-.subtitle {
-  margin: 0 0 25px;
-  color: var(--muted);
-  font-size: 16px;
-}
-
-.primary {
-  border: none;
-  background: var(--pink-dark);
-  color: white;
-  padding: 15px 24px;
-  border-radius: 999px;
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 14px;
   cursor: pointer;
-  box-shadow: 0 12px 30px rgba(200, 95, 130, 0.22);
-  transition: 0.25s ease;
+
+  z-index: 20;
+
+  padding: 0;
+  margin: 0;
+
+  border-radius: 60px;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 17px 35px rgba(200, 95, 130, 0.28);
+
+/*
+   Very subtle hover effect.
+   The button remains basically invisible.
+*/
+
+.cover-open:hover {
+  background: rgba(255, 255, 255, 0.035);
 }
 
-.primary span {
-  margin-left: 8px;
+
+.cover-open:active {
+  background: rgba(255, 255, 255, 0.07);
 }
 
-.tiny {
-  margin-top: 14px;
-  color: #aa929b;
-  font-size: 11px;
+
+.cover-open:focus-visible {
+  outline:
+    3px solid
+    rgba(255, 255, 255, 0.85);
+
+  outline-offset: 4px;
 }
 
-/* ---------------- BOOK ---------------- */
+
+/*
+   Hide the old cover design completely.
+*/
+
+.intro .eyebrow,
+.intro .cover-art,
+.intro h1,
+.intro .subtitle,
+.intro .primary,
+.intro .tiny {
+  display: none !important;
+}
+
+
+/*
+   Hide the header while the full-screen
+   cover is being displayed.
+
+   Once JavaScript adds .hidden to .intro,
+   the header automatically comes back.
+*/
+
+body:has(
+  .intro:not(.hidden)
+) header {
+  display: none;
+}
+
+
+/* =====================================================
+   BOOK
+   ===================================================== */
 
 .book-wrap {
   width: min(920px, calc(100% - 30px));
+
   margin: 20px auto 80px;
-  animation: bookIn 0.7s ease both;
+
+  animation:
+    bookIn
+    0.7s ease both;
 }
+
 
 .hidden {
   display: none !important;
 }
 
+
 @keyframes bookIn {
+
   from {
     opacity: 0;
     transform: translateY(25px);
@@ -395,65 +424,114 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
+
+
+/* =====================================================
+   PROGRESS
+   ===================================================== */
 
 .progress {
   display: flex;
+
   align-items: center;
+
   gap: 14px;
+
   margin-bottom: 15px;
+
   color: var(--muted);
+
   font-size: 11px;
 }
 
+
 .progress-track {
   height: 3px;
+
   flex: 1;
+
   background: var(--line);
+
   border-radius: 10px;
+
   overflow: hidden;
 }
+
 
 .progress-track i {
   display: block;
+
   width: 20%;
+
   height: 100%;
+
   background: var(--pink-dark);
-  transition: width 0.4s ease;
+
+  transition:
+    width 0.4s ease;
 }
+
 
 .chapter {
   min-width: 120px;
+
   text-align: right;
 }
 
-/* ---------------- PAGES ---------------- */
+
+/* =====================================================
+   PAGES
+   ===================================================== */
 
 .book {
   position: relative;
+
   min-height: 600px;
 }
+
 
 .page {
   display: none;
+
   position: relative;
+
   background:
-    radial-gradient(circle at 90% 10%, rgba(250, 221, 231, 0.5), transparent 25%),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(250, 221, 231, 0.5),
+      transparent 25%
+    ),
     var(--paper);
-  border: 1px solid var(--line);
+
+  border:
+    1px solid
+    var(--line);
+
   border-radius: 24px;
+
   padding: 55px;
+
   min-height: 600px;
+
   box-shadow: var(--shadow);
+
   overflow: hidden;
 }
 
+
 .page.active {
   display: block;
-  animation: pageIn 0.55s ease both;
+
+  animation:
+    pageIn
+    0.55s ease both;
 }
 
+
 @keyframes pageIn {
+
   from {
     opacity: 0;
     transform: translateX(18px);
@@ -463,466 +541,1074 @@ main {
     opacity: 1;
     transform: translateX(0);
   }
+
 }
+
+
+.page.leaving {
+  animation:
+    pageOut
+    0.36s ease both;
+}
+
+
+@keyframes pageOut {
+
+  to {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+}
+
+
+/* =====================================================
+   PAGE TEXT
+   ===================================================== */
 
 .page-kicker {
   color: var(--pink-dark);
+
   font-size: 10px;
+
   font-weight: 700;
+
   letter-spacing: 0.2em;
+
   margin-bottom: 16px;
 }
 
+
 .page h2 {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(40px, 6vw, 64px);
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(40px, 6vw, 64px);
+
   line-height: 1;
+
   font-weight: 500;
+
   margin: 0 0 20px;
+
   letter-spacing: -0.04em;
 }
 
+
 .page h2 em {
   color: var(--pink-dark);
+
   font-style: italic;
 }
 
+
 .copy {
   max-width: 590px;
+
   color: var(--muted);
+
   line-height: 1.8;
+
   font-size: 14px;
 }
 
-/* ---------------- PAGE 2 PHOTOS ---------------- */
+
+.copy.center {
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   PAGE 1
+   ===================================================== */
+
+.mini-flower {
+  color: var(--pink-dark);
+
+  font-size: 28px;
+
+  margin-bottom: 12px;
+
+  animation:
+    miniFlowerFloat
+    3s ease-in-out infinite;
+}
+
+
+@keyframes miniFlowerFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+}
+
+
+.scribble {
+  display: inline-block;
+
+  margin-top: 30px;
+
+  padding: 13px 18px;
+
+  background: #fff0f5;
+
+  color: var(--pink-dark);
+
+  border-radius: 12px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-style: italic;
+
+  transform: rotate(-1deg);
+}
+
+
+/* =====================================================
+   PAGE 2 - PHOTOS
+   ===================================================== */
 
 .photo-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap: 28px;
+
   margin-top: 32px;
+
   max-width: 680px;
 }
 
+
 .photo {
   background: white;
-  border: 1px solid #ead9df;
+
+  border:
+    1px solid
+    #ead9df;
+
   padding: 10px;
+
   border-radius: 6px;
-  box-shadow: 0 14px 35px rgba(76, 43, 56, 0.1);
-  transition: 0.3s ease;
+
+  box-shadow:
+    0 14px 35px
+    rgba(76, 43, 56, 0.1);
+
+  transition:
+    0.3s ease;
 }
 
+
 .photo:hover {
-  transform: translateY(-6px) rotate(0deg) !important;
-  box-shadow: 0 20px 45px rgba(76, 43, 56, 0.14);
+  transform:
+    translateY(-6px)
+    rotate(0deg) !important;
+
+  box-shadow:
+    0 20px 45px
+    rgba(76, 43, 56, 0.14);
 }
+
 
 .photo.p1 {
   transform: rotate(-3deg);
 }
 
+
 .photo.p2 {
   transform: rotate(3deg);
 }
 
-/* LEFT IMAGE */
+
+/*
+   LEFT PHOTO
+
+   This is your:
+   images/felisha-smile-4.jpg.jpeg
+*/
 
 .photo.p1 .photo-image {
   width: 100%;
+
   height: 190px;
+
   display: block;
+
   object-fit: contain;
+
   object-position: center;
+
   background: #fff;
 }
 
-/* RIGHT IMAGE */
-/* Slightly zoomed out + moved upward */
+
+/*
+   RIGHT PHOTO
+
+   This is your:
+   images/felisha-smile-1.jpg.jpeg
+
+   Slightly zoomed out
+   and moved upward.
+*/
 
 .photo.p2 .photo-image {
   width: 100%;
+
   height: 190px;
+
   display: block;
+
   object-fit: cover;
-  object-position: center 28%;
-  transform: scale(0.96);
+
+  object-position:
+    center 28%;
+
+  transform:
+    scale(0.96);
+
   background: #fff;
 }
 
+
 .photo label {
   display: block;
-  padding: 12px 4px 5px;
-  font-family: "Playfair Display", serif;
+
+  padding:
+    12px
+    4px
+    5px;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
   font-style: italic;
+
   color: #765d67;
+
   font-size: 15px;
 }
 
+
 .note-tag {
   display: inline-block;
+
   margin-top: 35px;
-  padding: 9px 14px;
+
+  padding:
+    9px
+    14px;
+
   border-radius: 999px;
+
   background: #fff0f5;
+
   color: var(--pink-dark);
+
   font-size: 11px;
 }
 
+
+/* =====================================================
+   PAGE FOOTER
+   ===================================================== */
+
 .page-foot {
   position: absolute;
+
   bottom: 25px;
+
   left: 55px;
   right: 55px;
+
   display: flex;
-  justify-content: space-between;
+
+  justify-content:
+    space-between;
+
   color: #ad969f;
+
   font-size: 11px;
 }
+
 
 .page-foot span {
   color: var(--pink-dark);
 }
 
-/* ---------------- NOTE CARDS ---------------- */
+
+/* =====================================================
+   PAGE 3 - LOVE NOTES
+   ===================================================== */
 
 .notes {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
   gap: 18px;
+
   margin-top: 30px;
+
   max-width: 700px;
 }
 
+
 .note {
+  appearance: none;
+
+  width: 100%;
+
   padding: 25px;
+
   border-radius: 18px;
+
   background: #fff7fa;
-  border: 1px solid var(--line);
-  transition: 0.25s ease;
+
+  border:
+    1px solid
+    var(--line);
+
+  color: var(--ink);
+
+  text-align: left;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
 }
+
 
 .note:hover {
-  transform: translateY(-4px);
+  transform:
+    translateY(-4px);
+
+  border-color:
+    var(--pink);
 }
 
-.note strong {
+
+.note span {
   display: block;
-  font-family: "Playfair Display", serif;
-  font-size: 21px;
+
+  color: var(--pink-dark);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
   margin-bottom: 9px;
 }
 
-.note p {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.7;
-  font-size: 13px;
+
+.note b {
+  display: block;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 21px;
+
+  margin-bottom: 9px;
 }
 
-/* ---------------- MEMORY ---------------- */
 
-.memory {
-  margin-top: 35px;
+.note i {
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  font-style: normal;
+}
+
+
+/* =====================================================
+   PAGE 4 - MEMORY
+   ===================================================== */
+
+.memory-frame {
   max-width: 680px;
-  padding: 28px;
-  border: 1px dashed #dfb9c7;
+
+  margin:
+    35px
+    auto
+    25px;
+}
+
+
+.memory-placeholder {
+  min-height: 190px;
+
+  border:
+    1px dashed
+    #dfb9c7;
+
   border-radius: 20px;
-  background: rgba(255, 247, 250, 0.7);
+
+  background:
+    rgba(255, 247, 250, 0.7);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: var(--pink-dark);
+
+  font-size: 42px;
 }
 
-.memory p {
-  margin: 0;
+
+.memory-placeholder small {
+  font-size: 12px;
+
   color: var(--muted);
-  line-height: 1.8;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
 }
 
-.memory .quote {
-  font-family: "Playfair Display", serif;
-  font-size: 24px;
-  color: var(--ink);
-  margin-bottom: 15px;
-}
 
-/* ---------------- CAKE ---------------- */
+/* =====================================================
+   PAGE 5 - CAKE
+   ===================================================== */
 
 .cake {
   width: 150px;
+
   height: 130px;
+
   position: relative;
-  margin: 35px auto;
+
+  margin:
+    35px
+    auto;
 }
+
 
 .cake-body {
   position: absolute;
+
   bottom: 0;
+
   left: 10px;
+
   width: 130px;
+
   height: 70px;
+
   background: #f1a9bd;
-  border-radius: 10px 10px 18px 18px;
-  box-shadow: inset 0 -12px rgba(197, 89, 125, 0.12);
+
+  border-radius:
+    10px
+    10px
+    18px
+    18px;
+
+  box-shadow:
+    inset 0 -12px
+    rgba(197, 89, 125, 0.12);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  color: white;
+
+  font-size: 24px;
 }
 
-.cake-top {
+
+.icing {
   position: absolute;
-  bottom: 58px;
+
+  bottom: 56px;
+
   left: 18px;
+
   width: 114px;
-  height: 25px;
-  border-radius: 50%;
+
+  height: 22px;
+
   background: #fff0f5;
+
+  border-radius: 50%;
 }
+
+
+.plate {
+  position: absolute;
+
+  bottom: -8px;
+
+  left: 0;
+
+  width: 150px;
+
+  height: 15px;
+
+  background: #f8dce6;
+
+  border-radius: 50%;
+}
+
 
 .candle {
   position: absolute;
-  bottom: 79px;
+
+  bottom: 78px;
+
   left: 68px;
+
   width: 14px;
+
   height: 45px;
+
   background: #fff;
+
   border-radius: 5px;
+
+  z-index: 3;
 }
+
 
 .flame {
   position: absolute;
-  bottom: 119px;
-  left: 68px;
-  width: 15px;
-  height: 20px;
+
+  bottom: 118px;
+
+  left: 67px;
+
+  width: 17px;
+
+  height: 22px;
+
   background: #f4ad72;
+
   border-radius: 50%;
-  animation: flame 0.7s ease-in-out infinite alternate;
+
+  z-index: 4;
+
+  animation:
+    flame
+    0.7s
+    ease-in-out
+    infinite
+    alternate;
 }
 
+
 @keyframes flame {
+
   from {
-    transform: scale(0.9) rotate(-4deg);
+    transform:
+      scale(0.9)
+      rotate(-4deg);
   }
 
   to {
-    transform: scale(1.1) rotate(4deg);
+    transform:
+      scale(1.1)
+      rotate(4deg);
   }
+
 }
 
-/* ---------------- NAVIGATION ---------------- */
+
+.secondary {
+  border:
+    1px solid
+    var(--line);
+
+  background: white;
+
+  color: var(--pink-dark);
+
+  border-radius: 999px;
+
+  padding:
+    12px
+    20px;
+
+  font-family: inherit;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    0.25s ease;
+}
+
+
+.secondary:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    var(--pink);
+}
+
+
+.secondary:disabled {
+  opacity: 0.65;
+
+  cursor: default;
+}
+
+
+.wish {
+  color: var(--pink-dark);
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-style: italic;
+
+  margin-top: 18px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
 
 .nav {
   display: flex;
-  justify-content: space-between;
+
+  justify-content:
+    space-between;
+
   align-items: center;
+
   margin-top: 18px;
 }
 
+
 .navbtn {
-  border: 1px solid var(--line);
+  border:
+    1px solid
+    var(--line);
+
   background: white;
+
   color: var(--ink);
+
   border-radius: 999px;
-  padding: 11px 17px;
+
+  padding:
+    11px
+    17px;
+
   font-family: inherit;
+
   cursor: pointer;
-  transition: 0.25s ease;
+
+  transition:
+    0.25s ease;
 }
 
+
 .navbtn:hover:not(:disabled) {
-  border-color: var(--pink);
-  transform: translateY(-2px);
+  border-color:
+    var(--pink);
+
+  transform:
+    translateY(-2px);
 }
+
 
 .navbtn:disabled {
   opacity: 0.4;
-  cursor: not-allowed;
+
+  cursor:
+    not-allowed;
 }
+
 
 .dots {
   display: flex;
+
   gap: 7px;
 }
 
+
 .dots i {
   display: block;
+
   width: 7px;
+
   height: 7px;
+
   background: #ead7df;
+
   border-radius: 50%;
-  transition: 0.25s ease;
+
+  transition:
+    0.25s ease;
 }
+
 
 .dots i.selected {
-  background: var(--pink-dark);
-  transform: scale(1.3);
+  background:
+    var(--pink-dark);
+
+  transform:
+    scale(1.3);
 }
 
-/* ---------------- MODAL ---------------- */
+
+/* =====================================================
+   NOTE MODAL
+   ===================================================== */
 
 .modal {
   position: fixed;
+
   inset: 0;
-  background: rgba(53, 35, 42, 0.35);
+
+  background:
+    rgba(53, 35, 42, 0.35);
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   padding: 20px;
-  z-index: 100;
-  backdrop-filter: blur(6px);
+
+  z-index: 2000;
+
+  backdrop-filter:
+    blur(6px);
 }
 
+
 .modal-card {
-  width: min(500px, 100%);
+  position: relative;
+
+  width:
+    min(500px, 100%);
+
   background: white;
+
   border-radius: 25px;
+
   padding: 35px;
-  box-shadow: 0 30px 80px rgba(48, 30, 39, 0.25);
+
+  box-shadow:
+    0 30px 80px
+    rgba(48, 30, 39, 0.25);
+
   text-align: center;
 }
 
-.modal-card h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 34px;
-  margin: 0 0 12px;
+
+.modal-card .close {
+  position: absolute;
+
+  top: 15px;
+  right: 18px;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+
+  background: #fff0f5;
+
+  color: var(--pink-dark);
+
+  border-radius: 50%;
+
+  font-size: 24px;
+
+  line-height: 1;
+
+  cursor: pointer;
 }
+
+
+.modal-flower {
+  color: var(--pink-dark);
+
+  font-size: 30px;
+
+  margin-bottom: 10px;
+}
+
+
+.modal-card .eyebrow {
+  margin-bottom: 15px;
+}
+
 
 .modal-card p {
   color: var(--muted);
+
   line-height: 1.7;
 }
 
-.close-modal {
-  margin-top: 18px;
-  border: none;
-  background: var(--pink-dark);
-  color: white;
-  border-radius: 999px;
-  padding: 11px 20px;
-  cursor: pointer;
-  font-family: inherit;
+
+.modal-heart {
+  color: var(--pink-dark);
+
+  font-size: 32px;
+
+  margin-top: 20px;
 }
 
-/* ---------------- FOOTER ---------------- */
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 footer {
   text-align: center;
+
   padding: 25px;
+
   color: #ad969f;
+
   font-size: 11px;
 }
 
+
 footer span {
-  color: var(--pink-dark);
+  color:
+    var(--pink-dark);
 }
 
-/* ---------------- RESPONSIVE ---------------- */
+
+/* =====================================================
+   RESPONSIVE - TABLET / MOBILE
+   ===================================================== */
 
 @media (max-width: 700px) {
+
+
   header {
-    padding: 18px 15px;
+    padding:
+      18px
+      15px;
   }
+
 
   .brand {
     font-size: 12px;
   }
 
+
   .music span {
     display: none;
   }
 
+
   .music {
-    padding: 9px 13px;
+    padding:
+      9px
+      13px;
   }
+
+
+  /*
+     Mobile cover.
+
+     The complete cover still fills
+     the entire phone screen.
+  */
 
   .intro {
-    min-height: calc(100vh - 65px);
-    padding-top: 10px;
+    width: 100vw;
+
+    height: 100dvh;
+
+    min-height: 100dvh;
   }
 
-  .cover-art {
-    width: 88vw;
-    height: 48vh;
-    min-height: 280px;
+
+  .full-cover {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position:
+      center center;
   }
 
-  .cover-photo {
-    max-width: 95%;
-    max-height: 95%;
+
+  /*
+     Mobile clickable area.
+  */
+
+  .cover-open {
+    left: 50%;
+
+    top: 60.5%;
+
+    width: 76%;
+
+    height: 11%;
+
+    transform:
+      translateX(-50%);
   }
 
-  .intro h1 {
-    font-size: 45px;
-  }
-
-  .subtitle {
-    font-size: 14px;
-  }
 
   .book-wrap {
-    width: calc(100% - 20px);
+    width:
+      calc(100% - 20px);
   }
 
+
   .page {
-    padding: 30px 22px 65px;
+    padding:
+      30px
+      22px
+      65px;
+
     min-height: 600px;
+
     border-radius: 20px;
   }
+
 
   .page h2 {
     font-size: 43px;
   }
 
+
   .photo-grid {
     grid-template-columns: 1fr;
+
     gap: 22px;
   }
 
+
   .photo.p1,
   .photo.p2 {
-    transform: rotate(0deg);
+    transform:
+      rotate(0deg);
   }
+
 
   .photo.p1 .photo-image,
   .photo.p2 .photo-image {
     height: 230px;
   }
 
+
   .notes {
     grid-template-columns: 1fr;
   }
+
 
   .page-foot {
     left: 22px;
     right: 22px;
   }
 
+
   .chapter {
     display: none;
   }
+
 
   .progress {
     gap: 8px;
   }
 
+
   .navbtn {
-    padding: 9px 12px;
+    padding:
+      9px
+      12px;
+
     font-size: 12px;
   }
+
+
+  .memory-frame {
+    margin-top: 25px;
+  }
+
 }
 
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
 @media (max-width: 420px) {
-  .intro h1 {
-    font-size: 39px;
+
+
+  .cover-open {
+    top: 60%;
+
+    width: 80%;
+
+    height: 12%;
   }
 
-  .cover-art {
-    height: 42vh;
-    min-height: 250px;
-  }
 
   .page {
-    padding: 25px 18px 65px;
+    padding:
+      25px
+      18px
+      65px;
   }
+
 
   .photo.p1 .photo-image,
   .photo.p2 .photo-image {
     height: 210px;
   }
+
+
+  .page h2 {
+    font-size: 39px;
+  }
+
+
+  .memory-placeholder {
+    min-height: 160px;
+  }
+
 }
