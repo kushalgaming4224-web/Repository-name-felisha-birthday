@@ -55,7 +55,7 @@
 
 <section class="intro" id="intro">
 
-  <!-- Your complete birthday cover image -->
+  <!-- Complete birthday cover image -->
   <img
     class="full-cover"
     src="images/felisha-cover.png"
@@ -64,17 +64,21 @@
 
 
   <!--
-    Invisible button positioned over
-    "OPEN YOUR SURPRISE" in the image.
-    
-    Clicking this triggers the existing
-    JavaScript and opens Page 1.
+    Clickable area placed over the
+    "OPEN YOUR SURPRISE" button
+    inside the artwork.
   -->
 
   <button
     id="openBtn"
     class="cover-open"
+    type="button"
     aria-label="Open your surprise"
+    onclick="
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('bookWrap').classList.remove('hidden');
+      window.scrollTo(0,0);
+    "
   ></button>
 
 </section>
@@ -539,6 +543,7 @@
       class="navbtn"
     >
       Next page →
+
     </button>
 
   </div>
