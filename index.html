@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday, Felisha 💗</title>
+
+  <title>For Felisha ♡</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,11 +22,11 @@
   <!-- Ambient background -->
   <div class="ambient" aria-hidden="true">
     <span>♡</span>
-    <span>✦</span>
-    <span>♡</span>
     <span>✧</span>
     <span>♡</span>
-    <span>✦</span>
+    <span>✿</span>
+    <span>♡</span>
+    <span>✧</span>
     <span>♡</span>
   </div>
 
@@ -29,6 +34,7 @@
   <!-- =========================
        INTRO / COVER
   ========================== -->
+
   <section class="intro" id="intro">
 
     <img
@@ -37,7 +43,6 @@
       alt="Happy Birthday Felisha"
     >
 
-    <!-- Transparent button over the entire cover -->
     <button
       id="openBtn"
       class="cover-click-all"
@@ -49,22 +54,22 @@
 
 
   <!-- =========================
-       BOOK
+       MAIN BOOK
   ========================== -->
+
   <main class="book-wrap hidden" id="bookWrap">
 
+    <!-- Header -->
     <header class="topbar">
 
       <div class="brand">
-        <span class="brand-heart">♡</span>
-        <span>For Felisha</span>
+        For Felisha ♡
       </div>
 
       <button
         class="music"
         id="musicBtn"
         type="button"
-        aria-label="Play music"
       >
         ♫ Music
       </button>
@@ -72,286 +77,317 @@
     </header>
 
 
-    <div class="book-shell">
+    <!-- Book -->
+    <section class="book">
 
-      <div class="book" id="book">
+      <!-- =========================
+           PAGE 1
+      ========================== -->
 
+      <article class="page active">
 
-        <!-- =========================
-             PAGE 1
-        ========================== -->
-        <section class="page active" data-page="0">
+        <div class="page-content">
 
-          <div class="page-inner">
-
-            <p class="eyebrow">A little hello</p>
-
-            <h1>
-              Happy Birthday,
-              <span>Felisha</span>
-            </h1>
-
-            <p class="lead">
-              I made this little corner of the internet
-              just for you.
-            </p>
-
-            <div class="divider">♡</div>
-
-            <p class="body-copy">
-              There are some things that are difficult to put
-              into a normal birthday message, so I thought
-              I would make you something you can keep.
-            </p>
-
-            <p class="signature">
-              — with lots of love
-            </p>
-
+          <div class="eyebrow">
+            01 · HELLO
           </div>
 
-        </section>
+          <h1>
+            A little hello
+            <em>for you</em>
+          </h1>
 
+          <p class="lead">
+            I made this little corner of the internet
+            just for you.
+          </p>
 
-        <!-- =========================
-             PAGE 2
-        ========================== -->
-        <section class="page" data-page="1">
+          <div class="letter">
 
-          <div class="page-inner">
-
-            <p class="eyebrow">Your smile</p>
-
-            <h2>
-              One of my favourite
-              <span>things about you</span>
-            </h2>
-
-            <p class="body-copy">
-              Your smile has a way of making ordinary moments
-              feel a little more special.
+            <p>
+              Somewhere between all the ordinary days,
+              you became one of my favourite parts of life.
             </p>
 
-
-            <div class="photo-grid">
-
-              <div class="photo-card">
-                <img
-                  src="images/felisha-smile-4.jpg.jpeg"
-                  alt="Felisha smiling"
-                >
-              </div>
-
-              <div class="photo-card">
-                <img
-                  src="images/felisha-smile-1.jpg.jpeg"
-                  alt="Felisha smiling"
-                >
-              </div>
-
-            </div>
-
-            <p class="small-note">
-              Keep smiling. It looks really good on you. ♡
+            <p>
+              So I wanted to make you something small,
+              sweet, and completely yours.
             </p>
 
-          </div>
-
-        </section>
-
-
-        <!-- =========================
-             PAGE 3
-        ========================== -->
-        <section class="page" data-page="2">
-
-          <div class="page-inner">
-
-            <p class="eyebrow">Little things</p>
-
-            <h2>
-              Things I hope you
-              <span>always remember</span>
-            </h2>
-
-            <p class="body-copy">
-              Tap the little notes below.
-            </p>
-
-
-            <div class="notes">
-
-              <button
-                class="note"
-                type="button"
-                data-note="You deserve to be reminded how special you are, not just on your birthday, but every day."
-              >
-                <span class="note-icon">♡</span>
-                <span>
-                  <strong>You are special</strong>
-                  <small>Tap to open</small>
-                </span>
-                <span class="note-arrow">→</span>
-              </button>
-
-
-              <button
-                class="note"
-                type="button"
-                data-note="I hope you never stop believing in yourself and everything you are capable of."
-              >
-                <span class="note-icon">✦</span>
-                <span>
-                  <strong>Believe in yourself</strong>
-                  <small>Tap to open</small>
-                </span>
-                <span class="note-arrow">→</span>
-              </button>
-
-
-              <button
-                class="note"
-                type="button"
-                data-note="No matter how ordinary a day feels, I hope you find something small that makes you smile."
-              >
-                <span class="note-icon">♡</span>
-                <span>
-                  <strong>Keep smiling</strong>
-                  <small>Tap to open</small>
-                </span>
-                <span class="note-arrow">→</span>
-              </button>
-
-
-              <button
-                class="note"
-                type="button"
-                data-note="You deserve beautiful things, beautiful moments, and people who appreciate you for exactly who you are."
-              >
-                <span class="note-icon">✧</span>
-                <span>
-                  <strong>You deserve happiness</strong>
-                  <small>Tap to open</small>
-                </span>
-                <span class="note-arrow">→</span>
-              </button>
-
+            <div class="signature">
+              — with love ♡
             </div>
 
           </div>
 
-        </section>
+        </div>
+
+        <div class="page-footer">
+          <span>A tiny surprise</span>
+          <span>♡</span>
+        </div>
+
+      </article>
 
 
-        <!-- =========================
-             PAGE 4
-        ========================== -->
-        <section class="page" data-page="3">
+      <!-- =========================
+           PAGE 2
+      ========================== -->
 
-          <div class="page-inner">
+      <article class="page">
 
-            <p class="eyebrow">More memories to make</p>
+        <div class="page-content">
 
-            <h2>
-              This is only the
-              <span>beginning</span>
-            </h2>
+          <div class="eyebrow">
+            02 · YOU
+          </div>
 
-            <p class="body-copy">
-              There are still so many little moments waiting
-              for us — more laughs, more pictures, more memories
-              and more days worth remembering.
-            </p>
+          <h1>
+            Your smile
+            <em>is my favourite</em>
+          </h1>
+
+          <p class="lead">
+            Some things don't need a long explanation.
+            Your smile is one of them.
+          </p>
 
 
-            <div class="memory-frame">
+          <div class="photo-grid">
 
+            <div class="photo-card">
               <img
-                class="memory-image"
-                src="images/memory.jpeg"
-                alt="A special memory of us"
+                src="images/felisha-smile-4.jpg.jpeg"
+                alt="Felisha smiling"
               >
-
             </div>
 
-
-            <p class="small-note">
-              Here's to all the memories we haven't made yet. ♡
-            </p>
+            <div class="photo-card">
+              <img
+                src="images/felisha-smile-1.jpg.jpeg"
+                alt="Felisha smiling"
+              >
+            </div>
 
           </div>
 
-        </section>
+
+          <p class="photo-caption">
+            Two little moments I wanted to keep here forever. ♡
+          </p>
+
+        </div>
+
+        <div class="page-footer">
+          <span>Your smile</span>
+          <span>♡</span>
+        </div>
+
+      </article>
 
 
-        <!-- =========================
-             PAGE 5
-        ========================== -->
-        <section class="page" data-page="4">
+      <!-- =========================
+           PAGE 3
+      ========================== -->
 
-          <div class="page-inner">
+      <article class="page">
 
-            <p class="eyebrow">Your day</p>
+        <div class="page-content">
 
-            <h2>
-              Make a wish,
-              <span>birthday girl</span>
-            </h2>
+          <div class="eyebrow">
+            03 · LITTLE THINGS
+          </div>
 
-            <div class="cake">
+          <h1>
+            Little things
+            <em>I love about you</em>
+          </h1>
 
-              <div class="cake-candle">
-                <span id="flame">✦</span>
-              </div>
-
-              <div class="cake-top"></div>
-              <div class="cake-body"></div>
-              <div class="cake-plate"></div>
-
-            </div>
+          <p class="lead">
+            It is always the little things that end up
+            meaning the most.
+          </p>
 
 
-            <p class="body-copy">
-              Close your eyes, make your wish,
-              and then click the button.
-            </p>
-
+          <div class="notes">
 
             <button
-              class="wish-btn"
-              id="wishBtn"
+              class="note"
               type="button"
+              data-note="The way your smile can instantly make an ordinary day feel better. ♡"
             >
-              Make a wish ♡
+              <span class="note-icon">♡</span>
+              <span>
+                <strong>Your smile</strong>
+                <small>the easiest reason to smile</small>
+              </span>
             </button>
 
 
-            <p
-              class="wish-text hidden"
-              id="wishText"
+            <button
+              class="note"
+              type="button"
+              data-note="I love how you can make even the smallest moments feel special. ✧"
             >
-              Wish sent with love. 💗
-            </p>
+              <span class="note-icon">✧</span>
+              <span>
+                <strong>The little moments</strong>
+                <small>the ones I want to remember</small>
+              </span>
+            </button>
 
 
-            <p class="final-message">
-              Happy Birthday, Felisha.
-              <br>
-              I hope this year gives you
-              everything you deserve. ♡
-            </p>
+            <button
+              class="note"
+              type="button"
+              data-note="You make life feel warmer just by being yourself. ♡"
+            >
+              <span class="note-icon">♡</span>
+              <span>
+                <strong>Just you</strong>
+                <small>exactly as you are</small>
+              </span>
+            </button>
 
           </div>
 
-        </section>
+          <p class="tap-hint">
+            Tap a note ♡
+          </p>
+
+        </div>
+
+        <div class="page-footer">
+          <span>Little things</span>
+          <span>♡</span>
+        </div>
+
+      </article>
 
 
-      </div>
+      <!-- =========================
+           PAGE 4
+      ========================== -->
 
-    </div>
+      <article class="page">
+
+        <div class="page-content">
+
+          <div class="eyebrow">
+            04 · US
+          </div>
+
+          <h1>
+            More memories
+            <em>to make</em>
+          </h1>
 
 
-    <!-- Navigation -->
+          <div class="memory-frame">
+
+            <img
+              class="memory-image"
+              src="images/memory.jpeg"
+              alt="A special memory of us"
+            >
+
+          </div>
+
+
+          <p class="memory-text">
+            I hope we get to collect so many more laughs,
+            adventures, silly moments, and beautiful
+            memories together. One day at a time, with you.
+          </p>
+
+
+          <div class="future-note">
+            My favourite story is still being written. ♡
+          </div>
+
+
+          <div class="future-label">
+            to all the days ahead
+          </div>
+
+        </div>
+
+        <div class="page-footer">
+          <span></span>
+          <span>♡</span>
+        </div>
+
+      </article>
+
+
+      <!-- =========================
+           PAGE 5
+      ========================== -->
+
+      <article class="page">
+
+        <div class="page-content birthday-page">
+
+          <div class="eyebrow">
+            05 · YOUR DAY
+          </div>
+
+          <h1>
+            Happy Birthday
+            <em>Felisha ♡</em>
+          </h1>
+
+          <p class="lead">
+            Today is all about celebrating you.
+          </p>
+
+
+          <div class="cake">
+
+            <div class="cake-top">
+              <span class="candle">
+                <span class="flame" id="flame">♥</span>
+              </span>
+            </div>
+
+            <div class="cake-body">
+              ♡
+            </div>
+
+          </div>
+
+
+          <button
+            class="wish-btn"
+            id="wishBtn"
+            type="button"
+          >
+            Make a wish ✨
+          </button>
+
+
+          <p
+            class="wish-text hidden"
+            id="wishText"
+          >
+            Wish sent with love. ♡
+          </p>
+
+        </div>
+
+        <div class="page-footer">
+          <span>Happy Birthday</span>
+          <span>♡</span>
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
     <div class="navigation">
 
@@ -366,31 +402,26 @@
 
       <div class="page-status">
 
-        <span id="chapter">
-          A little hello
-        </span>
-
-        <span class="page-count">
-          <span id="pageCount">1 / 5</span>
-        </span>
-
-        <div class="progress">
-          <div
-            class="progress-fill"
-            id="progressFill"
-          ></div>
+        <div class="page-count" id="pageCount">
+          1 / 5
         </div>
 
-        <div
-          class="dots"
-          id="dots"
-          aria-label="Page navigation"
-        >
+        <div class="progress">
+          <span id="progressFill"></span>
+        </div>
+
+        <div class="chapter" id="chapter">
+          A little hello
+        </div>
+
+        <div class="dots" id="dots">
+
           <button type="button" aria-label="Page 1"></button>
           <button type="button" aria-label="Page 2"></button>
           <button type="button" aria-label="Page 3"></button>
           <button type="button" aria-label="Page 4"></button>
           <button type="button" aria-label="Page 5"></button>
+
         </div>
 
       </div>
@@ -398,17 +429,17 @@
 
       <button
         id="nextBtn"
-        class="nav-btn primary"
+        class="nav-btn"
         type="button"
       >
-        Next →
+        Next page →
       </button>
 
     </div>
 
 
-    <footer>
-      Made with ♡ for Felisha
+    <footer class="site-footer">
+      Made with love for Felisha ♡
     </footer>
 
   </main>
@@ -428,15 +459,17 @@
     <div class="modal-card">
 
       <button
-        class="modal-close"
         id="closeModal"
+        class="modal-close"
         type="button"
         aria-label="Close"
       >
         ×
       </button>
 
-      <div class="modal-heart">♡</div>
+      <div class="modal-heart">
+        ♡
+      </div>
 
       <p id="modalText"></p>
 
